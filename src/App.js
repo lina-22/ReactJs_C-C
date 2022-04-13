@@ -6,6 +6,7 @@ import BoutiqueLandingImgaes from "./Pages/User/BoutiqueLandingImgaes";
 import { Routes, Route } from "react-router-dom";
 import BoutiqueSubSection from "./Pages/User/BoutiqueSubSection";
 import BoutiqueAjouterPanier from "./Pages/User/BoutiqueAjouterPanier";
+import Panier from "./Pages/User/Panier";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/boutiqueSubSection" element={<BoutiqueSubSection/>}/>
           <Route path="/boutiqueLandingImgaes" element={<BoutiqueLandingImgaes/>}/> 
           <Route path="/boutiqueAjouterPanier" element={<BoutiqueAjouterPanier/>}/>
+          <Route path="/panier" element={<Panier/>}/>
           
         </Routes>
 

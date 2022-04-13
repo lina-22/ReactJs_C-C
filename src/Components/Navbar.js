@@ -21,7 +21,7 @@ function Navbar(){
                 <li><Link to ="/boutiqueLandingImages">|| Boutique  || </Link></li>
                 {/* <li><Link to ="/boutiqueSubSection">|| Boutique  || </Link></li> this link for one drees boutiqueLandingImages  */}
                 <li>|| Se connecter  ||</li>
-                <li>|| Panier  ||</li>
+                <li><Link to ="/panier">|| Panier  ||</Link></li>
                 <li>|| Propos  ||</li>
             </ul>
         </nav>
