@@ -5,7 +5,7 @@ import formal2 from '../../images/imgPage1/Formal2.png';
 import tshirt2 from '../../images/imgPage1/T-shirt2.png';
 import photoLeft from '../../images/imgPage1/photo_left.png';
 import photoRight from '../../images/imgPage1/photo_right.png';
-function Home() {
+function Accueil() {
   return (
     <div>
       <section className="header">
@@ -56,4 +56,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Accueil;
