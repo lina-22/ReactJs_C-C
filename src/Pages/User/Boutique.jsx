@@ -4,6 +4,7 @@ import img3 from '../../images/imgPage2/image3.png';
 import img4 from '../../images/imgPage2/image4.png';
 import img5 from '../../images/imgPage2/image5.png';
 import img6 from '../../images/imgPage2/image6.png';
+
 function Boutique() {
   return (
     <div>

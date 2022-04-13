@@ -268,3 +268,33 @@ section .header{
     padding-top: 80px;
     padding-left: 80px;
 }
+
+
+/* body start from boutique */
+#boutiqe{
+    text-align: center;
+    padding: 100px;
+}
+#Boutique_body{
+    padding: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#sidebar1{
+    text-align: center;
+    /* word-spacing: 30px; */
+
+}
+#sidebar2{
+    text-align: center;
+    padding-top: 90px;
+    word-spacing: 30px;
+}
+
+/* #section_images{
+   display: inline;
+   justify-content: space-between;
+} */
+
+/* body end from boutique */

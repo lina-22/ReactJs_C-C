@@ -3,6 +3,7 @@ import './App.css';
 import Footer from "./Components/Footer";
 import Accueil from "./Pages/User/Accueil";
 import Boutique from "./Pages/User/Boutique";
+import SeConnecter from "./Pages/User/SeConnecter";
 import { Routes, Route } from "react-router-dom";
 
 
@@ -12,9 +13,9 @@ function App() {
       <div id="landing">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Accueil/>}/>
+          {/* <Route path="/" element={<Accueil/>}/> */}
           <Route path="/boutique" element={<Boutique/>}/>
-          <Route/>
+          {/* <Route path="/seConnecter" element={<SeConnecter/>}/>  */}
           
         </Routes>
 
