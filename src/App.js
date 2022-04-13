@@ -19,7 +19,7 @@ function App() {
 
 
        <Footer/>
-      </div>{" "}
+      </div>
     </div>
   );
 }
