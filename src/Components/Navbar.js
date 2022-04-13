@@ -1,20 +1,24 @@
+
+import { Link } from 'react-router-dom';
+import logoImg from '../images/imgPage1/logo.png';
+import panierImg from '../images/imgPage1/panier_img.png';
 function Navbar(){
     return(
         <section className="top">
         <p className="top_p">Choisissez et récupérez votre produit de n'importe où</p>
         <section className="logo_area">
             <section className="main_logo">
-            <img src="Images/imgPage1/logo.png" alt=""/>
+            <img src={logoImg} alt=""/>
             </section>
             <p id="name">Click & Collect</p>
             <section className="panier_logo">
-            <img className="panier" src="Images/imgPage1/panier_img.png" alt=""/>
+            <img className="panier" src={panierImg} alt=""/>
             </section>
         </section>
         <nav className="navbar">
             <ul>
-                <li>|| Accueil  ||</li>
-                <li>|| Boutique  ||</li>
+                <li><Link to = "/" >|| Accueil  || </Link> </li>
+                <li><Link to ="/boutique">|| Boutique  || </Link></li>
                 <li>|| Se connecter  ||</li>
                 <li>|| Panier  ||</li>
                 <li>|| Propos  ||</li>

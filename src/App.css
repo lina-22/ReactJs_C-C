@@ -106,39 +106,6 @@ section .header{
     
 }
 
-.second_landing_images{
-    background-color: 17292F;
-    height: 300px;
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left:150px;
-    padding-right: 100px;
-}
-
-.photo_left{
-    padding-top: 20px;
-    padding-bottom: 100px;
-    padding-left: 80px;
-    
-}
-.photo_right{
-    padding-top: 100px;
-    padding-bottom: 20px;
-}
-
-.mode_text1{
-    /* transform: rotate(290deg);  */
-    padding-left: 10px; 
-    padding-top: 150px; 
-    color: white;
-}
-.mode_text2{
-    transform: rotate(290deg); 
-    padding-right: 100px; 
-    padding-top: 100px; 
-    color: white;
-}
 
 .footer{
     background-color: #2D788F;
@@ -201,4 +168,103 @@ section .header{
 .media_images{
     height: 15px;
     
+}
+
+/* body start from boutique */
+#boutiqe{
+    text-align: center;
+    padding: 100px;
+}
+#Boutique_body{
+    padding: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+
+}
+ #sidebar1{
+    text-align: center;
+}
+
+.sideImg{
+    width: 100px;
+    height: 200px;
+    padding-top: 40px;
+}
+/* #sidebar2{
+    text-align: center;
+    padding-top: 90px;
+} */ */
+/* #color{
+    text-align: center;
+} */
+.side_imgs{
+    width: 200px;
+    height: 200px;
+}
+
+.taille{
+    padding-top: 50px;
+    text-align: center;
+}
+.taille1{
+    padding-top:20px;
+    text-align: center;
+}
+.size_area{
+    padding-top: 20px;
+    text-align: center;
+    word-spacing: 30px;
+}
+
+.quantity_adjust{
+    padding-top: 40px;
+    text-align: center;
+}
+#add_button{
+    margin-top: 40px;
+    margin-left: 50px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
+/* #section_images{
+   
+} */
+
+/* body end from boutique */
+
+
+
+.second_landing_images{
+    background-color: #17292F;
+    height: 350px;
+    display: flex;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    padding-left:100px;
+    padding-right: 150px;
+    justify-content:space-between;
+}
+
+.photo_left{
+    padding-top: 30px;
+    padding-bottom:20px;
+    padding-left: 80px;
+    
+}
+.photo_right{
+    padding-top: 20px;
+}
+
+.mode_text1{
+    /* transform: rotate(290deg);  */
+    padding-left: 120px; 
+    color: white;
+}
+.mode_text2{
+    /* transform: rotate(290deg);  */
+    color: white;
+    padding-top: 80px;
+    padding-left: 80px;
 }

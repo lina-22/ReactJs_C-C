@@ -1,3 +1,12 @@
+import masterImg from '../images/imgPage1/image_master_card.png';
+import paypalImg from '../images/imgPage1/paypal.png';
+import visaImg from '../images/imgPage1/image_visa.png';
+
+// import img20 from '../images/imgPage1/image_visa.png';
+// import img21 from '../images/imgPage1/image_visa.png';
+
+
+
 function Footer() {
     return (   
     <div class="footer">
@@ -6,9 +15,9 @@ function Footer() {
                 <section class="foot-left">
                    <p>paiments</p>
                    <section class="payment_methods">
-                   <img src="Images/imgPage1/image_master_card.png" alt=""/>
-                   <img src="Images/imgPage1/paypal.png" alt=""/>
-                   <img src="Images/imgPage1/image_visa.png" alt=""/>
+                   <img src={masterImg} alt=""/>
+                   <img src={paypalImg} alt=""/>
+                   <img src={visaImg} alt=""/>
                    </section>
                 </section>
                 <section class="foot-left">
