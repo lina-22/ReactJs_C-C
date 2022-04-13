@@ -18,7 +18,8 @@ function Navbar(){
         <nav className="navbar">
             <ul>
                 <li><Link to = "/" >|| Accueil  || </Link> </li>
-                <li><Link to ="/boutique">|| Boutique  || </Link></li>
+                <li><Link to ="/boutiqueLandingImages">|| Boutique  || </Link></li>
+                {/* <li><Link to ="/boutiqueSubSection">|| Boutique  || </Link></li> this link for one drees boutiqueLandingImages  */}
                 <li>|| Se connecter  ||</li>
                 <li>|| Panier  ||</li>
                 <li>|| Propos  ||</li>

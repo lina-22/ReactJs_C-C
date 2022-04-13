@@ -5,7 +5,7 @@ import img4 from '../../images/imgPage2/image4.png';
 import img5 from '../../images/imgPage2/image5.png';
 import img6 from '../../images/imgPage2/image6.png';
 
-function Boutique() {
+function BoutiqueSubSection() {
   return (
     <div>
     <div id="boutiqe">
@@ -59,4 +59,4 @@ function Boutique() {
   </div>
 );
 }
-export default Boutique;
+export default BoutiqueSubSection;
