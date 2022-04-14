@@ -445,3 +445,31 @@ section .header{
 
 
 /* body end from Connexion */
+
+/* body start for Propos */
+#aboutPage{
+    margin-top: 150px;
+    text-align: center;
+  }
+  
+  .propos{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(205, 245, 246);
+  }
+  
+  .information{
+      background-color: #b5d3fa;
+      /* background-image: url("img/legal.jpg"), url("paper.gif"); */
+  }
+  
+  .submit_button{
+     text-align: center;
+     width: 100px;
+     height: 50px;
+     border-radius: 30px;
+     border-color: turquoise;   
+  }
+   
+  /* body end from Propos */

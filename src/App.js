@@ -8,6 +8,7 @@ import BoutiqueSubSection from "./Pages/User/BoutiqueSubSection";
 import BoutiqueAjouterPanier from "./Pages/User/BoutiqueAjouterPanier";
 import Panier from "./Pages/User/Panier";
 import SeConnecter from "./Pages/User/SeConnecter";
+import Propos from "./Pages/User/Propos";
 
 
 function App() {
@@ -22,10 +23,9 @@ function App() {
           <Route path="/boutiqueAjouterPanier" element={<BoutiqueAjouterPanier/>}/>
           <Route path="/seConnecter" element={<SeConnecter/>}/>
           <Route path="/panier" element={<Panier/>}/>
+          <Route path="/propos" element={<Propos/>}/>
           
         </Routes>
-
-
        <Footer/>
       </div>
     </div>
