@@ -14,9 +14,9 @@ function Footer() {
             <section className="foot-left">
               <p>paiments</p>
               <section className="payment_methods">
-                <img src={masterImg} alt="" />
-                <img src={paypalImg} alt="" />
-                <img src={visaImg} alt="" />
+                <img className="methods" src={masterImg} alt="" />
+                <img className="methods" src={paypalImg} alt="" />
+                <img className="methods" src={visaImg} alt="" />
               </section>
             </section>
             <section className="foot-left">

@@ -20,7 +20,7 @@ function Navbar(){
                 <li><Link to = "/" >|| Accueil  || </Link> </li>
                 <li><Link to ="/boutiqueLandingImgaes">|| Boutique  || </Link></li>
                 {/* <li><Link to ="/boutiqueSubSection">|| Boutique  || </Link></li> this link for one drees boutiqueLandingImages  */}
-                <li><Link to ="/seConnecter">|| Se connecter  ||</Link></li>
+                <li><Link to ="/seConnecter">|| Connexion  ||</Link></li>
                 <li><Link to ="/panier">|| Panier  ||</Link></li>
                 <li><Link to ="/propos">|| Propos  ||</Link></li>
             </ul>

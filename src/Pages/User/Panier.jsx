@@ -1,7 +1,7 @@
 import selectedItem from '../../images/imgPage5/image6.png';
-import masterCard from '../../images/imgPage1/image_master_card.png';
-import paypal from '../../images/imgPage1/paypal.png';
-import visa from '../../images/imgPage1/image_visa.png';
+import masterImg from '../../images/imgPage1/image_master_card.png';
+import paypalImg from '../../images/imgPage1/paypal.png';
+import visaImg from '../../images/imgPage1/image_visa.png';
 
 
 function Panier() {
@@ -25,13 +25,14 @@ function Panier() {
 
           <section className="panierpayment_way">
             <p>
-              Paiments Methods <br /> We Accept{" "}
-            </p>
-            <section className="panierpayment_methods">
-              <img src={masterCard} alt="" />
-              <img src={paypal} alt="" />
-              <img src={visa} alt="" />
-            </section>
+              Paiments Methods <br /> <span><b><i>We Accept</i></b></span> {" "}
+            </p>           
+            <section className="payment_methods">
+                <img className="methods" src={masterImg} alt="" />
+                <img className="methods" src={paypalImg} alt="" />
+                <img className="methods" src={visaImg} alt="" />
+              </section>
+
           </section>
         </section>
       </div>

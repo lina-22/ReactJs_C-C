@@ -117,9 +117,14 @@ section .header{
     padding-top: 20px;
 }
 .payment_methods{
-    width: 10px;
+    width: 50%;
     padding-top: 10px;
     padding-left: 17px;
+}
+
+.methods{
+    width: 25px;
+    height: 20px;
 }
 
 .middle_footer{
@@ -397,22 +402,33 @@ section .header{
     display: flex;
     border-style: dotted;
     border-color: black;
+    
 }
 
 .panierside_imgs{
     width: 200px;
     height: 200px;
-}
 
+}
+/* .paniercouleur_img{
+    margin-bottom: 80px;
+} */
 .panierhappy_area{
-    padding-top: 50px;
-    padding-right: 20px;
+    padding-top: 20px;
+    padding-right: 30px;
     justify-content: center;
 }
-.panierpayment_way{
-    padding-top: 40px;
-} 
+.payment_methods{
+    width: 50%;
+    padding-top: 10px;
+    padding-left: 25px;
+}
 
+.methods{
+    width: 25px;
+    height: 20px;
+    
+}
 /* End of PANIER */
 
 
