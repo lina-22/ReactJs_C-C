@@ -26,9 +26,6 @@ function BoutiqueLandingImgaes() {
             <section className="landingsize_area">
               <p>XS S</p> <br />
               <p>M L</p> <br />
-              {/* <button>XS</button> <button>S</button> <br/>
-               <button>M</button> <button>L</button> <br/>
-               <button>XL</button>   */}
             </section>
           </section>
         </aside>

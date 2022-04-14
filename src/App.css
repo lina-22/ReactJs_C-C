@@ -270,7 +270,7 @@ section .header{
 }
 
 
-/* body start from boutique Landing images */
+/* body start from boutique Landing images it is not working */
 #landingboutiqe{
     text-align: center;
     padding: 100px;
@@ -296,7 +296,6 @@ section .header{
    display: inline;
    justify-content: space-between;
 } */
-
 
 /* body end from boutique Landing Images */
 
