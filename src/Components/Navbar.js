@@ -16,13 +16,14 @@ function Navbar(){
             </section>
         </section>
         <nav className="navbar">
-            <ul>
-                <li><Link to = "/" >|| Accueil  || </Link> </li>
-                <li><Link to ="/boutiqueLandingImgaes">|| Boutique  || </Link></li>
-                {/* <li><Link to ="/boutiqueSubSection">|| Boutique  || </Link></li> this link for one drees boutiqueLandingImages  */}
-                <li><Link to ="/seConnecter">|| Connexion  ||</Link></li>
-                <li><Link to ="/panier">|| Panier  ||</Link></li>
-                <li><Link to ="/propos">|| Propos  ||</Link></li>
+            <ul> 
+                <button><li><Link to = "/" >|| Accueil  || </Link> </li></button>
+                <button><li><Link to ="/boutiqueLandingImgaes">|| Boutique  || </Link></li></button>
+                
+                {/* </button><li><Link to ="/boutiqueSubSection">|| Boutique  || </Link></li></button> this link for one drees boutiqueLandingImages  */}
+                <button><li><Link to ="/seConnecter">|| Connexion  ||</Link></li></button>
+                <button><li><Link to ="/panier">|| Panier  ||</Link></li></button>
+                <button><li><Link to ="/propos">|| Propos  ||</Link></li></button>
             </ul>
         </nav>
     </section>
