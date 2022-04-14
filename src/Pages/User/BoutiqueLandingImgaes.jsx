@@ -30,10 +30,10 @@ function BoutiqueLandingImgaes() {
           </section>
         </aside>
 
-        <section id="landingsection_images">
-          <img src={img26} alt="" />
-          <img src={img27} alt="" />
-          <img src={img28} alt="" />
+        <section className ="landingsection_images">
+          <img className="display_img" src={img26} alt="" />
+          <img className="display_img" src={img27} alt="" />
+          <img className="display_img" src={img28} alt="" />
         </section>
       </div>
     </div>

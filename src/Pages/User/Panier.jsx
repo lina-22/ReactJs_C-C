@@ -3,7 +3,9 @@ import masterCard from '../../images/imgPage1/image_master_card.png';
 import paypal from '../../images/imgPage1/paypal.png';
 import visa from '../../images/imgPage1/image_visa.png';
 
+
 function Panier() {
+
   return (
     <div>
       <div id="panierboutiqe">

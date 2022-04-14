@@ -282,24 +282,32 @@ section .header{
     justify-content: space-around;
 }
 #landingsidebar1{
-    text-align: center;
-    /* word-spacing: 30px; */
+    text-align: left;
+    word-spacing: 30px;
 
 }
 #landingsidebar2{
-    text-align: center;
+    text-align: left;
     padding-top: 90px;
     word-spacing: 30px;
 }
 
-/* #landingsection_images{
-   display: inline;
+.landingsize_area{
+    word-spacing: 65px;
+}
+.landingsection_images{
+   display: flex;
    justify-content: space-between;
-} */
+}
+
+.display_img{
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
 /* body end from boutique Landing Images */
 
-/* Boutique Ajuter Au Panier Start */
+
 
 /* body start from boutique */
 #Ajouterboutiqe{
@@ -373,7 +381,9 @@ section .header{
    height: 20px;
    width: 15px;
    /* text-align: center; */
-}
+ } 
+
+
 #panierBoutique_body{
     padding: 200px;
     width: 100%;
@@ -401,7 +411,7 @@ section .header{
 }
 .panierpayment_way{
     padding-top: 40px;
-}
+} 
 
 /* End of PANIER */
 
