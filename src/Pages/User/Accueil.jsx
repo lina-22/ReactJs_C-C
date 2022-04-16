@@ -8,6 +8,7 @@ import photoRight from '../../images/imgPage1/photo_right.png';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BACKEND_URL } from '../../utils';
+
 function Accueil() {
 
   const [state, setState] = useState({
