@@ -14,7 +14,7 @@ import Propos from "./Pages/User/Propos";
 
 function App() {
   return (
-    <div class="main">
+    <div classNAme="main">
       <div id="landing">
         <Navbar />
         <Routes>

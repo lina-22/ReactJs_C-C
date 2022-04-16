@@ -256,10 +256,14 @@ section .header{
     padding-top: 30px;
     padding-bottom:20px;
     padding-left: 80px;
+    max-width: 400px;
+    max-height: 220px;
     
 }
 .photo_right{
     padding-top: 20px;
+    max-width: 400px;
+    max-height: 220px;
 }
 
 .mode_text1{
