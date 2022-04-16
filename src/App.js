@@ -25,7 +25,7 @@ function App() {
           <Route path="/seConnecter" element={<SeConnecter/>}/>
           <Route path="/panier" element={<Panier/>}/>
           <Route path="/propos" element={<Propos/>}/>
-          {/* <Route path="/addProduct" element={<AddProduct/>}/>  */}
+          <Route path="/addProduct" element={<AddProduct/>}/> 
           {/* <Route path="/propos" element={<Propos/>}/>
           <Route path="/propos" element={<Propos/>}/>
           <Route path="/propos" element={<Propos/>}/>
