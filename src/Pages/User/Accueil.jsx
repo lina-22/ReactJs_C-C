@@ -5,7 +5,30 @@ import formal2 from '../../images/imgPage1/Formal2.png';
 import tshirt2 from '../../images/imgPage1/T-shirt2.png';
 import photoLeft from '../../images/imgPage1/photo_left.png';
 import photoRight from '../../images/imgPage1/photo_right.png';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BACKEND_URL } from '../../utils';
 function Accueil() {
+
+  const [state, setState] = useState({
+    products: [],
+    categories: []
+  });
+  useEffect(() =>{
+    axios.get(`${BACKEND_URL}/gethomedata`).then((res) =>{
+     
+     const responseData = res.data;
+
+     if(responseData.status === true){
+       setState(responseData.data);
+     }
+
+    }).catch((err) =>{
+      console.log(err);
+    })
+  }, []);
+
+
   return (
     <div>
       <section className="header">
