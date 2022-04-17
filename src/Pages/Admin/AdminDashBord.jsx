@@ -1,12 +1,15 @@
+
+
 function DashBord() {
     return ( 
         <div>
                 <div className="main"/>
 
+        <h1 id="admin">Admin Dashbord</h1>
                  <section className="Nav_section">
             <nav className="navbar">
                 <ul>
-                    <li>|| AdminDashbord ||</li>
+                    <li>|| AdminDashbord  ||</li>
                     <li>|| SeeAllProduct ||</li>
                     <li>|| AddProduct ||</li>
                     <li>|| ManageProduct ||</li>
@@ -15,7 +18,6 @@ function DashBord() {
                 </ul>
             </nav>
         </section>
-        <h1 id="admin">Admin Dashbord</h1>
         <div className="dashbordBody"/>
             <div id="productSection"/>
                 <p> <span><b> Product Dashbord </b></span></p> <br/>

@@ -1,7 +1,12 @@
 import './App.css';
+import './AppAdmin.css';
 import { Routes, Route } from "react-router-dom";
+
+
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+
+
 import Accueil from "./Pages/User/Accueil";
 import BoutiqueLandingImgaes from "./Pages/User/BoutiqueLandingImgaes";
 import BoutiqueSubSection from "./Pages/User/BoutiqueSubSection";
@@ -10,7 +15,7 @@ import SeConnecter from "./Pages/User/SeConnecter";
 import Panier from "./Pages/User/Panier";
 import Propos from "./Pages/User/Propos";
 
-{/*start Admin Pannel */}
+
 import AdminDashBord from "./Pages/Admin/AdminDashBord";
 import AddProduct from './Pages/Admin/AddProduct';
 import ManageProduct from './Pages/Admin/ManageProduct';
