@@ -1,13 +1,13 @@
 function ManageProduct() {
     return ( 
         <div>
-             <div class="main">
+             <div className="main">
         <h1 id="admin">Manage product</h1>
-        <div class="dashbordBody">
+        <div className="dashbordBody">
             <div id="productSection">
                 <h2 id="display"> <span><b> Display products </b></span></h2> <br/>
 
-                <table class="table">
+                <table className="table">
                     <thead>
                         <tr>
                             <th scope="col">Product Id</th>

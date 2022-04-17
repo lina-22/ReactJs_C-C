@@ -10,7 +10,13 @@ import SeConnecter from "./Pages/User/SeConnecter";
 import Panier from "./Pages/User/Panier";
 import Propos from "./Pages/User/Propos";
 
-
+{/*start Admin Pannel */}
+import AdminDashBord from "./Pages/Admin/AdminDashBord";
+import AddProduct from './Pages/Admin/AddProduct';
+import ManageProduct from './Pages/Admin/ManageProduct';
+import SeeAllProduct from './Pages/Admin/SeeAllProduct';
+import UpdateProduct from './Pages/Admin/UpdateProduct';
+{/*end Admin Pannel */}
 
 function App() {
   return (
@@ -25,11 +31,16 @@ function App() {
           <Route path="/seConnecter" element={<SeConnecter/>}/>
           <Route path="/panier" element={<Panier/>}/>
           <Route path="/propos" element={<Propos/>}/>
-          <Route path="/addProduct" element={<AddProduct/>}/> 
-          {/* <Route path="/propos" element={<Propos/>}/>
-          <Route path="/propos" element={<Propos/>}/>
-          <Route path="/propos" element={<Propos/>}/>
-          <Route path="/propos" element={<Propos/>}/> */}
+
+              
+              {/*start Admin Pannel */}
+          <Route path="/adminDashBord" element={<AdminDashBord/>}/> 
+          <Route path="/addProduct" element={<AddProduct/>}/>
+          <Route path="/manageProduct" element={<ManageProduct/>}/>
+          <Route path="/seeAllProduct" element={<SeeAllProduct/>}/>
+          <Route path="/updateProduct" element={<UpdateProduct/>}/>
+
+          {/*end Admin Pannel */}
           
         </Routes>
        <Footer/>
