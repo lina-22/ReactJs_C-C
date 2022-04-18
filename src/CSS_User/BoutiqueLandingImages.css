@@ -1,0 +1,71 @@
+/* body start from boutique Landing images it is not working */
+#landingboutiqe{
+    text-align: center;
+    padding: 100px;
+}
+#landingBoutique_body{
+    padding: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#landingsidebar1{
+    text-align: left;
+    word-spacing: 30px;
+
+}
+#landingsidebar2{
+    text-align: left;
+    padding-top: 90px;
+    word-spacing: 30px;
+}
+
+.landingsize_area{
+    word-spacing: 65px;
+}
+.landingsection_images{
+   display: flex;
+   justify-content: space-between;
+}
+
+.display_img{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* body end from boutique Landing Images *//* body start from boutique Landing images it is not working */
+#landingboutiqe{
+    text-align: center;
+    padding: 100px;
+}
+#landingBoutique_body{
+    padding: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#landingsidebar1{
+    text-align: left;
+    word-spacing: 30px;
+
+}
+#landingsidebar2{
+    text-align: left;
+    padding-top: 90px;
+    word-spacing: 30px;
+}
+
+.landingsize_area{
+    word-spacing: 65px;
+}
+.landingsection_images{
+   display: flex;
+   justify-content: space-between;
+}
+
+.display_img{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* body end from boutique Landing Images */

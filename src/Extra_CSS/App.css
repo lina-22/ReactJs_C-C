@@ -112,6 +112,7 @@ section .header{
     height: 200px;
 }
 
+
 .footer{
     background-color: #2D788F;
 }
@@ -323,7 +324,7 @@ section .header{
 
 
 
-/* body start from boutique */
+/* body start from boutique Ajouterboutiqe*/
 #Ajouterboutiqe{
     display: flex;
     text-align: center;
