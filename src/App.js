@@ -1,11 +1,35 @@
 import './App.css';
 import './AppAdmin.css';
 
+
+// import './CSS_Components/Footer.css';
+// import './CSS_Components/Navbar.css';
+
+
+// import './CSS_Admin/AddProduct.css';
+// import './CSS_Admin/AdminDashBord.css';
+// import './CSS_Admin/ManageProduct.css';
+// import './CSS_Admin/SeeAllProduct.css';
+// import './CSS_Admin/UpdateProduct.css';
+
+
+// import './CSS_User/Accueil.css';
+// import './CSS_User/BoutiqueLandingImages.css';
+// import './CSS_User/BoutiqueSubSection.css';
+// import './CSS_User/BoutiqueAjouterPanier.css';
+// import './CSS_User/Panier.css';
+// import './CSS_User/Propos.css';
+// import './CSS_User/SeConnecter.css';
+
+
+
 import { Routes, Route } from "react-router-dom";
 
 
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import AdminLayout from './Components/AdminLayout';
+import UserLayout from './Components/UserLayout';
 
 
 import Accueil from "./Pages/User/Accueil";
@@ -22,8 +46,8 @@ import AddProduct from './Pages/Admin/AddProduct';
 import ManageProduct from './Pages/Admin/ManageProduct';
 import SeeAllProduct from './Pages/Admin/SeeAllProduct';
 import UpdateProduct from './Pages/Admin/UpdateProduct';
-import UserLayout from './Components/UserLayout';
-import AdminLayout from './Components/AdminLayout';
+
+
 {/*end Admin Pannel */}
 
 function App() {
