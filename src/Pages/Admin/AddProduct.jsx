@@ -17,6 +17,7 @@ function AddProduct() {
         <input className="placeholder" type="text" placeholder="Description" /><br/> <br/>
         <input className="placeholder" type="text" placeholder="Category Index" /><br/> <br/>
         <input className="placeholder" type="text" placeholder="Add Category" /><br/> <br/>
+        
         <div className="file">
           <button>Select a file</button>
           <button>No file</button>
