@@ -22,36 +22,59 @@ import AddProduct from './Pages/Admin/AddProduct';
 import ManageProduct from './Pages/Admin/ManageProduct';
 import SeeAllProduct from './Pages/Admin/SeeAllProduct';
 import UpdateProduct from './Pages/Admin/UpdateProduct';
+import UserLayout from './Components/UserLayout';
 {/*end Admin Pannel */}
 
 function App() {
   return (
-    <div classNAme="main">
-      <div id="landing">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Accueil/>}/>
+    
+    
+ <Routes>
+
+<Route path="/admin" element={<AdminLayout/>}>
+      </Route>
+
+      <Route path="/dashbord" element={<AdminDashBord/>}>
+      </Route>
+   <Route path='/' element={<UserLayout/>}>
+
+           <Route index element={<Accueil/>}/>
           <Route path="/boutiqueSubSection" element={<BoutiqueSubSection/>}/>
           <Route path="/boutiqueLandingImgaes" element={<BoutiqueLandingImgaes/>}/> 
           <Route path="/boutiqueAjouterPanier" element={<BoutiqueAjouterPanier/>}/>
           <Route path="/seConnecter" element={<SeConnecter/>}/>
-          <Route path="/panier" element={<Panier/>}/>
-          <Route path="/propos" element={<Propos/>}/>
+           <Route path="/panier" element={<Panier/>}/>
+           <Route path="/propos" element={<Propos/>}/>
+   </Route>
+
+
+ </Routes>
+    // <div classNAme="main">
+    //   <div id="landing">
+    //     <Navbar />
+    //     <Routes>
+    //       <Route path="/" element={<Accueil/>}/>
+    //       <Route path="/boutiqueSubSection" element={<BoutiqueSubSection/>}/>
+    //       <Route path="/boutiqueLandingImgaes" element={<BoutiqueLandingImgaes/>}/> 
+    //       <Route path="/boutiqueAjouterPanier" element={<BoutiqueAjouterPanier/>}/>
+    //       <Route path="/seConnecter" element={<SeConnecter/>}/>
+    //       <Route path="/panier" element={<Panier/>}/>
+    //       <Route path="/propos" element={<Propos/>}/>
 
               
-              {/*start Admin Pannel */}
-          <Route path="/adminDashBord" element={<AdminDashBord/>}/> 
-          <Route path="/addProduct" element={<AddProduct/>}/>
-          <Route path="/manageProduct" element={<ManageProduct/>}/>
-          <Route path="/seeAllProduct" element={<SeeAllProduct/>}/>
-          <Route path="/updateProduct" element={<UpdateProduct/>}/>
+    //           {/*start Admin Pannel */}
+    //       <Route path="/adminDashBord" element={<AdminDashBord/>}/> 
+    //       <Route path="/addProduct" element={<AddProduct/>}/>
+    //       <Route path="/manageProduct" element={<ManageProduct/>}/>
+    //       <Route path="/seeAllProduct" element={<SeeAllProduct/>}/>
+    //       <Route path="/updateProduct" element={<UpdateProduct/>}/>
 
-          {/*end Admin Pannel */}
+    //       {/*end Admin Pannel */}
           
-        </Routes>
-       <Footer/>
-      </div>
-    </div>
+    //     </Routes>
+    //    <Footer/>
+    //   </div>
+    // </div>
   );
 }
 

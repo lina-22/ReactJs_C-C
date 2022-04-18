@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import logoImg from '../images/imgPage1/logo.png';
 import panierImg from '../images/imgPage1/panier_img.png';
+// import "../CSS/Navbar.css";
 function Navbar(){
     return(
         <section className="top">

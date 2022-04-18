@@ -58,7 +58,7 @@ function Accueil() {
           </p>
           <section className="first_landing_images">
             {
-              state.products.map((product, index)=> <img src={product.image} key={index} alt="" />)
+              state.products.map((product, index)=>( <a href=""><img src={product.image} key={index} alt="" /> </a> ))
             }
 
             {/* <img src={state.products[0] && state.products[0].image} alt="" />
@@ -70,12 +70,16 @@ function Accueil() {
 
         <section className="second_landing_images">
           <section className="sectionA">
+            <a href="#">
           <img className="photo_left" src={state.categories[0] && state.categories[0].image} alt="" />
+          </a>
             <p className="mode_text1">Mode maintentant pour les homme</p>
           </section>
           <section className="sectionB">
             <p className="mode_text2">Mode maintentant pour les femme</p>
+            <a href="#">
             <img className="photo_right" src={state.categories[1] && state.categories[1].image} alt="" />
+            </a>
           </section>
         </section>
       </div>{" "}

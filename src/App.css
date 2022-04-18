@@ -100,14 +100,17 @@ section .header{
 }
 .first_landing_images{
   
-    padding: 40px 40px;
-    height: 200px;
+  
     /* width: 150px; */
     display: flex;
     justify-content: space-around;
     
 }
 
+.first_landing_images img{
+    padding: 40px 40px;
+    height: 200px;
+}
 
 .footer{
     background-color: #2D788F;
