@@ -70,7 +70,7 @@ function Accueil() {
 
         <section className="second_landing_images">
           <section className="sectionA">
-            <img className="photo_left" src={state.categories[0] && state.categories[0].image} alt="" />
+          <img className="photo_left" src={state.categories[0] && state.categories[0].image} alt="" />
             <p className="mode_text1">Mode maintentant pour les homme</p>
           </section>
           <section className="sectionB">

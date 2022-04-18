@@ -54,6 +54,10 @@ function BoutiqueLandingImgaes() {
           <img className="display_img" src={img27} alt="" />
           <img className="display_img" src={img28} alt="" />
           <img className="display_img" src={img26} alt="" />
+
+          {/* {
+              state.products.map((category, index)=> <img src={category.image} key={index} alt="" />)
+            } */}
           {/* <img className="display_img" src={state.categories[0] && state.categories[0].image} alt="" />
           <img className="display_img" src={state.categories[1] && state.categories[1].image} alt="" />
           <img className="display_img" src={state.categories[2] && state.categories[2].image} alt="" /> */}
