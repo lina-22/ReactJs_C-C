@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 function AdminLayout() {
   return (
     <div className="main">
@@ -15,7 +17,7 @@ function AdminLayout() {
         </nav>
       </section>
 
-      <Outlet></Outlet>
+      <Outlet />
     </div>
   );
 }

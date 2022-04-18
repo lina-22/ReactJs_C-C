@@ -1,13 +1,12 @@
 function ManageProduct() {
     return ( 
         <div>
-             <div className="main">
-        <h1 id="admin">Manage product</h1>
-        <div className="dashbordBody">
+           <h1 id="admin">Manage product</h1>
+        <div class="dashbordBody">
             <div id="productSection">
                 <h2 id="display"> <span><b> Display products </b></span></h2> <br/>
 
-                <table className="table">
+                <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Product Id</th>
@@ -56,7 +55,6 @@ function ManageProduct() {
                 </table>
             </div>
         </div>
-    </div>
         </div>
      );
 }

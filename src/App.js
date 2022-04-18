@@ -23,6 +23,7 @@ import ManageProduct from './Pages/Admin/ManageProduct';
 import SeeAllProduct from './Pages/Admin/SeeAllProduct';
 import UpdateProduct from './Pages/Admin/UpdateProduct';
 import UserLayout from './Components/UserLayout';
+import AdminLayout from './Components/AdminLayout';
 {/*end Admin Pannel */}
 
 function App() {
@@ -30,21 +31,28 @@ function App() {
     
     
  <Routes>
+         <Route path="/" element={<AdminLayout/>}>
+         </Route>       
+         <Route path="/adminDashBord" element={<AdminDashBord/>}> 
+         </Route>   
+         <Route path="/addProduct" element={<AddProduct/>}>
+         </Route>     
+         <Route path="/manageProduct" element={<ManageProduct/>}>
+         </Route>
+         <Route path="/seeAllProduct" element={<SeeAllProduct/>}>  
+         </Route>
+         <Route path="/updateProduct" element={<UpdateProduct/>}>
+         </Route>
+    
+         <Route path='/' element={<UserLayout/>}>
 
-<Route path="/admin" element={<AdminLayout/>}>
-      </Route>
-
-      <Route path="/dashbord" element={<AdminDashBord/>}>
-      </Route>
-   <Route path='/' element={<UserLayout/>}>
-
-           <Route index element={<Accueil/>}/>
-          <Route path="/boutiqueSubSection" element={<BoutiqueSubSection/>}/>
-          <Route path="/boutiqueLandingImgaes" element={<BoutiqueLandingImgaes/>}/> 
-          <Route path="/boutiqueAjouterPanier" element={<BoutiqueAjouterPanier/>}/>
-          <Route path="/seConnecter" element={<SeConnecter/>}/>
-           <Route path="/panier" element={<Panier/>}/>
-           <Route path="/propos" element={<Propos/>}/>
+         <Route index element={<Accueil/>}/>
+         <Route path="/boutiqueSubSection" element={<BoutiqueSubSection/>}/>
+         <Route path="/boutiqueLandingImgaes" element={<BoutiqueLandingImgaes/>}/> 
+         <Route path="/boutiqueAjouterPanier" element={<BoutiqueAjouterPanier/>}/>
+         <Route path="/seConnecter" element={<SeConnecter/>}/>
+         <Route path="/panier" element={<Panier/>}/>
+         <Route path="/propos" element={<Propos/>}/>
    </Route>
 
 

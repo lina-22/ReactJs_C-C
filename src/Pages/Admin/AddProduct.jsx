@@ -12,26 +12,11 @@ function AddProduct() {
       </p>{" "}
       <br />
       <section className="productArea">
-        <input className="placeholder" type="text" placeholder="Product Name" />
-        <br />
-        <br />
-        <input className="placeholder" type="text" placeholder="Add Price" />
-        <br />
-        <br />
-        <input className="placeholder" type="text" placeholder="Description" />
-        <br />
-        <br />
-        <input
-          className="placeholder"
-          type="text"
-          placeholder="Category Index"
-        />
-        <br />
-        <br />
-        <input className="placeholder" type="text" placeholder="Add Category" />
-        <br />
-        <br />
-
+        <input className="placeholder" type="text" placeholder="Product Name" /><br/> <br/>
+        <input className="placeholder" type="text" placeholder="Add Price" /><br/> <br/>
+        <input className="placeholder" type="text" placeholder="Description" /><br/> <br/>
+        <input className="placeholder" type="text" placeholder="Category Index" /><br/> <br/>
+        <input className="placeholder" type="text" placeholder="Add Category" /><br/> <br/>
         <div className="file">
           <button>Select a file</button>
           <button>No file</button>

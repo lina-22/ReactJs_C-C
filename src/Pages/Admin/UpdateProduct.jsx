@@ -1,7 +1,6 @@
 function UpdateProduct() {
     return ( 
         <div>
-               <div className="main">
         <h1 id="admin">Update product</h1>
         <div className="dashbordBody">
             <div id="productSection">
@@ -63,7 +62,6 @@ function UpdateProduct() {
             </div>
         </div>
     </div>
-        </div>
      );
 }
 

@@ -1,8 +1,6 @@
 function SeeAllProduct() {
     return ( 
         <div>
-             <div className="main">
-        <h1 id="admin">Admin Dashbord</h1>
         <div className="dashbordBody">
             <div id="productSection">
                 <h2 id="display"> <span><b> Display All Index products </b></span></h2> <br/>
@@ -71,7 +69,6 @@ function SeeAllProduct() {
             </div>
         </div>
     </div>
-        </div>
      );
 }
 
