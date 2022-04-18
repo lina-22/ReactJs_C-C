@@ -51,10 +51,15 @@ function BoutiqueLandingImgaes() {
         </aside>
 
         <section className ="landingsection_images">
+        <a href="#">
           <img className="display_img" src={img27} alt="" />
+          </a>
+          <a href="/boutiqueSubSection">
           <img className="display_img" src={img28} alt="" />
+          </a>
+          <a href="#">
           <img className="display_img" src={img26} alt="" />
-
+          </a>
           {/* {
               state.products.map((category, index)=> <img src={category.image} key={index} alt="" />)
             } */}

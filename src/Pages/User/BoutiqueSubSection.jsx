@@ -51,7 +51,9 @@ function BoutiqueSubSection() {
             <button className="btn">
               <i className="fa fa-trash"></i> Trash
             </button>
+           
             <button id="add_button"> Ajouter au Panier</button>
+           
           </aside>
         </section>
       </section>

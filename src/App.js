@@ -55,7 +55,7 @@ function App() {
     
     
  <Routes>
-         <Route path="/" element={<AdminLayout/>}>
+         <Route path="/admin" element={<AdminLayout/>}>
          </Route>       
          <Route path="/adminDashBord" element={<AdminDashBord/>}> 
          </Route>   
