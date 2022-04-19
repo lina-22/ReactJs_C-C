@@ -1,3 +1,6 @@
+import "../../CSS_Components/Navbar.css";
+import "../../CSS_Admin/SeeAllProduct.css"
+
 function SeeAllProduct() {
     return ( 
         <div>

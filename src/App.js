@@ -53,20 +53,17 @@ import UpdateProduct from './Pages/Admin/UpdateProduct';
 function App() {
   return (
     
-    
+    // <Navbar />
  <Routes>
-         <Route path="/admin" element={<AdminLayout/>}>
-         </Route>       
-         <Route path="/adminDashBord" element={<AdminDashBord/>}> 
-         </Route>   
-         <Route path="/addProduct" element={<AddProduct/>}>
-         </Route>     
-         <Route path="/manageProduct" element={<ManageProduct/>}>
-         </Route>
-         <Route path="/seeAllProduct" element={<SeeAllProduct/>}>  
-         </Route>
-         <Route path="/updateProduct" element={<UpdateProduct/>}>
-         </Route>
+         {/* <Route path="/admin" element={<AdminLayout/>}>
+         </Route>        */}
+         <Route path="/" element={<AdminLayout/>}/>              
+         <Route path="/adminDashBord" element={<AdminDashBord/>}/> 
+         <Route path="/addProduct" element={<AddProduct/>}/>  
+         <Route path="/manageProduct" element={<ManageProduct/>}/>
+         <Route path="/seeAllProduct" element={<SeeAllProduct/>}/>  
+         <Route path="/updateProduct" element={<UpdateProduct/>}/>
+        
     
          <Route path='/' element={<UserLayout/>}>
 

@@ -1,4 +1,5 @@
-
+import "../../CSS_Components/Navbar.css";
+import "../../CSS_Admin/AdminDashBord.css"
 
 function DashBord() {
     return ( 
@@ -13,7 +14,7 @@ function DashBord() {
                 </section>
             <div/>
             <div id="categorySection">
-                <p><span/><b>Category Dashbord</b><span></span></p><br/>
+                <p><span><b>Category Dashbord</b></span></p><br/>
                 <section className="categoryArea">
                     <input className="placeholder" type="text" placeholder="Category Index"/><br/><br/>
                     <input className="placeholder" type="text" placeholder="Add Category"/><br/><br/>

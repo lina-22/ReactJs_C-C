@@ -5,6 +5,7 @@ import visaImg from '../images/imgPage1/image_visa.png';
 import img20 from '../images/imgPage1/image 20.png';
 import img21 from '../images/imgPage1/image 21.png';
 import img22 from '../images/imgPage1/image 22.png';
+import "../CSS_Components/Footer.css"
 
 function Footer() {
     return (   
