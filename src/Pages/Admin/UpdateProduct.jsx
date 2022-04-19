@@ -9,16 +9,18 @@ function UpdateProduct() {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">Product Id</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Product Id</th><br/>
+                            <th scope="col">Product Name</th><br/>
+                            <th scope="col">Description</th><br/>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="scope">
                         <tr>
                             <th scope="row">1</th>
+
                             <td>Mrrrr</td>
+
                             <td>@fatvhgh</td>
                             <td><button>Update</button></td>
                             
