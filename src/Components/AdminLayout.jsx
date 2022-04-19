@@ -10,11 +10,11 @@ function AdminLayout() {
       <section className="Nav_section">
         <nav className="navbar">
           <ul>
-            <li><Link to = "/adminDashBord" >|| AdminDashbord ||</Link></li>
-            <li><Link to = "/seeAllProduct" >|| SeeAllProduct ||</Link></li>
-            <li><Link to = "/addProduct" >   || AddProduct    ||</Link></li>
-            <li><Link to = "/manageProduct" >|| ManageProduct ||</Link></li>
-            <li><Link to = "/updateProduct" >|| UpdateProduct ||</Link></li>
+            <li><Link to = "/admin/adminDashBord" >|| AdminDashbord ||</Link></li>
+            <li><Link to = "/admin/seeAllProduct" >|| SeeAllProduct ||</Link></li>
+            <li><Link to = "/admin/addProduct" >   || AddProduct    ||</Link></li>
+            <li><Link to = "/admin/manageProduct" >|| ManageProduct ||</Link></li>
+            <li><Link to = "/admin/updateProduct" >|| UpdateProduct ||</Link></li>
             {/* <li><Link to = "/" >|| DeleteProduct ||</Link></li> */}
           </ul>
         </nav>

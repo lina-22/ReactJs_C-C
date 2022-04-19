@@ -1,7 +1,7 @@
 import "../../CSS_Components/Navbar.css";
 import "../../CSS_Admin/AdminDashBord.css"
 
-function DashBord() {
+function AdminDashBord() {
     return ( 
         <div>
         <div className="dashbordBody">
@@ -27,4 +27,4 @@ function DashBord() {
      );
 }
 
-export default DashBord;
+export default AdminDashBord;

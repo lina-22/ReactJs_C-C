@@ -59,11 +59,11 @@ function App() {
          </Route>        */}
          <Route path="/admin" element={<AdminLayout/>}/>      
                  
-         <Route path="/adminDashBord" element={<AdminDashBord/>}/> 
-         <Route path="/addProduct" element={<AddProduct/>}/>  
-         <Route path="/manageProduct" element={<ManageProduct/>}/>
-         <Route path="/seeAllProduct" element={<SeeAllProduct/>}/>  
-         <Route path="/updateProduct" element={<UpdateProduct/>}/>
+         <Route path="/admin/adminDashBord" element={<AdminDashBord/>}/> 
+         <Route path="/admin/addProduct" element={<AddProduct/>}/>  
+         <Route path="/admin/manageProduct" element={<ManageProduct/>}/>
+         <Route path="/admin/seeAllProduct" element={<SeeAllProduct/>}/>  
+         <Route path="/admin/updateProduct" element={<UpdateProduct/>}/>
         
     
          <Route path='/' element={<UserLayout/>}>
