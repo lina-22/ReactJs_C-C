@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 // import Footer from "./Footer";
@@ -8,12 +10,12 @@ function AdminLayout() {
       <section className="Nav_section">
         <nav className="navbar">
           <ul>
-            <li>|| AdminDashbord ||</li>
-            <li>|| SeeAllProduct ||</li>
-            <li>|| AddProduct ||</li>
-            <li>|| ManageProduct ||</li>
-            <li>|| UpdateProduct ||</li>
-            <li>|| DeleteProduct ||</li>
+            <li><Link to = "/adminDashBord" >|| AdminDashbord ||</Link></li>
+            <li><Link to = "/seeAllProduct" >|| SeeAllProduct ||</Link></li>
+            <li><Link to = "/addProduct" >   || AddProduct    ||</Link></li>
+            <li><Link to = "/manageProduct" >|| ManageProduct ||</Link></li>
+            <li><Link to = "/updateProduct" >|| UpdateProduct ||</Link></li>
+            {/* <li><Link to = "/" >|| DeleteProduct ||</Link></li> */}
           </ul>
         </nav>
       </section>
