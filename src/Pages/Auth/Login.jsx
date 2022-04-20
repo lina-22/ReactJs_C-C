@@ -1,14 +1,29 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useEffect, useInsertionEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { LOG_IN } from "../../actionTypes";
+import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
 
 import "./Login.css";
 function Login() {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-    isLoading: false,
-  });
+   
+    const {auth,authDispatch} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [state, setState] = useState({
+      email: "",
+      password: "",
+      isLoading: false,
+    });
+  
+  
+    useEffect(()=> {
+  
+      if(auth.user){
+        navigate('/admin')
+      }
+  
+    }, [auth.user])
 
   const onChangeHandler = (e) => {
     // console.log(e.target.value);
@@ -33,6 +48,11 @@ function Login() {
         const {status, data, message} =res.data;
 
         if(status){
+         authDispatch({
+             type :LOG_IN,
+             payload: data
+         })
+
           const {user, token} = data;
         //   console.log(token);
           const accessToken = `Bearer ${token.plainTextToken}`;

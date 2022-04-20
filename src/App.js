@@ -47,14 +47,19 @@ import ManageProduct from './Pages/Admin/ManageProduct';
 import SeeAllProduct from './Pages/Admin/SeeAllProduct';
 import UpdateProduct from './Pages/Admin/UpdateProduct';
 import Login from "./Pages/Auth/Login";
+import { AuthContext } from "./contexts";
+import { useReducer } from "react";
+import { authReducer } from "./reducers/authReducer";
 
 
 {/*end Admin Pannel */}
 
 function App() {
+
+  const [auth, authDispatch] = useReducer(authReducer, {})
   return (
-    
-    // <Navbar />
+  <AuthContext.Provider value ={{auth,  authDispatch}}>
+
  <Routes>
            
 
@@ -80,9 +85,12 @@ function App() {
          <Route path="panier" element={<Panier/>}/>
          <Route path="propos" element={<Propos/>}/>
    </Route>
-
+   
 
  </Routes>
+
+ </AuthContext.Provider>
+
     // <div classNAme="main">
     //   <div id="landing">
     //     <Navbar />

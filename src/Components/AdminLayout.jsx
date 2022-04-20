@@ -1,10 +1,24 @@
-import { Link } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Outlet } from "react-router-dom";
+import { AuthContext } from '../contexts';
 import Navbar from "./Navbar";
 // import Footer from "./Footer";
 function AdminLayout() {
+
+  const {auth} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(!auth.use){
+      navigate('/login')
+    }  
+  },[auth.user])
   return (
+
+
+
     <div className="main">
       <h1 id="admin">Admin Dashbord</h1>
       <section className="Nav_section">
@@ -25,6 +39,7 @@ function AdminLayout() {
         {/* <Footer /> */}
     </div>
   );
+
 }
 
 export default AdminLayout;
