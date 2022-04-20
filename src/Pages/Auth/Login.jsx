@@ -19,18 +19,35 @@ function Login() {
     });
   };
 
-  const onSubmitHandler = (e) =>{
-      e.preventDefault();
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
 
-      setState({...state, isLoading: true});
+    setState({ ...state, isLoading: true });
 
-      axios.post(`${BACKEND_URL}/login`, {email: state.email, password: state.password,}).then((res) =>{
-          console.log(res.data);
+    axios
+      .post(`${BACKEND_URL}/login`, {
+        email: state.email,
+        password: state.password,
       })
-      .catch((err)=>{
-          console.log(err);
+      .then((res) => {
+        const {status, data, message} =res.data;
+
+        if(status){
+          const {user, token} = data;
+        //   console.log(token);
+          const accessToken = `Bearer ${token.plainTextToken}`;
+          axios.defaults.headers.common = {'Authorization':accessToken };
+          localStorage.setItem('accessToken',accessToken);
+         }else{
+
+        }
+        setState({email:"" , password:"", isLoading: false});
       })
-  }
+      .catch((err) => {
+        console.log(err);
+        setState({...state, isLoading: false});
+      });
+  };
 
   return (
     <div className="container">
@@ -42,7 +59,8 @@ function Login() {
             id="email"
             onChange={onChangeHandler}
             placeholder="Enter your Email"
-            value={state.email} disabled={state.isLoading} 
+            value={state.email}
+            disabled={state.isLoading}
           />
         </div>
         <div className="input-group">
@@ -52,11 +70,17 @@ function Login() {
             id="password"
             onChange={onChangeHandler}
             placeholder="Enter your password"
-            value={state.password} disabled={state.isLoading}
+            value={state.password}
+            disabled={state.isLoading}
           />
         </div>
         <div className="input-group">
-          <input type="submit" className="btn" value={state.isLoading ? "Loading..." : "LOGIN"} disabled={state.isLoading} />
+          <input
+            type="submit"
+            className="btn"
+            value={state.isLoading ? "Loading..." : "LOGIN"}
+            disabled={state.isLoading}
+          />
         </div>
       </form>
     </div>
