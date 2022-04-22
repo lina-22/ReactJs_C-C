@@ -2,6 +2,9 @@ import img26 from "../../images/imgPage3/image26.png";
 import img27 from "../../images/imgPage3/image27.png";
 import img28 from "../../images/imgPage3/image28.png";
 
+import "../../CSS_User/BoutiqueLandingImages.css"
+
+
 function BoutiqueLandingImgaes() {
   
   // const [state, setState] = useState({

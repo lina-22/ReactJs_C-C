@@ -5,6 +5,8 @@ import img4 from '../../images/imgPage2/image4.png';
 import img5 from '../../images/imgPage2/image5.png';
 import img6 from '../../images/imgPage2/image6.png';
 
+import "../../CSS_User/BoutiqueSubSection.css"
+
 function BoutiqueSubSection() {
   return (
     <div>

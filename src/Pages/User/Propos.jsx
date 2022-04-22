@@ -1,3 +1,5 @@
+import "../../CSS_User/Propos.css"
+
 function Propos() {
     return ( 
         <div>

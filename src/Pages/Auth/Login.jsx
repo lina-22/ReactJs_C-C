@@ -4,7 +4,6 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { LOG_IN } from "../../actionTypes";
 import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
-
 import "./Login.css";
 function Login() {
    

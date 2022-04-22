@@ -1,4 +1,4 @@
-import "../../CSS_Components/Navbar.css";
+// import "../../CSS_Components/Navbar.css";
 import "../../CSS_Admin/AdminDashBord.css"
 
 function AdminDashBord() {

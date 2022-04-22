@@ -10,6 +10,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BACKEND_URL } from '../../utils';
 
+
+import "../../CSS_User/Accueil.css"
+
 function Accueil() {
 
   const [state, setState] = useState({

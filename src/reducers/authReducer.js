@@ -7,7 +7,7 @@ export const authReducer = (state, action) => {
         const {user, token} = action.payload;
         const accessToken = `Bearer ${token.plainTextToken}`;
         axios.defaults.headers.common = {Authorization:accessToken };
-        localStorage.setItem('accessToken',accessToken);
+        localStorage.setItem('AccessToken',accessToken);
         return {user}
 
         case LOG_OUT: 
