@@ -1,4 +1,4 @@
-// import "../../CSS_Components/Navbar.css";
+import "../../CSS_Components/Navbar.css";
 import "../../CSS_Admin/ManageProduct.css"
 
 function ManageProduct() {

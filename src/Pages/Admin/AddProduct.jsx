@@ -1,4 +1,5 @@
-import '../../CSS_Admin/AddProduct.css';
+import '../../CSS_Admin/AddProduct.css'
+
 function AddProduct() {
   return (
     <div>

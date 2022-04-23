@@ -1,6 +1,9 @@
 import checkImg from '../../images/imgPage4/check.png';
 import colorImg from '../../images/imgPage4/image6.png';
 import trashImg from '../../images/imgPage4/Trash.png';  
+
+import '../../CSS_User/BoutiqueAjouterPanier.css'
+
 function BoutiqueAjouterPanier() {
     return ( 
         

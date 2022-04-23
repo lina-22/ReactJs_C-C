@@ -2,8 +2,7 @@ import selectedItem from '../../images/imgPage5/image6.png';
 import masterImg from '../../images/imgPage1/image_master_card.png';
 import paypalImg from '../../images/imgPage1/paypal.png';
 import visaImg from '../../images/imgPage1/image_visa.png';
-
-import "../../CSS_User/Panier.css"
+import '../../CSS_User/Panier.css'
 
 function Panier() {
 

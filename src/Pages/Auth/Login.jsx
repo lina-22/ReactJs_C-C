@@ -1,41 +1,35 @@
 import axios from "axios";
-import { useContext, useEffect, useInsertionEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { LOG_IN } from "../../actionTypes";
 import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
 import "./Login.css";
+
 function Login() {
+  const {auth,authDispatch} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+    isLoading: false,
+  });
+
+
+  useEffect(()=> {
    
-    const {auth,authDispatch} = useContext(AuthContext);
-    const navigate = useNavigate();
-    const [state, setState] = useState({
-      email: "",
-      password: "",
-      isLoading: false,
-    });
-  
-  
-    useEffect(()=> {
-  
-      if(auth.user){
-        navigate('/admin')
-      }
-  
-    }, [auth.user])
+    if(auth.user){
+      navigate('/admin')
+    }
+
+  }, [auth.user])
 
   const onChangeHandler = (e) => {
-    // console.log(e.target.value);
-
-    setState({
-      ...state,
-      [e.target.id]: e.target.value,
-    });
+    setState({ ...state, [e.target.id]: e.target.value });
   };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-
     setState({ ...state, isLoading: true });
 
     axios
@@ -44,32 +38,26 @@ function Login() {
         password: state.password,
       })
       .then((res) => {
-        const {status, data, message} =res.data;
-
-        if(status){
-         authDispatch({
-             type :LOG_IN,
-             payload: data
-         })
-
-          const {user, token} = data;
-        //   console.log(token);
-          const accessToken = `Bearer ${token.plainTextToken}`;
-          axios.defaults.headers.common = {'Authorization':accessToken };
-          localStorage.setItem('accessToken',accessToken);
-         }else{
-
+        const { status, data, message } = res.data;
+        if (status) {
+         
+          authDispatch({
+            type: LOG_IN,
+            payload: data
+          })
         }
-        setState({email:"" , password:"", isLoading: false});
+
+        setState({ email: "", password: "", isLoading: false });
       })
       .catch((err) => {
         console.log(err);
-        setState({...state, isLoading: false});
+
+        setState({ ...state, isLoading: false });
       });
   };
 
   return (
-    <div className="container">
+    <div className="my-container">
       <form onSubmit={onSubmitHandler}>
         <div className="input-group">
           <label htmlFor="email">Email</label>
@@ -77,7 +65,7 @@ function Login() {
             type="email"
             id="email"
             onChange={onChangeHandler}
-            placeholder="Enter your Email"
+            placeholder="Enter Your Email"
             value={state.email}
             disabled={state.isLoading}
           />
@@ -88,7 +76,7 @@ function Login() {
             type="password"
             id="password"
             onChange={onChangeHandler}
-            placeholder="Enter your password"
+            placeholder="Enter Your Password"
             value={state.password}
             disabled={state.isLoading}
           />

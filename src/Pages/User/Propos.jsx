@@ -1,4 +1,4 @@
-import "../../CSS_User/Propos.css"
+import '../../CSS_User/Propos.css'
 
 function Propos() {
     return ( 
