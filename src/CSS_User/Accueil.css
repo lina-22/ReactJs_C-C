@@ -15,8 +15,8 @@ section .header{
     /* display: flex;
     position: absolute; */
     position: absolute;
-    top: 70%;
-    left: 68%;
+    top: 90%;
+    left: 75%;
     /* background-color:yellow; */
     color: black solid;
     font-size: .7em;
@@ -28,8 +28,8 @@ section .header{
     /* display: flex;
     position: absolute; */
     position: absolute;
-    top: 35%;
-    left: 28%;
+    top: 30%;
+    left: 15%;
     /* background-color:yellow; */
     color: black;
     font-size: .7em;
@@ -47,8 +47,6 @@ section .header{
 }
 .first_landing_images{
   
-  
-    /* width: 150px; */
     display: flex;
     justify-content: space-around;
     
@@ -57,11 +55,13 @@ section .header{
 .first_landing_images img{
     padding: 40px 40px;
     height: 200px;
+    width: 260px;
 }
 
 .second_landing_images{
     background-color: #17292F;
     height: 350px;
+    /* width: 100px; */
     display: flex;
     margin-top: 2px;
     margin-bottom: 5px;
@@ -74,7 +74,7 @@ section .header{
     padding-top: 30px;
     padding-bottom:20px;
     padding-left: 80px;
-    max-width: 400px;
+    max-width: 600px;
     max-height: 220px;
     
 }

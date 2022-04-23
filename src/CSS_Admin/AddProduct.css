@@ -4,15 +4,17 @@
     box-sizing: border-box;
 }
 
-.main{
+.mainAdmin{
     max-width: 1280px;
     margin: 0 auto; 
     /* margin-top: 100px;
     margin-left: 250px; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(175, 175, 225);
+    /* background-color: rgb(175, 175, 225); */
 } 
-
+.navbar{
+       margin-left: 100px;
+}
 /* body start for admin Dashbord */
 #admin{
     text-align: center;

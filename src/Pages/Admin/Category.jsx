@@ -11,8 +11,9 @@ function Category() {
           <thead>
             <tr>
               <th>Id</th>
-              <th>Image</th>
               <th>Name</th>
+              <th>is_featured</th>
+              <th>Image</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -20,6 +21,14 @@ function Category() {
             <tr>
               <td>1</td>
               <td>Mark</td>
+              <td>Otto</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
               <td>Otto</td>
               <td>@mdo</td>
             </tr>

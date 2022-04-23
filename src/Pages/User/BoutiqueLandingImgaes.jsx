@@ -39,7 +39,7 @@ function BoutiqueLandingImgaes() {
               Summer <br /> <br /> winter
             </p>
           </section>
-          <section id="landingsidebar2">
+          {/* <section id="landingsidebar2">
             <h4>Taille</h4> <br /> <hr />
             <p> Unique XL</p>
             <br />
@@ -47,7 +47,7 @@ function BoutiqueLandingImgaes() {
               <p>XS S</p> <br />
               <p>M L</p> <br />
             </section>
-          </section>
+          </section> */}
         </aside>
 
         <section className ="landingsection_images">

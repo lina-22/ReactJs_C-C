@@ -30,29 +30,30 @@ function BoutiqueSubSection() {
       </section>
 
       <section id="sidebar2">
-        <h4 id="color">Couleur</h4>
+        <h4 id="color">Choisissez Couleur</h4>
         <section id="img_sidebar2">
           <aside id="sidebar_inf">
             <section className="side_imgs">
-              <img className="couleur_img" src={img5} alt="" />
-              <img className="couleur_img" src={img6}alt="" />
+              <img className="couleur_img1" src={img5} alt="" />
+              <img className="couleur_img2" src={img6}alt="" />
             </section>
-            <h4 className="taille">Taille</h4>
-            <p className="taille1">Taille Unique</p>
+
+            
             <section className="size_area">
-              <p>XS S</p>
-              <p>M L</p>
-              <p>XL XXL</p>
+            <h4>Taille</h4> <hr />
+              <p > Unique XL</p>
+              <p className="taille1">M L</p>
+              <p className="taille1">XS S</p>           
             </section>
 
             <section className="quantity_adjust">
               <p>Quantité</p>
+              <section className='btns'>
               <button>+</button>
-              <button>-</button> <br />
+              <button>-</button>
+              </section> 
             </section>
-            <button className="btn">
-              <i className="fa fa-trash"></i> Trash
-            </button>
+           
            
             <button id="add_button"> Ajouter au Panier</button>
            

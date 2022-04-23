@@ -31,25 +31,39 @@
     width: 200px;
     height: 200px;
 }
-
-.taille{
-    padding-top: 50px;
-    text-align: center;
+.couleur_img1{
+    width: 100px;
+    height: 100px;
+    padding-right: 10px;
 }
+.couleur_img2{
+    width: 100px;
+    height: 100px;
+    padding-left: 10px;
+}
+
 .taille1{
     padding-top:20px;
     text-align: center;
+    word-spacing: 50px;
 }
 .size_area{
+    margin-top: 100px;
     padding-top: 20px;
     text-align: center;
     word-spacing: 30px;
+    background-color: rgb(107, 104, 117);
+    color: aliceblue;
 }
 
 .quantity_adjust{
     padding-top: 40px;
     text-align: center;
 }
+.btns{
+padding-inline-start: 10px;
+}
+
 #add_button{
     margin-top: 40px;
     margin-left: 50px;

@@ -14,12 +14,12 @@ function Panier() {
       <div id="panierBoutique_body">
         <section id="paniermain_consulter">
           <section className="panierside_imgs">
-            <p>Article(s)</p> <br /> <br />
+            <p>Article(s)</p> <br /> 
             <img className="paniercouleur_img" src={selectedItem} alt="" />
           </section>
 
           <section className="panierhappy_area">
-            <h4 className="paniertaille">Prix</h4> <br /> <br />
+            <h4 className="paniertaille">Prix</h4> <br /> 
             <p className="paniertaille1">49.99 Euro</p>
           </section>
 
