@@ -31,8 +31,12 @@ function BoutiqueAjouterPanier() {
                     </section>
                 </section>
                 <section className="buttons">
+                    <a href="/Panier">
                     <button id="button1"> VOIRE MON PANIER</button> <br/> <br/>
+                    </a>
+                    <a href="/BoutiqueLandingImgaes">
                     <button id="button2"> Continuer mes achats</button>
+                    </a>
                 </section>
 
             </section>

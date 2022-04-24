@@ -1,7 +1,7 @@
-import img1 from '../../images/imgPage2/image1.png';
-import img2 from '../../images/imgPage2/image2.png';
-import img3 from '../../images/imgPage2/image3.png';
-import img4 from '../../images/imgPage2/image4.png';
+import img1 from '../../images/imgPage2/black1.webp';
+import img2 from '../../images/imgPage2/black2.webp';
+import img3 from '../../images/imgPage2/black3.webp';
+import Black_full from '../../images/imgPage2/Black_full.webp';
 import img5 from '../../images/imgPage2/image5.png';
 import img6 from '../../images/imgPage2/image6.png';
 
@@ -26,7 +26,7 @@ function BoutiqueSubSection() {
       </section>
 
       <section className="middleImg">
-        <img src={img4} alt="" />
+        <img src={Black_full} alt="" />
       </section>
 
       <section id="sidebar2">
@@ -34,10 +34,11 @@ function BoutiqueSubSection() {
         <section id="img_sidebar2">
           <aside id="sidebar_inf">
             <section className="side_imgs">
-              <a href="/boutiqueBlackdress">
+              
               <img className="couleur_img1" src={img5} alt="" />
-              </a>
+              <a href="/boutiqueSubSection">
               <img className="couleur_img2" src={img6}alt="" />
+              </a>
             </section>
 
             

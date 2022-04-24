@@ -26,6 +26,7 @@ import UserLayout from "./Components/UserLayout";
 import Accueil from "./Pages/User/Accueil";
 import BoutiqueLandingImgaes from "./Pages/User/BoutiqueLandingImgaes";
 import BoutiqueSubSection from "./Pages/User/BoutiqueSubSection";
+import BoutiqueBlackdress from "./Pages/User/BoutiqueBlackdress";
 import BoutiqueAjouterPanier from "./Pages/User/BoutiqueAjouterPanier";
 import SeConnecter from "./Pages/User/SeConnecter";
 import Panier from "./Pages/User/Panier";
@@ -72,6 +73,7 @@ function App() {
         <Route path="/" element={<UserLayout />}>
           <Route index element={<Accueil />} />
           <Route path="boutiqueSubSection" element={<BoutiqueSubSection />} />
+          <Route path="boutiqueBlackdress" element={<BoutiqueBlackdress />} />
           <Route
             path="boutiqueLandingImgaes"
             element={<BoutiqueLandingImgaes />}

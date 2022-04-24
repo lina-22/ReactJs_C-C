@@ -35,7 +35,11 @@ function Panier() {
 
           </section>
         </section>
+        <a href="/BoutiqueLandingImgaes">
+                    <button id="button2"> Continuer mes achats</button>
+                    </a>
       </div>
+      
     </div>
   );
 }
