@@ -55,9 +55,9 @@ function Accueil() {
           <p className="first_message">
             {" "}
             <span>
-              <b>Feel the</b>
+              <b>Catch</b>
             </span>{" "}
-            <br /> <i>**THE FASHION OF MODERN WORLD**</i>
+            <br /> <i>**THE STYLE OF MODERN WORLD**</i>
           </p>
           <section className="first_landing_images">
             {
