@@ -27,6 +27,7 @@ function BoutiqueSubSection() {
 
       <section className="middleImg">
         <img src={Black_full} alt="" />
+        <p>Robe ceinturée à imprimé tacheture <br /> price: 25 euro </p>
       </section>
 
       <section id="sidebar2">
@@ -52,9 +53,11 @@ function BoutiqueSubSection() {
             <section className="quantity_adjust">
               <p>Quantité</p>
               <section className='btns'>
-              <button>+</button>
               <button>-</button>
+              <button></button>
+              <button>+</button>
               </section> 
+              
             </section>
            
             <a href="/boutiqueAjouterPanier">

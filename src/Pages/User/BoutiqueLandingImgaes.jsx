@@ -51,15 +51,26 @@ function BoutiqueLandingImgaes() {
         </aside>
 
         <section className ="landingsection_images">
-        <a href="#">
+          <div>
+          <a href="#">
           <img className="display_img" src={img27} alt="" />
           </a>
+          <p>Robe ceinturée à imprimé tacheture <br /> price: 25 euro </p>
+          </div>
+
+          <div>
           <a href="/boutiqueSubSection">
           <img className="display_img" src={img28} alt="" />
           </a>
+          <p>Robe ceinturée à imprimé  <br /> price: 25 euro </p>
+          </div>
+
+          <div>
           <a href="#">
           <img className="display_img" src={img26} alt="" />
           </a>
+          <p>Robe ceinturée à imprimé  <br /> price: 25 euro </p>
+          </div>
           {/* {
               state.products.map((category, index)=> <img src={category.image} key={index} alt="" />)
             } */}
