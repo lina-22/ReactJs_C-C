@@ -4,7 +4,9 @@ import { Container, Table } from "react-bootstrap";
 function Category() {
     return ( 
         <Container>
-        <h1 className="text-center">Ctegory</h1>
+         <div className="clearfix my-2">
+        <h1 className="text-center">Category</h1>
+           </div> 
         <hr />
   
         <Table striped bordered hover>
