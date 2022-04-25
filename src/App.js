@@ -45,6 +45,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import Category from "./Pages/Admin/Category";
+import Product from "./Pages/Admin/Product";
 import { ToastContainer } from "react-toastify";
 {
   /*end Admin Pannel */
@@ -66,6 +67,7 @@ function App() {
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashBord />} />
             <Route path="category" element={<Category />} />
+            <Route path="product" element={<Product />} />
             <Route path="addProduct" element={<AddProduct />} />
             <Route path="manageProduct" element={<ManageProduct />} />
             <Route path="seeAllProduct" element={<SeeAllProduct />} />

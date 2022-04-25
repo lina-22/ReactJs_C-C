@@ -52,6 +52,9 @@ function AdminLayout() {
               <Nav.Item>
                 <Link className="nav-link" to="/admin/category">Category</Link>
               </Nav.Item>
+              <Nav.Item>
+                <Link className="nav-link" to="/admin/product">Product</Link>
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
    
