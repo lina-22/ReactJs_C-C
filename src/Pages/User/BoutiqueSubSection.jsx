@@ -27,7 +27,6 @@ function BoutiqueSubSection() {
 
       <section className="middleImg">
         <img src={img4} alt="" />
-        <p>Robe ceinturée à imprimé tacheture <br /> price: 25 euro </p>
       </section>
 
       <section id="sidebar2">

@@ -42,53 +42,56 @@ import { AuthContext } from "./contexts";
 import { useReducer } from "react";
 import { authReducer } from "./reducers/authReducer";
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import Category from "./Pages/Admin/Category";
+import { ToastContainer } from "react-toastify";
 {
   /*end Admin Pannel */
 }
-const token = localStorage.getItem('AccessToken');
+const token = localStorage.getItem("AccessToken");
 // console.log(token);
-if(token){
-  axios.defaults.headers.common = { Authorization: token}; 
+if (token) {
+  axios.defaults.headers.common = { Authorization: token };
 }
 
 function App() {
-
-  const [auth, authDispatch] = useReducer(authReducer,{})
+  const [auth, authDispatch] = useReducer(authReducer, {});
 
   return (
-    <AuthContext.Provider value={{auth, authDispatch}}>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashBord />} />
-          <Route path="category" element={<Category />} />
-          <Route path="addProduct" element={<AddProduct />} />
-          <Route path="manageProduct" element={<ManageProduct />} />
-          <Route path="seeAllProduct" element={<SeeAllProduct />} />
-          <Route path="updateProduct" element={<UpdateProduct />} />
-        </Route>
+    <>
+      <AuthContext.Provider value={{ auth, authDispatch }}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashBord />} />
+            <Route path="category" element={<Category />} />
+            <Route path="addProduct" element={<AddProduct />} />
+            <Route path="manageProduct" element={<ManageProduct />} />
+            <Route path="seeAllProduct" element={<SeeAllProduct />} />
+            <Route path="updateProduct" element={<UpdateProduct />} />
+          </Route>
 
-        <Route path="/" element={<UserLayout />}>
-          <Route index element={<Accueil />} />
-          <Route path="boutiqueSubSection" element={<BoutiqueSubSection />} />
-          <Route path="boutiqueBlackdress" element={<BoutiqueBlackdress />} />
-          <Route
-            path="boutiqueLandingImgaes"
-            element={<BoutiqueLandingImgaes />}
-          />
-          <Route
-            path="boutiqueAjouterPanier"
-            element={<BoutiqueAjouterPanier />}
-          />
-          <Route path="seConnecter" element={<SeConnecter />} />
-          <Route path="panier" element={<Panier />} />
-          <Route path="propos" element={<Propos />} />
-        </Route>
-      </Routes>
-    </AuthContext.Provider>
-
+          <Route path="/" element={<UserLayout />}>
+            <Route index element={<Accueil />} />
+            <Route path="boutiqueSubSection" element={<BoutiqueSubSection />} />
+            <Route path="boutiqueBlackdress" element={<BoutiqueBlackdress />} />
+            <Route
+              path="boutiqueLandingImgaes"
+              element={<BoutiqueLandingImgaes />}
+            />
+            <Route
+              path="boutiqueAjouterPanier"
+              element={<BoutiqueAjouterPanier />}
+            />
+            <Route path="seConnecter" element={<SeConnecter />} />
+            <Route path="panier" element={<Panier />} />
+            <Route path="propos" element={<Propos />} />
+          </Route>
+        </Routes>
+      </AuthContext.Provider>
+      <ToastContainer />
+    </>
   );
 }
 

@@ -44,7 +44,7 @@ function AdminLayout() {
       <MyNavbar />
       <h1 id="admin">Admin Dashbord</h1>
       <Navbar bg="light" expand="lg">
-        <Container>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -54,7 +54,7 @@ function AdminLayout() {
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
-        </Container>
+   
       </Navbar>
       {/* <MyNavbar /> */}
       <Outlet />
