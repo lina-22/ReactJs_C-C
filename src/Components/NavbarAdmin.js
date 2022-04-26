@@ -33,11 +33,11 @@ const logOutHandler = ()=>{
             
           </section>
         </section>
-        <nav className="navbar">
+        {/* <nav className="navbar">
             <ul> 
                 <li><Link to = "/" >|| Accueil  || </Link> </li>
             </ul>
-        </nav>
+        </nav> */}
     </section>
     );
 }

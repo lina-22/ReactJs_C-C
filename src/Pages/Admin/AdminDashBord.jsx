@@ -1,5 +1,7 @@
 import "../../CSS_Components/Navbar.css";
-import "../../CSS_Admin/AdminDashBord.css"
+import "../../CSS_Admin/AdminDashBord.css";
+// import AdminDashBoardImg from '../images/dash.webp';
+// import AdminDashBoardImg from '../images/sb-admin-2.png'
 
 function AdminDashBord() {
     return ( 
@@ -13,6 +15,11 @@ function AdminDashBord() {
                     <input className="placeholder" type="text" placeholder="Manage Product"/><br/><br/>
                 </section>
             <div/>
+
+            {/* <section className="">
+            <img src={AdminDashBoardImg} alt="" />
+          </section> */}
+
             <div id="categorySection">
                 <p><span><b>Category Dashbord</b></span></p><br/>
                 <section className="categoryArea">

@@ -49,11 +49,28 @@ function AdminLayout() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link>Dashboard</Nav.Link>
+
+              <Nav.Item>
+                <Link className="nav-link"  to = "/" > Accueil  </Link> 
+              </Nav.Item>
               <Nav.Item>
                 <Link className="nav-link" to="/admin/category">Category</Link>
               </Nav.Item>
+         
               <Nav.Item>
                 <Link className="nav-link" to="/admin/product">Product</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link className="nav-link" to="/admin/product_availables">ProductAvailable</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link className="nav-link" to="">ProductLine</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link className="nav-link" to="">Reservation</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link className="nav-link" to="">Users</Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

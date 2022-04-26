@@ -33,10 +33,10 @@ import Panier from "./Pages/User/Panier";
 import Propos from "./Pages/User/Propos";
 
 import AdminDashBord from "./Pages/Admin/AdminDashBord";
-import AddProduct from "./Pages/Admin/AddProduct";
-import ManageProduct from "./Pages/Admin/ManageProduct";
-import SeeAllProduct from "./Pages/Admin/SeeAllProduct";
-import UpdateProduct from "./Pages/Admin/UpdateProduct";
+// import AddProduct from "./Pages/Admin/AddProduct";
+// import ManageProduct from "./Pages/Admin/ManageProduct";
+// import SeeAllProduct from "./Pages/Admin/SeeAllProduct";
+// import UpdateProduct from "./Pages/Admin/UpdateProduct";
 import Login from "./Pages/Auth/Login";
 import { AuthContext } from "./contexts";
 import { useReducer } from "react";
@@ -47,6 +47,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Category from "./Pages/Admin/Category";
 import Product from "./Pages/Admin/Product";
 import { ToastContainer } from "react-toastify";
+import Product_availables from "./Pages/Admin/Product_availables";
 {
   /*end Admin Pannel */
 }
@@ -68,10 +69,11 @@ function App() {
             <Route index element={<AdminDashBord />} />
             <Route path="category" element={<Category />} />
             <Route path="product" element={<Product />} />
-            <Route path="addProduct" element={<AddProduct />} />
+            <Route path="product_availables" element={<Product_availables />} />
+            {/* <Route path="addProduct" element={<AddProduct />} />
             <Route path="manageProduct" element={<ManageProduct />} />
             <Route path="seeAllProduct" element={<SeeAllProduct />} />
-            <Route path="updateProduct" element={<UpdateProduct />} />
+            <Route path="updateProduct" element={<UpdateProduct />} /> */}
           </Route>
 
           <Route path="/" element={<UserLayout />}>
