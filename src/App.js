@@ -38,7 +38,7 @@ import AdminDashBord from "./Pages/Admin/AdminDashBord";
 // import SeeAllProduct from "./Pages/Admin/SeeAllProduct";
 // import UpdateProduct from "./Pages/Admin/UpdateProduct";
 import Login from "./Pages/Auth/Login";
-import { AuthContext } from "./contexts";
+import { AuthContext, CategoryContext } from "./contexts";
 import { useReducer } from "react";
 import { authReducer } from "./reducers/authReducer";
 import axios from "axios";
@@ -48,9 +48,9 @@ import Category from "./Pages/Admin/Category";
 import Product from "./Pages/Admin/Product";
 import { ToastContainer } from "react-toastify";
 import Product_availables from "./Pages/Admin/Product_availables";
-{
-  /*end Admin Pannel */
-}
+import { categoryReducer, categoryStore } from "./reducers/categoryReducer";
+
+
 const token = localStorage.getItem("AccessToken");
 // console.log(token);
 if (token) {
@@ -59,10 +59,12 @@ if (token) {
 
 function App() {
   const [auth, authDispatch] = useReducer(authReducer, {});
+  const [categoryValue, categoryDispatch] = useReducer(categoryReducer, categoryStore);
 
   return (
     <>
       <AuthContext.Provider value={{ auth, authDispatch }}>
+      <CategoryContext.Provider value={{categoryValue, categoryDispatch}}>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminLayout />}>
@@ -93,6 +95,7 @@ function App() {
             <Route path="propos" element={<Propos />} />
           </Route>
         </Routes>
+        </CategoryContext.Provider>
       </AuthContext.Provider>
       <ToastContainer />
     </>
