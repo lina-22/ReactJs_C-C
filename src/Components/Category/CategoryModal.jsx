@@ -1,13 +1,30 @@
-import { useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
+import { REMOVE_CATEGORIES } from "../../actionTypes";
+import { CategoryContext } from "../../contexts";
 
-function CategoryModal({ show, handleClose, saveCategory }) {
+function CategoryModal({ show, handleClose, saveCategory, updateCategory }) {
+  const { categoryValue, categoryDispatch } = useContext(CategoryContext);
   const [state, setState] = useState({
     image: "",
     name: "",
-    is_featured: false,
+    is_featured: 0,
     isLoading: false,
   });
+
+  const imgRef = useRef();
+
+  useEffect(() => {
+    if (categoryValue.selectedCategory) {
+      setState((prvSt) => {
+        return {
+          ...prvSt,
+          name: categoryValue.selectedCategory.name,
+          is_featured: categoryValue.selectedCategory.is_featured,
+        };
+      });
+    }
+  }, [show]);
 
   const onChangeHandler = (e) => {
     setState((prvSt) => {
@@ -39,21 +56,34 @@ function CategoryModal({ show, handleClose, saveCategory }) {
     const formData = new FormData();
 
     formData.append("image", state.image);
+
     formData.append("name", state.name);
     formData.append("is_featured", state.is_featured);
 
-    saveCategory(formData, () => {
+    if (categoryValue.selectedCategory) {
+      formData.append("_method", "PUT");
+      updateCategory(formData, categoryValue.selectedCategory.id);
+    } else {
+      saveCategory(formData);
+    }
+  };
+
+  const resetState = () => {
+    categoryDispatch({ type: REMOVE_CATEGORIES });
+    imgRef.current.value = null;
+
+    setTimeout(() => {
       setState({
         image: "",
         name: "",
-        is_featured: false,
+        is_featured: 0,
         isLoading: false,
       });
-    });
+    }, 5);
   };
 
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose} onExit={resetState}>
       <Modal.Header closeButton>
         <Modal.Title>Add New Category</Modal.Title>
       </Modal.Header>
@@ -67,6 +97,7 @@ function CategoryModal({ show, handleClose, saveCategory }) {
               name="image"
               placeholder="Select Image"
               disabled={state.isLoading}
+              ref={imgRef}
             />
           </Form.Group>
 
@@ -85,10 +116,11 @@ function CategoryModal({ show, handleClose, saveCategory }) {
             <Form.Check
               type="checkbox"
               name="is_featured"
-              onClick={onChangeHandler}
+              onChange={onChangeHandler}
               label="Is Featured"
               checked={state.is_featured}
               disabled={state.isLoading}
+              
             />
           </Form.Group>
           <Button variant="primary" type="submit" disabled={state.isLoading}>
