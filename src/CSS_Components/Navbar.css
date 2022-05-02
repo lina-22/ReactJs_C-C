@@ -1,62 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;500&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: rgb(28, 97, 138); */
 }
 
-.main{
+/* .main{
     max-width: 1280px;
     margin: 0 auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background-color: blue; */
-} 
+}  */
 
-/* .landing{
-    width:100%;
-    height: 300px;
-    margin: 0 auto;
-} */
-
-.top_p{
-    display: flex;
-    justify-content: center;
+section.top {
+    /* border: 1px solid black; */
 }
-.logo_area{
+section.top marquee {
+    background-color: black;
+    color: white;
     width: 100%;
-    height: 90px;
-    padding: 20px 50px 20px 50px;
-    margin: 0 auto;
+}
+.logo {
+    width: 70px;
+    height: 70px;
+}
+.logo_ttl_bskt{
     display: flex;
-    justify-content: space-between;
-    /* background-color: rgb(180, 234, 53); */
+    justify-content: space-around;
+    padding: 10px 0;
+}
+header h1{
+    font-size: 3.8rem;
+    font-family: 'Montserrat';
+    font-weight: 200;
+}
+header h1 span{
+    font-weight: 600;
+}
+section.panier_logo img{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
 }
 
-#name{
-    font-size: 40px;
+@media screen and (min-width:800px) and (max-width:959px) {
+    section.panier_logo img{
+        width: 40px;
+        height: 40px;
+        margin-top: 15px;
+    }
+    h1 {
+        font-size: 3.4rem;
+        color: blue;
+    }
 }
 
-.navbar{
-    height: 60px;
-    padding-top: 20px;
-    padding-left: 180px;
-    margin-left: 100px;
-    margin-right: 100px;
-    /* background-color: aquamarine; */
+@media screen and (min-width:480px) and (max-width:799px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    section.panier_logo img{
+        width: 40px;
+        height: 40px;
+        margin-top: 15px;
+    }
+    
+    h1 {
+        font-size: 3.4rem;
+        color: red;
+    }
+    label {
+        top: -25px !important;
+        right: 50px !important;
+    }
 }
-.navbar ul{
-    display:flex;
-    justify-content: space-between;
+
+
+/* navigation  */
+
+section.mainNav {
+    position: relative;
+}
+
+nav {
+    background-color: rgba(202, 202, 195, 0.2);
+    transform: scale(1, 0);
+    transition: 250ms ease-in-out;
+    transform-origin: top;
+    padding: 10px 0px 2px 0px;
+}
+nav ul {
+    font-size: 18px;
+    margin-left: 20px;
     list-style: none;
 }
-.navbar ul li{
-    font-size: 1.5em;
+nav ul li {
+    transform: scale(1, 0);
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+nav ul li a:hover{
+    color: red;
+}
+input.nav-toggler  {
+    margin-left: 20px;
+    position: absolute;
+    top: -70px;
+    right: 10%;
+    opacity: 0;
+}
+input.nav-toggler:checked ~ nav {
+    transform: scale(1, 1);
+}
+input.nav-toggler:checked ~ nav ul li {
+    transform: scale(1, 1);
+    transition: 250ms ease-in-out;
+}
+ label {
+    position: absolute;
+    top: -48px;
+    right: 8%;
+    height: 50%;
+    width: 25px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+label span {
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    z-index: 2;
+    background: rgb(17, 17, 16);
+    margin-top: 5px;
+}
+label span, label span::before, label span::after {
+    /* position: relative; */
+    height: 3px;
+    width: 25px;
+    z-index: 2;
+    background: rgb(17, 17, 16);
+}
+label span::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    height: 2px;
+}
+label span::after {
+    content: '';
+    position: absolute;
+    bottom: 7px;
+}
+@media only screen and (min-width: 800px){
+    nav ul li {
+        transform: scale(1, 1);
+        display: inline-block;
+        /* border: 2px solid white; */
+        padding: 4px;
+        width: 120px;
+        height: 25px;
+        
+    }
+    nav {
+        transform: scale(1, 1);
+        text-align: center;
+    }
+    input, label {
+        display: none !important;
+    }
 }
 
-section .header{
-    width: 100%;
-    /* border-left: 10px solid ; */
-    background-color: rgb(205, 50, 73);
-    position: relative;
-
-}
+/* @media screen and (min-width:960px) and (max-width:1200px)
+@media screen and (min-width:768px) and (max-width:959px)
+@media screen and (min-width:320px) and (max-width:767px) */

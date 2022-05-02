@@ -1,91 +1,140 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { toast } from "react-toastify";
+import { ADD_PRODUCTS, LOAD_PRODUCTS, UPDATE_PRODUCTS } from "../../actionTypes";
 import ProductModal from "../../Components/Product/ProductModal";
+import ProductTr from "../../Components/Product/ProductTr";
+import { ProductContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
 
 function Product() {
   const [showModal, setShowModal] = useState(false);
+  const { productValue, productDispatch } = useContext(ProductContext);
+
+  useEffect(() => {
+    axios
+      .get(`${BACKEND_URL}/products`)
+      .then((res) => {
+        const { status, data, message } = res.data;
+        if (status) {
+          productDispatch({
+            type: LOAD_PRODUCTS,
+            payload: data,
+          });
+
+          toast.success(message);
+        } else {
+          toast.error(message);
+        }
+      })
+      .catch();
+  }, []);
 
   const handleShowModal = () => {
-    setShowModal((prvSt) => !prvSt)
+    setShowModal((prvSt) => !prvSt);
+  };
 
-  }
+  const saveProduct = (data) => {
+    axios
+      .post(`${BACKEND_URL}/products`, data)
+      .then((res) => {
+        const { status, data, message } = res.data;
+        if (status) {
+          productDispatch({
+            type: ADD_PRODUCTS,
+            payload: data,
+          });
 
-  const saveProduct = (data, calback) => {
-    axios.post(`${BACKEND_URL}/products`, data).then(res => {
-      const {status, data, message} = res.data;
-      if(status){
-        // todo dispatch
-        console.log(data);
-        toast.success(message);
-        handleShowModal();
-      }else{
-        toast.error(message)
-      }
+          toast.success(message);
+          handleShowModal();
+        } else {
+          toast.error(message);
+        }
+      })
+      .catch((err) => {
+        toast.error("Server Error!");
+        console.log(err);
+      });
+  };
 
-      calback()
-    }).catch(err => {
-      toast.error("Server Error!");
-      console.log(err);
-      calback()
-    })
 
+  const updateProduct = (data, id) => {
+    axios
+      .post(`${BACKEND_URL}/products/${id}`, data)
+      .then((res) => {
+        const { status, data, message } = res.data;
+        if (status) {
+          
+          productDispatch({
+            type: UPDATE_PRODUCTS,
+            payload: data
+          })
+
+          toast.success(message);
+          handleShowModal();
+        } else {
+          toast.error(message);
+        }
+
+      })
+      .catch((err) => {
+        toast.error("Server Error!");
+        console.log(err);
+      });
   }
 
   return (
     <Container>
       <div className="clearfix my-2">
         <h1 className="float-start">Product</h1>
-        <Button onClick={handleShowModal} className="float-end" variant="primary">
+        <Button
+          onClick={handleShowModal}
+          className="float-end"
+          variant="primary"
+        >
           Add Product
-        </Button> 
-        <Button onClick={handleShowModal} className="float-end" variant="primary">
-          Update Product
         </Button>
       </div>
 
       <hr />
 
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>is_featured</th>
-            <th>Price</th>
-            <th>Discount</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </Table>
+      {productValue.isLoaded ? (
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>is_featured</th>
+              <th>Price</th>
+              <th>Discount</th>
+              <th>Image</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productValue.products.map((prod, index) => (
+              <ProductTr
+                handleShowModal={handleShowModal}
+                product={prod}
+                key={index}
+              />
+            ))}
+          </tbody>
+        </Table>
+      ) : (
+        <div className="text-center my-5">
+          <h4>Loading..............</h4>
+        </div>
+      )}
 
-      <ProductModal show={showModal} handleClose={handleShowModal} saveProduct={saveProduct}/>
+      <ProductModal
+        show={showModal}
+        handleClose={handleShowModal}
+        saveProduct={saveProduct}
+        updateProduct={updateProduct}
+      />
     </Container>
   );
 }

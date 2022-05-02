@@ -38,7 +38,7 @@ import AdminDashBord from "./Pages/Admin/AdminDashBord";
 // import SeeAllProduct from "./Pages/Admin/SeeAllProduct";
 // import UpdateProduct from "./Pages/Admin/UpdateProduct";
 import Login from "./Pages/Auth/Login";
-import { AuthContext, CategoryContext } from "./contexts";
+import { AuthContext, CategoryContext, ProductContext } from "./contexts";
 import { useReducer } from "react";
 import { authReducer } from "./reducers/authReducer";
 import axios from "axios";
@@ -49,6 +49,7 @@ import Product from "./Pages/Admin/Product";
 import { ToastContainer } from "react-toastify";
 import Product_availables from "./Pages/Admin/Product_availables";
 import { categoryReducer, categoryStore } from "./reducers/categoryReducer";
+import { productReducer, productStore } from "./reducers/productReducer";
 
 const token = localStorage.getItem("AccessToken");
 // console.log(token);
@@ -58,51 +59,60 @@ if (token) {
 
 function App() {
   const [auth, authDispatch] = useReducer(authReducer, {});
-  const [categoryValue, categoryDispatch] = useReducer(categoryReducer, categoryStore);
+  const [categoryValue, categoryDispatch] = useReducer(
+    categoryReducer,
+    categoryStore
+  );
+  const [productValue, productDispatch] = useReducer(
+    productReducer,
+    productStore
+  );
 
   return (
     <>
       <AuthContext.Provider value={{ auth, authDispatch }}>
-        <CategoryContext.Provider value={{categoryValue, categoryDispatch}}>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route index element={<AdminDashBord />} />
-              <Route path="category" element={<Category />} />
-              <Route path="product" element={<Product />} />
-              <Route
-                path="product_availables"
-                element={<Product_availables />}
-              />
-              {/* <Route path="addProduct" element={<AddProduct />} />
+        <CategoryContext.Provider value={{ categoryValue, categoryDispatch }}>
+          <ProductContext.Provider value={{ productValue, productDispatch }}>
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminDashBord />} />
+                <Route path="category" element={<Category />} />
+                <Route path="product" element={<Product />} />
+                <Route
+                  path="product_availables"
+                  element={<Product_availables />}
+                />
+                {/* <Route path="addProduct" element={<AddProduct />} />
             <Route path="manageProduct" element={<ManageProduct />} />
             <Route path="seeAllProduct" element={<SeeAllProduct />} />
             <Route path="updateProduct" element={<UpdateProduct />} /> */}
-            </Route>
+              </Route>
 
-            <Route path="/" element={<UserLayout />}>
-              <Route index element={<Accueil />} />
-              <Route
-                path="boutiqueSubSection"
-                element={<BoutiqueSubSection />}
-              />
-              <Route
-                path="boutiqueBlackdress"
-                element={<BoutiqueBlackdress />}
-              />
-              <Route
-                path="boutiqueLandingImgaes"
-                element={<BoutiqueLandingImgaes />}
-              />
-              <Route
-                path="boutiqueAjouterPanier"
-                element={<BoutiqueAjouterPanier />}
-              />
-              <Route path="seConnecter" element={<SeConnecter />} />
-              <Route path="panier" element={<Panier />} />
-              <Route path="propos" element={<Propos />} />
-            </Route>
-          </Routes>
+              <Route path="/" element={<UserLayout />}>
+                <Route index element={<Accueil />} />
+                <Route
+                  path="boutiqueSubSection"
+                  element={<BoutiqueSubSection />}
+                />
+                <Route
+                  path="boutiqueBlackdress"
+                  element={<BoutiqueBlackdress />}
+                />
+                <Route
+                  path="boutiqueLandingImgaes"
+                  element={<BoutiqueLandingImgaes />}
+                />
+                <Route
+                  path="boutiqueAjouterPanier"
+                  element={<BoutiqueAjouterPanier />}
+                />
+                <Route path="seConnecter" element={<SeConnecter />} />
+                <Route path="panier" element={<Panier />} />
+                <Route path="propos" element={<Propos />} />
+              </Route>
+            </Routes>
+          </ProductContext.Provider>
         </CategoryContext.Provider>
       </AuthContext.Provider>
       <ToastContainer />

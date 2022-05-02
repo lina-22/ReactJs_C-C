@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import logoImg from '../images/imgPage1/logo.png';
 import panierImg from '../images/imgPage1/panier_img.png';
+import shoppingCartIcon from '../images/imgPage1/shopping_cart.svg';
 import logout from '../images/logout.png';
 import "../CSS_Components/Navbar.css";
 import { useContext } from 'react';
@@ -16,10 +17,41 @@ const logOutHandler = ()=>{
 
     return(
         <section className="top">
-        <p className="top_p">
+        <marquee className="top_p">
           Choisissez et récupérez votre produit de n'importe où
-        </p>
-        <section className="logo_area">
+        </marquee>
+        <section className='logo_ttl_bskt'>
+        <img className="logo" src={logoImg} alt="" />
+        <header>
+        <h1>
+          Click <span>&</span> Collect
+        </h1>
+        </header>
+        <section className="panier_logo">
+            <img className="panier" src={shoppingCartIcon} alt="panier" />
+            {
+              auth.user && <img style={{width: 25, cursor: "pointer", marginLeft: 10}} onClick={logOutHandler} title="Log Out" src={logout} alt="" />
+            }
+          </section>
+        </section>
+        <section className='mainNav'>
+          <input type="checkbox" id="nav-toggler" class="nav-toggler" />
+          <label for="nav-toggler">
+              <span></span>
+          </label>
+          <nav>
+              <ul>
+                  <li><a href=""><Link to = "/" >|| Accueil  || </Link></a></li>
+                  <li><a href=""><Link to ="/boutiqueLandingImgaes">|| Boutique  || </Link></a></li>
+                  <li><a href=""><Link to ="/seConnecter">|| Connexion  ||</Link></a></li>
+                  <li><a href=""><Link to ="/panier">|| Panier  ||</Link></a></li>
+                  <li><a href=""><Link to ="/propos">|| Propos  ||</Link></a></li>
+              </ul>
+          </nav>
+        </section>
+        
+
+        {/* <section className="logo_area">
           <section className="main_logo">
             <img src={logoImg} alt="" />
           </section>
@@ -32,18 +64,18 @@ const logOutHandler = ()=>{
             }
             
           </section>
-        </section>
-        <nav className="navbar">
+        </section> */}
+        {/* <nav className="navbar">
             <ul> 
                 <button><li><Link to = "/" >|| Accueil  || </Link> </li></button>
                 <button><li><Link to ="/boutiqueLandingImgaes">|| Boutique  || </Link></li></button>
                 
-                {/* </button><li><Link to ="/boutiqueSubSection">|| Boutique  || </Link></li></button> this link for one drees boutiqueLandingImages  */}
+                
                 <button><li><Link to ="/seConnecter">|| Connexion  ||</Link></li></button>
                 <button><li><Link to ="/panier">|| Panier  ||</Link></li></button>
                 <button><li><Link to ="/propos">|| Propos  ||</Link></li></button>
             </ul>
-        </nav>
+        </nav> */}
     </section>
     );
 }
