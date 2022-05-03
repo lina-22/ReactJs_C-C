@@ -35,17 +35,17 @@ const logOutHandler = ()=>{
           </section>
         </section>
         <section className='mainNav'>
-          <input type="checkbox" id="nav-toggler" class="nav-toggler" />
-          <label for="nav-toggler">
+          <input type="checkbox" id="nav-toggler" className="nav-toggler" />
+          <label htmlFor="nav-toggler">
               <span></span>
           </label>
           <nav>
               <ul>
-                  <li><a href=""><Link to = "/" >|| Accueil  || </Link></a></li>
-                  <li><a href=""><Link to ="/boutiqueLandingImgaes">|| Boutique  || </Link></a></li>
-                  <li><a href=""><Link to ="/seConnecter">|| Connexion  ||</Link></a></li>
-                  <li><a href=""><Link to ="/panier">|| Panier  ||</Link></a></li>
-                  <li><a href=""><Link to ="/propos">|| Propos  ||</Link></a></li>
+                  <li><Link to = "/" > Accueil </Link></li>
+                  <li><Link to ="/boutiqueLandingImgaes"> Boutique   </Link></li>
+                  <li><Link to ="/seConnecter"> Connexion </Link></li>
+                  <li><Link to ="/panier"> Panier  </Link></li>
+                  <li><Link to ="/propos"> Propos  </Link></li>
               </ul>
           </nav>
         </section>

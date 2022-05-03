@@ -35,6 +35,16 @@ function Accueil() {
 
   return (
     <div>
+    <div className="hero">
+        <img className="main_image" src={mainImg} alt="" />  
+        <h2 className='info_pub'>
+             économisez votre temps <br/> et vivez facilement      
+        </h2>
+        <h3>
+        Offre toujous disponible!!
+        </h3>
+    </div>
+    {/* <div className='hero'>
       <section className="header">
         <img className="main_image" src={mainImg} alt="" />
         <section className="offer_inf">
@@ -64,15 +74,13 @@ function Accueil() {
               state.products.map((product, index)=>( <a href=""><img src={product.image} key={index} alt="" /> </a> ))
             }
 
-            {/* <img src={state.products[0] && state.products[0].image} alt="" />
-            <img src={state.products[1] && state.products[1].image} alt="" />
-            <img src={state.products[2] && state.products[2].image} alt="" />
-            <img src={state.products[3] && state.products[3].image} alt="" /> */}
+        
           </section>
         </section>
 
         <section className="second_landing_images">
           <section className="sectionA">
+          <img className="photo_left" src={photoLeft} alt="" />  
             <a href="#">
           <img className="photo_left" src={state.categories[0] && state.categories[0].image} alt="" />
           </a>
@@ -80,15 +88,20 @@ function Accueil() {
           </section>
           <section className="sectionB">
             <p className="mode_text2">Mode maintentant pour les femme</p>
+            <img className="photo_right" src={photoRight} alt="" />  
             <a href="#">
-            <img className="photo_right" src={state.categories[1] && state.categories[1].image} alt="" />
+            <img className="photo_right" src={state.categories[17] && state.categories[17].image} alt="" />
             </a>
           </section>
         </section>
       </div>{" "}
-   
+    </div> */}
     </div>
   );
 }
 
 export default Accueil;
+    {/* <img src={state.products[0] && state.products[0].image} alt="" />
+            <img src={state.products[1] && state.products[1].image} alt="" />
+            <img src={state.products[2] && state.products[2].image} alt="" />
+            <img src={state.products[3] && state.products[3].image} alt="" /> */}
