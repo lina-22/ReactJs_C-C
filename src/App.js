@@ -33,23 +33,28 @@ import Panier from "./Pages/User/Panier";
 import Propos from "./Pages/User/Propos";
 
 import AdminDashBord from "./Pages/Admin/AdminDashBord";
+import Category from "./Pages/Admin/Category";
+import Product from "./Pages/Admin/Product";
+import ProductAvailable from "./Pages/Admin/ProductAvailable";
+
 // import AddProduct from "./Pages/Admin/AddProduct";
 // import ManageProduct from "./Pages/Admin/ManageProduct";
 // import SeeAllProduct from "./Pages/Admin/SeeAllProduct";
 // import UpdateProduct from "./Pages/Admin/UpdateProduct";
+
 import Login from "./Pages/Auth/Login";
-import { AuthContext, CategoryContext, ProductContext } from "./contexts";
+
+import { AuthContext, CategoryContext, ProductContext, ProductAvailableContext } from "./contexts";
 import { useReducer } from "react";
 import { authReducer } from "./reducers/authReducer";
+
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
-import Category from "./Pages/Admin/Category";
-import Product from "./Pages/Admin/Product";
 import { ToastContainer } from "react-toastify";
-import Product_availables from "./Pages/Admin/Product_availables";
 import { categoryReducer, categoryStore } from "./reducers/categoryReducer";
 import { productReducer, productStore } from "./reducers/productReducer";
+import { productAvaiableReducer, productStore } from "./reducers/productavaiableReducer";
 
 const token = localStorage.getItem("AccessToken");
 // console.log(token);
@@ -73,6 +78,7 @@ function App() {
       <AuthContext.Provider value={{ auth, authDispatch }}>
         <CategoryContext.Provider value={{ categoryValue, categoryDispatch }}>
           <ProductContext.Provider value={{ productValue, productDispatch }}>
+          <ProductAvailableContext.Provider value={{ productAvailableValue, productAvailableDispatch }}>
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/admin" element={<AdminLayout />}>
@@ -81,7 +87,7 @@ function App() {
                 <Route path="product" element={<Product />} />
                 <Route
                   path="product_availables"
-                  element={<Product_availables />}
+                  element={<ProductAvailable />}
                 />
                 {/* <Route path="addProduct" element={<AddProduct />} />
             <Route path="manageProduct" element={<ManageProduct />} />
@@ -112,6 +118,7 @@ function App() {
                 <Route path="propos" element={<Propos />} />
               </Route>
             </Routes>
+           </ProductAvailableContext.Provider>
           </ProductContext.Provider>
         </CategoryContext.Provider>
       </AuthContext.Provider>

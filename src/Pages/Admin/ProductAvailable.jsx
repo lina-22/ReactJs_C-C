@@ -7,7 +7,26 @@ import { BACKEND_URL } from "../../utils";
 
 function Product_availables() {
   const [showModal, setShowModal] = useState(false);
+  const { productValue, productDispatch } = useContext(ProductContext);
 
+  useEffect(() => {
+    axios
+      .get(`${BACKEND_URL}/productsAvailable`)
+      .then((res) => {
+        const { status, data, message } = res.data;
+        if (status) {
+          productDispatch({
+            type: LOAD_PRODUCTAVAILABLES,
+            payload: data,
+          });
+
+          toast.success(message);
+        } else {
+          toast.error(message);
+        }
+      })
+      .catch();
+  }, []);
   const handleShowModal = () => {
     setShowModal((prvSt) => !prvSt)
 

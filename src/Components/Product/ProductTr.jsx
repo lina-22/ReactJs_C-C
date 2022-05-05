@@ -34,7 +34,8 @@ function ProductTr({product, handleShowModal}) {
       })
     }
   }
-
+  
+  
   const editHandler = cat => {
     productDispatch({
       type: SELECT_PRODUCTS,

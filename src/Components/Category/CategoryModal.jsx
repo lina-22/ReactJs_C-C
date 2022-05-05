@@ -6,9 +6,9 @@ import { CategoryContext } from "../../contexts";
 function CategoryModal({ show, handleClose, saveCategory, updateCategory }) {
   const { categoryValue, categoryDispatch } = useContext(CategoryContext);
   const [state, setState] = useState({
-    image: "",
+    image: "",/*this line should delete as we will cut cat images */
     name: "",
-    is_featured: 0,
+    is_featured: 0,/*this line should delete as we will cut cat images */
     isLoading: false,
   });
 
@@ -20,7 +20,7 @@ function CategoryModal({ show, handleClose, saveCategory, updateCategory }) {
         return {
           ...prvSt,
           name: categoryValue.selectedCategory.name,
-          is_featured: categoryValue.selectedCategory.is_featured,
+          is_featured: categoryValue.selectedCategory.is_featured,/*this line should delete as we will cut cat images */
         };
       });
     }
@@ -55,10 +55,10 @@ function CategoryModal({ show, handleClose, saveCategory, updateCategory }) {
 
     const formData = new FormData();
 
-    formData.append("image", state.image);
+    formData.append("image", state.image);/*this line should delete as we will cut cat images */
 
     formData.append("name", state.name);
-    formData.append("is_featured", state.is_featured);
+    formData.append("is_featured", state.is_featured);/*this line should delete as we will cut cat images */
 
     if (categoryValue.selectedCategory) {
       formData.append("_method", "PUT");
@@ -74,9 +74,9 @@ function CategoryModal({ show, handleClose, saveCategory, updateCategory }) {
 
     setTimeout(() => {
       setState({
-        image: "",
+        image: "",/*this line should delete as we will cut cat images */
         name: "",
-        is_featured: 0,
+        is_featured: 0,/*this line should delete as we will cut cat images */
         isLoading: false,
       });
     }, 5);
@@ -89,7 +89,8 @@ function CategoryModal({ show, handleClose, saveCategory, updateCategory }) {
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={onSubmitHandler}>
-          <Form.Group className="mb-3" controlId="image">
+          {/* this line should delete as we will cut cat images   */}
+          <Form.Group className="mb-3" controlId="image"> 
             <Form.Label>Image</Form.Label>
             <Form.Control
               onChange={onChangeHandler}
