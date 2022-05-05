@@ -18,6 +18,12 @@
 // import "./CSS_User/Propos.css";
 // import "./CSS_User/SeConnecter.css";
 
+
+// import AddProduct from "./Pages/Admin/AddProduct";
+// import ManageProduct from "./Pages/Admin/ManageProduct";
+// import SeeAllProduct from "./Pages/Admin/SeeAllProduct";
+// import UpdateProduct from "./Pages/Admin/UpdateProduct";
+
 import { Routes, Route } from "react-router-dom";
 
 import AdminLayout from "./Components/AdminLayout";
@@ -37,10 +43,6 @@ import Category from "./Pages/Admin/Category";
 import Product from "./Pages/Admin/Product";
 import ProductAvailable from "./Pages/Admin/ProductAvailable";
 
-// import AddProduct from "./Pages/Admin/AddProduct";
-// import ManageProduct from "./Pages/Admin/ManageProduct";
-// import SeeAllProduct from "./Pages/Admin/SeeAllProduct";
-// import UpdateProduct from "./Pages/Admin/UpdateProduct";
 
 import Login from "./Pages/Auth/Login";
 
@@ -54,7 +56,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { categoryReducer, categoryStore } from "./reducers/categoryReducer";
 import { productReducer, productStore } from "./reducers/productReducer";
-import { productAvaiableReducer, productStore } from "./reducers/productavaiableReducer";
+import { productAvailableReducer, productAvailableStore } from "./reducers/productAvailableReducer";
 
 const token = localStorage.getItem("AccessToken");
 // console.log(token);
@@ -64,13 +66,20 @@ if (token) {
 
 function App() {
   const [auth, authDispatch] = useReducer(authReducer, {});
+
   const [categoryValue, categoryDispatch] = useReducer(
     categoryReducer,
     categoryStore
   );
+
   const [productValue, productDispatch] = useReducer(
     productReducer,
     productStore
+  );
+
+  const [productAvailableValue, productAvailableDispatch] = useReducer(
+    productAvailableReducer,
+    productAvailableStore
   );
 
   return (

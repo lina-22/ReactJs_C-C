@@ -1,13 +1,16 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { toast } from "react-toastify";
-import Product_availablesModal from "../../Components/ProductAvailable/Product_availablesModal";
+import { ADD_PRODUCTSAVAILABLE, LOAD_PRODUCTSAVAILABLE, UPDATE_PRODUCTSAVAILABLE } from "../../actionTypes";
+import ProductAvailableModal from "../../Components/ProductAvailable/ProductAvailableModal";
+import ProductAvailableTr from "../../Components/Product/ProductTr";
+import { ProductAvailableContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
 
-function Product_availables() {
+function ProductAvailable() {
   const [showModal, setShowModal] = useState(false);
-  const { productValue, productDispatch } = useContext(ProductContext);
+  const { productAvailableValue, productAvailableDispatch } = useContext(ProductAvailableContext);
 
   useEffect(() => {
     axios
@@ -15,8 +18,8 @@ function Product_availables() {
       .then((res) => {
         const { status, data, message } = res.data;
         if (status) {
-          productDispatch({
-            type: LOAD_PRODUCTAVAILABLES,
+          productAvailableDispatch({
+            type: LOAD_PRODUCTSAVAILABLE,
             payload: data,
           });
 
@@ -27,77 +30,110 @@ function Product_availables() {
       })
       .catch();
   }, []);
+
   const handleShowModal = () => {
-    setShowModal((prvSt) => !prvSt)
+    setShowModal((prvSt) => !prvSt);
+  };
 
-  }
+  const saveProductAvailable = (data) => {
+    axios
+      .post(`${BACKEND_URL}/productsAvailable`, data)
+      .then((res) => {
+        const { status, data, message } = res.data;
+        if (status) {
+          productAvailableDispatch({
+            type: ADD_PRODUCTSAVAILABLE,
+            payload: data,
+          });
 
-  const saveProduct_availables = (data, calback) => {
-    axios.post(`${BACKEND_URL}/productsAvailable`, data).then(res => {
-      const {status, data, message} = res.data;
-      if(status){
-        // todo dispatch
-        console.log(data);
-        toast.success(message);
-        handleShowModal();
-      }else{
-        toast.error(message)
-      }
+          toast.success(message);
+          handleShowModal();
+        } else {
+          toast.error(message);
+        }
+      })
+      .catch((err) => {
+        toast.error("Server Error!");
+        console.log(err);
+      });
+  };
 
-      calback()
-    }).catch(err => {
-      toast.error("Server Error!");
-      console.log(err);
-      calback()
-    })
 
+  const updateProductAvailable = (data, id) => {
+    axios
+      .post(`${BACKEND_URL}/productsAvailable/${id}`, data)
+      .then((res) => {
+        const { status, data, message } = res.data;
+        if (status) {
+          
+          productAvailableDispatch({
+            type: UPDATE_PRODUCTSAVAILABLE,
+            payload: data
+          })
+
+          toast.success(message);
+          handleShowModal();
+        } else {
+          toast.error(message);
+        }
+
+      })
+      .catch((err) => {
+        toast.error("Server Error!");
+        console.log(err);
+      });
   }
 
   return (
     <Container>
       <div className="clearfix my-2">
-        <h1 className="float-start">Product_availables</h1>
-        <Button onClick={handleShowModal} className="float-end" variant="primary">
-          Add Product_availables
-        </Button> 
-        <Button onClick={handleShowModal} className="float-end" variant="primary">
-          Update Product_availables
+        <h1 className="float-start">ProductAvailable</h1>
+        <Button
+          onClick={handleShowModal}
+          className="float-end"
+          variant="primary"
+        >
+          Add ProductAvailable
         </Button>
       </div>
 
       <hr />
 
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Product_id</th>
-            <th>Colour</th>
-            <th>Quantity</th>
-            <th>Size</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </Table>
+      {productAvailableValue.isLoaded ? (
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Product_id</th>
+              <th>is_featured</th>
+              <th>Colour</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productAvailableValue.productsAvailable.map((prodAvailable, index) => (
+              <ProductAvailableTr
+                handleShowModal={handleShowModal}
+                productAvailable={prodAvailable}
+                key={index}
+              />
+            ))}
+          </tbody>
+        </Table>
+      ) : (
+        <div className="text-center my-5">
+          <h4>Loading..............</h4>
+        </div>
+      )}
 
-      <Product_availablesModal show={showModal} handleClose={handleShowModal} saveProduct_availables={saveProduct_availables}/>
+      <ProductAvailableModal
+        show={showModal}
+        handleClose={handleShowModal}
+        saveProductAvailable={saveProductAvailable}
+        updateProductAvailable={updateProductAvailable}
+      />
     </Container>
   );
 }
 
-export default Product_availables;
+export default ProductAvailable;
