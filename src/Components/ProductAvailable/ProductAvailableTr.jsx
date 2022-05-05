@@ -18,7 +18,7 @@ function ProductAvailableTr({ productAvailable, handleShowModal }) {
 
         if(status){
 
-          productAvailableDispatch({
+          ProductAvailableDispatch({
             type: DELETE_PRODUCTSAVAILABLE,
             payload: id
           })
@@ -38,7 +38,7 @@ function ProductAvailableTr({ productAvailable, handleShowModal }) {
   }
 
   const editHandler = cat => {
-    productAvailableDispatch({
+    ProductAvailableDispatch({
       type: SELECT_PRODUCTSAVAILABLE,
       payload: prodAvailable
     })
