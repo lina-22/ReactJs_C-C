@@ -44,64 +44,37 @@ function Accueil() {
         Offre toujous disponible!!
         </h3>
     </div>
-    {/* <div className='hero'>
-      <section className="header">
-        <img className="main_image" src={mainImg} alt="" />
-        <section className="offer_inf">
-          <p className="offer_inf1">
-            <span>
-              <b> économisez votre temps et vivez facilement</b>
-            </span>
-          </p>
-          <p className="offer_inf2">
-            <span>
-              <b>Offre toujous disponible!!</b>
-            </span>
-          </p>
-        </section>
+    <div className="promo_trending">
+      <section className="promotoion">
+        <h4>
+          Feel the <br/><span>fashion of modern world</span>
+        </h4>
+        <article>
+          {
+            state.products.slice(0, 4).map((product, index)=>( 
+            <a href="">
+                <img src={product.image} key={index} alt="" /> 
+            </a> 
+            ))
+          }
+        </article>
       </section>
-      <div className="landing_images">
-        <section className="first_landing">
-          <p className="first_message">
-            {" "}
-            <span>
-              <b>Catch</b>
-            </span>{" "}
-            <br /> <i>**THE STYLE OF MODERN WORLD**</i>
-          </p>
-          <section className="first_landing_images">
-            {
-              state.products.map((product, index)=>( <a href=""><img src={product.image} key={index} alt="" /> </a> ))
-            }
-
-        
-          </section>
-        </section>
-
-        <section className="second_landing_images">
-          <section className="sectionA">
-          <img className="photo_left" src={photoLeft} alt="" />  
-            <a href="#">
-          <img className="photo_left" src={state.categories[0] && state.categories[0].image} alt="" />
-          </a>
-            <p className="mode_text1">Mode maintentant pour les homme</p>
-          </section>
-          <section className="sectionB">
-            <p className="mode_text2">Mode maintentant pour les femme</p>
-            <img className="photo_right" src={photoRight} alt="" />  
-            <a href="#">
-            <img className="photo_right" src={state.categories[17] && state.categories[17].image} alt="" />
-            </a>
-          </section>
-        </section>
-      </div>{" "}
-    </div> */}
+      <section className="trending">
+          <article>
+              <img className="photo_right" src={photoRight} alt="" />  
+              <p>à la mode maintenant</p>
+              <p>pour les femmes</p>
+          </article>
+          <article>
+          <p>à la mode maintenant</p>
+              <p>pour les hommes</p>
+              <img className="photo_right" src={photoRight} alt="" />  
+          </article>
+      </section>
     </div>
+    </div>
+  
   );
 }
 
-export default Accueil;
-    {/* <img src={state.products[0] && state.products[0].image} alt="" />
-            <img src={state.products[1] && state.products[1].image} alt="" />
-            <img src={state.products[2] && state.products[2].image} alt="" />
-            <img src={state.products[3] && state.products[3].image} alt="" /> */}
+export  default Accueil ;
