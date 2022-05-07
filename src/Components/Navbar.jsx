@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import logoImg from '../images/imgPage1/logo.png';
+import logoImg from '../images/imgPage1/Logo2.png';
 import panierImg from '../images/imgPage1/panier_img.png';
 import shoppingCartIcon from '../images/imgPage1/shopping_cart.svg';
 import logout from '../images/logout.png';
@@ -50,32 +50,6 @@ const logOutHandler = ()=>{
           </nav>
         </section>
         
-
-        {/* <section className="logo_area">
-          <section className="main_logo">
-            <img src={logoImg} alt="" />
-          </section>
-          <p id="name">Click & Collect</p>
-          <section className="panier_logo">
-            <img className="panier" src={panierImg} alt="" />
-            
-            {
-              auth.user && <img style={{width: 25, cursor: "pointer", marginLeft: 10}} onClick={logOutHandler} title="Log Out" src={logout} alt="" />
-            }
-            
-          </section>
-        </section> */}
-        {/* <nav className="navbar">
-            <ul> 
-                <button><li><Link to = "/" >|| Accueil  || </Link> </li></button>
-                <button><li><Link to ="/boutiqueLandingImgaes">|| Boutique  || </Link></li></button>
-                
-                
-                <button><li><Link to ="/seConnecter">|| Connexion  ||</Link></li></button>
-                <button><li><Link to ="/panier">|| Panier  ||</Link></li></button>
-                <button><li><Link to ="/propos">|| Propos  ||</Link></li></button>
-            </ul>
-        </nav> */}
     </section>
     );
 }

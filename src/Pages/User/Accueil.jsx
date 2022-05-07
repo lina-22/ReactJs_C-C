@@ -68,7 +68,7 @@ function Accueil() {
           <article>
           <p>à la mode maintenant</p>
               <p>pour les hommes</p>
-              <img className="photo_right" src={photoRight} alt="" />  
+              <img className="photo_left" src={photoLeft} alt="" />  
           </article>
       </section>
     </div>
