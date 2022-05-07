@@ -91,7 +91,7 @@ input.nav-toggler:checked ~ nav ul li {
     transform: scale(1, 1);
     transition: 250ms ease-in-out;
 }
- label {
+nav label {
      position: absolute;
      /* top: 0px !important; */
      /* top: -48px;
@@ -105,7 +105,7 @@ input.nav-toggler:checked ~ nav ul li {
     width: 20px; */
     margin: 0;
 }
-label span {
+nav label span {
     top: 10px;
     right: 2px;
     position: absolute;
@@ -115,20 +115,20 @@ label span {
     background: rgb(17, 17, 16);
     margin-top: 5px;
 }
-label span, label span::before, label span::after {
+nav label span,  nav label span::before, nav label span::after {
     /* position: relative; */
     height: 3px;
     width: 25px;
     z-index: 2;
     background: rgb(17, 17, 16);
 }
-label span::before {
+nav label span::before {
     content: '';
     position: absolute;
     top: 7px;
     right: 0;
 }
-label span::after {
+nav label span::after {
     content: '';
     position: absolute;
     bottom: 7px;
@@ -147,7 +147,7 @@ label span::after {
         transform: scale(1, 1);
         text-align: center;
     }
-    input, label {
+    nav input, nav label {
         display: none !important;
     }
 }

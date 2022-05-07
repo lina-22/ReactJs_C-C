@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { LOG_IN } from "../../actionTypes";
 import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
-import "./Login.css";
+import style from "./Login.css";
 
 function Login() {
   const {auth,authDispatch} = useContext(AuthContext);
@@ -57,9 +57,9 @@ function Login() {
   };
 
   return (
-    <div className="my-container">
+    <div className="Loginmy-container">
       <form onSubmit={onSubmitHandler}>
-        <div className="input-group">
+        <div className="Logininput-group">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -70,7 +70,7 @@ function Login() {
             disabled={state.isLoading}
           />
         </div>
-        <div className="input-group">
+        <div className="Logininput-group">
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -81,10 +81,10 @@ function Login() {
             disabled={state.isLoading}
           />
         </div>
-        <div className="input-group">
+        <div className="Logininput-group">
           <input
             type="submit"
-            className="btn"
+            className="Loginbtn"
             value={state.isLoading ? "Loading..." : "LOGIN"}
             disabled={state.isLoading}
           />

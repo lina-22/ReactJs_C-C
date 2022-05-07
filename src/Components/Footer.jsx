@@ -9,62 +9,46 @@ import "../CSS_Components/Footer.css"
 
 function Footer() {
     return (   
-        <div className="footer">
+        <div className="footer_container">
         <footer>
-          <section className="top_footer">
-            <section className="foot-left">
-              <p>paiments</p>
-              <section className="payment_methods">
-                <img className="methods" src={masterImg} alt="" />
+          <section className="btm_top">
+            <section>
+              <h5>Paiements</h5>
+              <span>
+              <img className="methods" src={masterImg} alt="" />
                 <img className="methods" src={paypalImg} alt="" />
-                <img className="methods" src={visaImg} alt="" />
-              </section>
+                <img className="methods" src={visaImg} alt="" /> 
+              </span>
             </section>
-            <section className="foot-left">
-              <p className="Corporate">Corporate info </p>
-              <p className="sécurité">
-                Sécurité <br /> Career avec nous <br /> Conditions générales de
-                vente{" "}
-              </p>
+            <section>
+              <h5>Corporate Information</h5>
+              <span>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </span>
             </section>
-            <section className="foot-left">
-              <p className="aide">Trouver de l’aide </p>
-              <p className="faq">
-                {" "}
-                FAQ <br /> Mon compte <br /> Guide des tailles
-              </p>
+            <section>
+              <h5>Trouver de L'aide</h5>
+              <span>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </span>
             </section>
           </section>
-  
-          <section className="middle_footer">
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of type
-              and scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s
-              with the release of Letraset sheets containing Lorem Ipsum passages,
-              and more recently with desktop publishing software like Aldus
-              PageMaker including versions of Lorem Ipsum.
-            </p>
-            <br />
-            <hr />
-          </section>
-  
-          <section className="bottom_footer">
-            <p>
-              22 rue de chaigneau, Lorient 2022 DressOnlineDoor. Tout droits
-              résevés.
-            </p>
-  
-            <section className="social_media">
-              <p>Suivez Nous:</p> <hr />
-              <div className="media_images">
+          <section className="bottom">
+            <p className='about_short'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, voluptate dolorem tenetur laborum rem voluptatibus aliquid labore magnam doloremque reiciendis nam ipsa facere delectus culpa sit odit aperiam, amet animi quo consectetur cum maiores. Officiis blanditiis, nemo vel officia delectus minima commodi reprehenderit repellendus perspiciatis voluptas rerum ipsam suscipit libero veniam aliquid omnis obcaecati, totam deleniti quia laborum ad ratione enim in? Quod delectus nisi consectetur obcaecati fugit deleniti excepturi impedit amet, quam quae itaque, laudantium quos, quibusdam accusamus? Expedita, rerum magnam sint aliquid esse atque minima necessitatibus cum, voluptatem animi dignissimos corrupti doloremque sed fugiat! Ipsam quam adipisci quidem!</p>
+            <section className="contact_info">
+              <address>22 rue de chaigneau, Lorient 2022 DressOnlineDoor. Tout droits résevés.</address>
+              <section className="social">
+                <p>Suivez nous</p>
+                <span>
                 <img className="media_images" src={img20} alt="" />
                 <img className="media_images" src={img21} alt="" />
                 <img className="media_images" src={img22} alt="" />
-              </div>
+                </span>
+              </section>
             </section>
           </section>
         </footer>

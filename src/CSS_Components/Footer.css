@@ -1,69 +1,40 @@
-
-.footer{
-    background-color: #2D788F;
+footer {
+    background-color: rgb(250, 241, 228);
+    padding: 50px 20px !important;
 }
-
-.top_footer{
+section.btm_top {
     display: flex;
-    justify-content: space-around; 
-    padding-top: 20px;
+    justify-content: space-around;
 }
-.payment_methods{
-    width: 50%;
-    padding-top: 10px;
-    padding-left: 17px;
+section.top section:nth-child(1) span{
+    display: flex;
+    flex-direction: column;
 }
-
-.methods{
-    width: 25px;
-    height: 20px;
-}
-
-.middle_footer{
-    text-align: center;
-    padding: 20px 20px;
-    border-bottom: 5px solid white;
-}
-.Corporate{
-    padding-left: 70px;
-}
-.sécurité{
-    padding-top: 10px;
-    text-align: center;
-    padding: 20px 20px;
-}
-.aide{
-    padding-left: 20px;
-}
-.faq{
-    padding-top: 10px;
-    text-align: center;
-    padding: 20px 20px;
-}
-
-.bottom_footer{
+section.top section:nth-child(1) span img{
     height: 70px;
-    padding-left: 70px;
-    padding-top: 15px;
+    width: 70px;
+}
+section.bottom {
+    text-align: justify;
+    padding-top: 20px !important;
+}
+section.bottom p.about_short{
+    border-bottom: 1px solid black;
+    padding-bottom: 15px !important;
+}
+section.contact_info {
+    padding-top: 10px !important;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+section.contact_info address{
+    text-align: center;
+}
+section.social {
     display: flex;
-    justify-content: space-around;    
+    gap: 10px;
+}
+section.social span img{
+    margin: 0 5px !important;
 }
 
-.social_media{
-    height: 200px;
-    display: flex;
-    justify-content: space-around; 
-    padding-left: 20px;
-
-    /* justify-content: space-between;
-    text-align: right;
-    padding: 20px;
-    margin-right: 50px;
-    height: 70px; */
-}
-
-.media_images{
-    height: 15px;
-    padding-left: 10px;
-    
-}
