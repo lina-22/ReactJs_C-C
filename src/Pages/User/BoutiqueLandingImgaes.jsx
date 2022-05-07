@@ -24,14 +24,14 @@ function BoutiqueLandingImgaes() {
   
   
   return (
-    <div>
-      <div id="landingboutiqe">
+    <div className="Bboutique">
+      <div className="Blandingboutiqe">
         <h1>Boutique</h1>
       </div>
 
       <div id="landingBoutique_body">
         <aside id="landingsidebar">
-          <section id="landingsidebar1">
+          <section className ="Blandingsidebar1">
             <h2>Catégorie</h2> <br />
             <hr />
             <p>
@@ -39,33 +39,24 @@ function BoutiqueLandingImgaes() {
               Summer <br /> <br /> winter
             </p>
           </section>
-          {/* <section id="landingsidebar2">
-            <h4>Taille</h4> <br /> <hr />
-            <p> Unique XL</p>
-            <br />
-            <section className="landingsize_area">
-              <p>XS S</p> <br />
-              <p>M L</p> <br />
-            </section>
-          </section> */}
         </aside>
 
-        <section className ="landingsection_images">
+        <section className ="Blandingsection_images">
         <a href="#">
-          <img className="display_img" src={img27} alt="" />
+          <img className="Bdisplay_img" src={img27} alt="" />
           </a>
           <a href="/boutiqueSubSection">
-          <img className="display_img" src={img28} alt="" />
+          <img className="Bdisplay_img" src={img28} alt="" />
           </a>
           <a href="#">
-          <img className="display_img" src={img26} alt="" />
+          <img className="Bdisplay_img" src={img26} alt="" />
           </a>
           {/* {
               state.products.map((category, index)=> <img src={category.image} key={index} alt="" />)
             } */}
-          {/* <img className="display_img" src={state.categories[0] && state.categories[0].image} alt="" />
-          <img className="display_img" src={state.categories[1] && state.categories[1].image} alt="" />
-          <img className="display_img" src={state.categories[2] && state.categories[2].image} alt="" /> */}
+          {/* <img className="Bdisplay_img" src={state.categories[0] && state.categories[0].image} alt="" />
+          <img className="Bdisplay_img" src={state.categories[1] && state.categories[1].image} alt="" />
+          <img className="Bdisplay_img" src={state.categories[2] && state.categories[2].image} alt="" /> */}
         </section>
       </div>
     </div>
