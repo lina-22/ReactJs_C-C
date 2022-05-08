@@ -33,7 +33,7 @@ import BoutiqueLandingImgaes from "./Pages/User/BoutiqueLandingImgaes";
 import BoutiqueSubSection from "./Pages/User/BoutiqueSubSection";
 import BoutiqueBlackdress from "./Pages/User/BoutiqueBlackdress";
 import BoutiqueAjouterPanier from "./Pages/User/BoutiqueAjouterPanier";
-import SeConnecter from "./Pages/User/SeConnecter";
+
 import Panier from "./Pages/User/Panier";
 import Propos from "./Pages/User/Propos";
 
@@ -132,7 +132,7 @@ function App() {
                     path="boutiqueAjouterPanier"
                     element={<BoutiqueAjouterPanier />}
                   />
-                  <Route path="seConnecter" element={<SeConnecter />} />
+               
                   <Route path="panier" element={<Panier />} />
                   <Route path="propos" element={<Propos />} />
                 </Route>
