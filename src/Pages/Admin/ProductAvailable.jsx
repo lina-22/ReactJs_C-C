@@ -4,7 +4,8 @@ import { Button, Container, Table } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { ADD_PRODUCTSAVAILABLE, LOAD_PRODUCTSAVAILABLE, UPDATE_PRODUCTSAVAILABLE } from "../../actionTypes";
 import ProductAvailableModal from "../../Components/ProductAvailable/ProductAvailableModal";
-import ProductAvailableTr from "../../Components/Product/ProductTr";
+import ProductAvailableTr from "../../Components/ProductAvailable/ProductAvailableTr";
+
 import { ProductAvailableContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
 

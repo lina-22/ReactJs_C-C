@@ -1,0 +1,62 @@
+/* body start from boutique Ajouterboutiqe*/
+/* *{background-color: rgb(1, 16, 11);} */
+#Ajouterboutiqe{
+    display: flex;
+    text-align: center;
+    margin-top: 100px;
+}
+#check{
+   height: 20px;
+   width: 15px;
+   /* text-align: center; */
+}
+#AjouterBoutique_body{
+    padding: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(101, 104, 106);
+    margin-top: 100px;
+
+}
+ #Ajoutermain_consulter{
+    display: flex;
+    border-style: dotted;
+    border-color: black;
+}
+
+.Ajouterside_imgs{
+    width: 200px;
+    height: 200px;
+    padding-top:30px ;
+}
+
+.happy_area{
+    padding-top: 10px;
+    padding-right: 10px;
+    justify-content: center;
+}
+
+.trush{
+    padding-top: 60px;
+    padding-left: 50px;
+    text-align: center;
+}
+.buttons{
+    margin-top: 40px;
+    margin-left: 50px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+#button1{
+   background-color: rgb(131, 219, 131);
+}
+#button2{
+   background-color: aqua;
+}
+/* #section_images{
+   
+} */
+
+/* body end from boutique Ajouter au Panier */

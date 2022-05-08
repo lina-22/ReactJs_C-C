@@ -18,7 +18,6 @@
 // import "./CSS_User/Propos.css";
 // import "./CSS_User/SeConnecter.css";
 
-
 // import AddProduct from "./Pages/Admin/AddProduct";
 // import ManageProduct from "./Pages/Admin/ManageProduct";
 // import SeeAllProduct from "./Pages/Admin/SeeAllProduct";
@@ -43,10 +42,14 @@ import Category from "./Pages/Admin/Category";
 import Product from "./Pages/Admin/Product";
 import ProductAvailable from "./Pages/Admin/ProductAvailable";
 
+import Login from "./Pages/Auth_Connexion/Login";
 
-import Login from "./Pages/Auth/Login";
-
-import { AuthContext, CategoryContext, ProductContext, ProductAvailableContext } from "./contexts";
+import {
+  AuthContext,
+  CategoryContext,
+  ProductContext,
+  ProductAvailableContext,
+} from "./contexts";
 import { useReducer } from "react";
 import { authReducer } from "./reducers/authReducer";
 
@@ -56,7 +59,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { categoryReducer, categoryStore } from "./reducers/categoryReducer";
 import { productReducer, productStore } from "./reducers/productReducer";
-import { productAvailableReducer, productAvailableStore } from "./reducers/productAvailableReducer";
+import {
+  productAvailableReducer,
+  productAvailableStore,
+} from "./reducers/productAvailableReducer";
+import Registration from "./Pages/Auth_Connexion/Registration";
 
 const token = localStorage.getItem("AccessToken");
 // console.log(token);
@@ -87,47 +94,50 @@ function App() {
       <AuthContext.Provider value={{ auth, authDispatch }}>
         <CategoryContext.Provider value={{ categoryValue, categoryDispatch }}>
           <ProductContext.Provider value={{ productValue, productDispatch }}>
-          <ProductAvailableContext.Provider value={{ productAvailableValue, productAvailableDispatch }}>
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/admin" element={<AdminLayout />}>
-                <Route index element={<AdminDashBord />} />
-                <Route path="category" element={<Category />} />
-                <Route path="product" element={<Product />} />
-                <Route
-                  path="product_availables"
-                  element={<ProductAvailable />}
-                />
-                {/* <Route path="addProduct" element={<AddProduct />} />
+            <ProductAvailableContext.Provider
+              value={{ productAvailableValue, productAvailableDispatch }}
+            >
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/registration" element={<Registration />} />
+                <Route path="/admin" element={<AdminLayout />}>
+                  <Route index element={<AdminDashBord />} />
+                  <Route path="category" element={<Category />} />
+                  <Route path="product" element={<Product />} />
+                  <Route
+                    path="product_availables"
+                    element={<ProductAvailable />}
+                  />
+                  {/* <Route path="addProduct" element={<AddProduct />} />
             <Route path="manageProduct" element={<ManageProduct />} />
             <Route path="seeAllProduct" element={<SeeAllProduct />} />
             <Route path="updateProduct" element={<UpdateProduct />} /> */}
-              </Route>
+                </Route>
 
-              <Route path="/" element={<UserLayout />}>
-                <Route index element={<Accueil />} />
-                <Route
-                  path="boutiqueSubSection"
-                  element={<BoutiqueSubSection />}
-                />
-                <Route
-                  path="boutiqueBlackdress"
-                  element={<BoutiqueBlackdress />}
-                />
-                <Route
-                  path="boutiqueLandingImgaes"
-                  element={<BoutiqueLandingImgaes />}
-                />
-                <Route
-                  path="boutiqueAjouterPanier"
-                  element={<BoutiqueAjouterPanier />}
-                />
-                <Route path="seConnecter" element={<SeConnecter />} />
-                <Route path="panier" element={<Panier />} />
-                <Route path="propos" element={<Propos />} />
-              </Route>
-            </Routes>
-           </ProductAvailableContext.Provider>
+                <Route path="/" element={<UserLayout />}>
+                  <Route index element={<Accueil />} />
+                  <Route
+                    path="boutiqueSubSection"
+                    element={<BoutiqueSubSection />}
+                  />
+                  <Route
+                    path="boutiqueBlackdress"
+                    element={<BoutiqueBlackdress />}
+                  />
+                  <Route
+                    path="boutiqueLandingImgaes"
+                    element={<BoutiqueLandingImgaes />}
+                  />
+                  <Route
+                    path="boutiqueAjouterPanier"
+                    element={<BoutiqueAjouterPanier />}
+                  />
+                  <Route path="seConnecter" element={<SeConnecter />} />
+                  <Route path="panier" element={<Panier />} />
+                  <Route path="propos" element={<Propos />} />
+                </Route>
+              </Routes>
+            </ProductAvailableContext.Provider>
           </ProductContext.Provider>
         </CategoryContext.Provider>
       </AuthContext.Provider>

@@ -6,7 +6,7 @@ import { DELETE_PRODUCTS, SELECT_PRODUCTS } from "../../actionTypes";
 import { ProductContext } from "../../contexts";
 import { BACKEND_URL, IMAGE_URL } from "../../utils";
 
-function ProductTr({product, handleShowModal}) {
+function ProductTr({product, handleShowModal, handleAttatchModal}) {
   const {productDispatch} = useContext(ProductContext)
 
 
@@ -75,6 +75,15 @@ function ProductTr({product, handleShowModal}) {
           onClick={() => deleteProduct(product.id)}
         >
           Delete
+        </Button>
+
+        <Button
+          variant="success"
+          size="sm"
+          className="mx-1"
+          onClick={handleAttatchModal}
+        >
+          Attatch Category
         </Button>
       </td>
     </tr>

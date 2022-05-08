@@ -37,7 +37,7 @@ function ProductAvailableTr({ productAvailable, handleShowModal }) {
 
   }
 
-  const editHandler = cat => {
+  const editHandler = prodAvailable => {
     ProductAvailableDispatch({
       type: SELECT_PRODUCTSAVAILABLE,
       payload: prodAvailable

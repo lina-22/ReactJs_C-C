@@ -2,7 +2,11 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { toast } from "react-toastify";
-import { ADD_CATEGORIES, LOAD_CATEGORIES, UPDATE_CATEGORIES } from "../../actionTypes";
+import {
+  ADD_CATEGORIES,
+  LOAD_CATEGORIES,
+  UPDATE_CATEGORIES,
+} from "../../actionTypes";
 import CategoryModal from "../../Components/Category/CategoryModal";
 import CategoryTr from "../../Components/Category/CategoryTr";
 import { CategoryContext } from "../../contexts";
@@ -13,22 +17,24 @@ function Category() {
   const { categoryValue, categoryDispatch } = useContext(CategoryContext);
 
   useEffect(() => {
-    axios
-      .get(`${BACKEND_URL}/categories`)
-      .then((res) => {
-        const { status, data, message } = res.data;
-        if (status) {
-          categoryDispatch({
-            type: LOAD_CATEGORIES,
-            payload: data,
-          });
+    if (!categoryValue.isLoaded) {
+      axios
+        .get(`${BACKEND_URL}/categories`)
+        .then((res) => {
+          const { status, data, message } = res.data;
+          if (status) {
+            categoryDispatch({
+              type: LOAD_CATEGORIES,
+              payload: data,
+            });
 
-          toast.success(message);
-        } else {
-          toast.error(message);
-        }
-      })
-      .catch();
+            toast.success(message);
+          } else {
+            toast.error(message);
+          }
+        })
+        .catch();
+    }
   }, []);
 
   const handleShowModal = () => {
@@ -41,18 +47,16 @@ function Category() {
       .then((res) => {
         const { status, data, message } = res.data;
         if (status) {
-          
           categoryDispatch({
             type: ADD_CATEGORIES,
-            payload: data
-          })
+            payload: data,
+          });
 
           toast.success(message);
           handleShowModal();
         } else {
           toast.error(message);
         }
-
       })
       .catch((err) => {
         toast.error("Server Error!");
@@ -66,24 +70,22 @@ function Category() {
       .then((res) => {
         const { status, data, message } = res.data;
         if (status) {
-          
           categoryDispatch({
             type: UPDATE_CATEGORIES,
-            payload: data
-          })
+            payload: data,
+          });
 
           toast.success(message);
           handleShowModal();
         } else {
           toast.error(message);
         }
-
       })
       .catch((err) => {
         toast.error("Server Error!");
         console.log(err);
       });
-  }
+  };
 
   return (
     <Container>
@@ -112,8 +114,13 @@ function Category() {
             </tr>
           </thead>
           <tbody>
-            
-            { categoryValue.categories.map( (cat, index) => <CategoryTr handleShowModal={handleShowModal} category={cat} key={index} /> ) }
+            {categoryValue.categories.map((cat, index) => (
+              <CategoryTr
+                handleShowModal={handleShowModal}
+                category={cat}
+                key={index}
+              />
+            ))}
           </tbody>
         </Table>
       ) : (

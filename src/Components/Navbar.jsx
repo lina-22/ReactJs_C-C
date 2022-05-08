@@ -43,7 +43,7 @@ const logOutHandler = ()=>{
               <ul>
                   <li><Link to = "/" > Accueil </Link></li>
                   <li><Link to ="/boutiqueLandingImgaes"> Boutique   </Link></li>
-                  <li><Link to ="/seConnecter"> Connexion </Link></li>
+                  <li><Link to ="/login"> Connexion </Link></li>
                   <li><Link to ="/panier"> Panier  </Link></li>
                   <li><Link to ="/propos"> Propos  </Link></li>
               </ul>
