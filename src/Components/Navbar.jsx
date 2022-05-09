@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import logoImg from '../images/imgPage1/Logo2.png';
+import navMenuBurger from '../images/menu.png';
 import panierImg from '../images/imgPage1/panier_img.png';
 import shoppingCartIcon from '../images/imgPage1/shopping_cart.svg';
 import logout from '../images/logout.png';
@@ -36,8 +37,8 @@ const logOutHandler = ()=>{
         </section>
         <section className='mainNav'>
           <input type="checkbox" id="nav-toggler" className="nav-toggler" />
-          <label htmlFor="nav-toggler">
-              <span></span>
+          <label for="nav-toggler" id='nav-lbl'>
+              <img src={navMenuBurger} alt="menu" />
           </label>
           <nav>
               <ul>

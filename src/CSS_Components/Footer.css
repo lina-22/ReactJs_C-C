@@ -6,9 +6,9 @@ section.btm_top {
     display: flex;
     justify-content: space-around;
 }
-section.top section:nth-child(1) span{
+section.btm_top section:nth-child(1) span{
     display: flex;
-    flex-direction: column;
+    gap: 5px;
 }
 section.top section:nth-child(1) span img{
     height: 70px;
@@ -37,4 +37,64 @@ section.social {
 section.social span img{
     margin: 0 5px !important;
 }
+
+/*********************************************/
+/************* responsive ****************/
+/*********************************************/
+  
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    footer {
+        padding: 40px 10px !important;
+    }
+    footer h5 {
+        font-size: .9rem;
+    }
+    section.btm_top {
+        font-size: .7rem;
+    }
+    section.bottom {
+        padding-top: 20px !important;
+        font-size: .8rem;
+    }
+    section.contact_info {
+        grid-template-columns: 2fr 2fr;
+    }
+    section.social {
+        justify-content: center;
+    }
+    section.social span img{
+        margin: 0 5px !important;
+    }
+  }
+  @media screen and (min-width: 320px) and (max-width: 479px) {
+    footer {
+        padding: 20px 10px !important;
+    }
+    footer h5 {
+        font-size: .8rem;
+    }
+    section.btm_top {
+        font-size: .7rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    section.btm_top section:nth-child(1) span{
+        justify-content: center;
+        padding: 10px !important;
+    }
+    section.bottom {
+        font-size: .8rem;
+    }
+    section.contact_info {
+        grid-template-columns: 1fr;
+    }
+    section.social {
+        justify-content: center;
+    }
+    section.social span img{
+        margin: 0 5px !important;
+    }
+   
+  }
 
