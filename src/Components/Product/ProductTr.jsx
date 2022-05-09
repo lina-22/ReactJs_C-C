@@ -36,13 +36,23 @@ function ProductTr({product, handleShowModal, handleAttatchModal}) {
   }
   
   
-  const editHandler = cat => {
+  const editHandler = prod => {
     productDispatch({
       type: SELECT_PRODUCTS,
-      payload: cat
+      payload: prod
     })
     handleShowModal();
 
+  }
+
+
+  const attactchCategoryHandler = prod => {
+    productDispatch({
+      type: SELECT_PRODUCTS,
+      payload: prod
+    })
+
+    handleAttatchModal();
   }
 
   
@@ -81,7 +91,7 @@ function ProductTr({product, handleShowModal, handleAttatchModal}) {
           variant="success"
           size="sm"
           className="mx-1"
-          onClick={handleAttatchModal}
+          onClick={() => attactchCategoryHandler(product)}
         >
           Attatch Category
         </Button>

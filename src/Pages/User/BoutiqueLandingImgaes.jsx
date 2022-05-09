@@ -1,28 +1,37 @@
 import img26 from "../../images/imgPage3/image26.png";
 import img27 from "../../images/imgPage3/image27.png";
 import img28 from "../../images/imgPage3/image28.png";
-import '../../CSS_User/BoutiqueLandingImages.css'
+import "../../CSS_User/BoutiqueLandingImages.css";
+import { Button } from "react-bootstrap";
+import { useContext, useEffect, useState } from "react";
+import { CategoryContext } from "../../contexts";
+import axios from "axios";
+import { BACKEND_URL, IMAGE_URL } from "../../utils";
+import { LOAD_CATEGORIES } from "../../actionTypes";
+import { toast } from "react-toastify";
 function BoutiqueLandingImgaes() {
-  
-  // const [state, setState] = useState({
-  //   // products: [],
-  //   categories: []
-  // });
-  // useEffect(() =>{
-  //   axios.get(`${BACKEND_URL}/categories`).then((res) =>{
-     
-  //    const responseData = res.data;
+  const { categoryValue, categoryDispatch } = useContext(CategoryContext);
 
-  //    if(responseData.status === true){
-  //      setState(responseData.data);
-  //    }
+  const [catIndex, setCatIndex] = useState(0);
+  useEffect(() => {
+    if (!categoryValue.isLoaded) {
+      axios
+        .get(`${BACKEND_URL}/categories`)
+        .then((res) => {
+          const { status, data, message } = res.data;
+          if (status) {
+            categoryDispatch({
+              type: LOAD_CATEGORIES,
+              payload: data,
+            });
+          } else {
+            toast.error(message);
+          }
+        })
+        .catch();
+    }
+  }, []);
 
-  //   }).catch((err) =>{
-  //     console.log(err);
-  //   })
-  // }, []);
-  
-  
   return (
     <div className="Bboutique">
       <div className="Blandingboutiqe">
@@ -31,32 +40,30 @@ function BoutiqueLandingImgaes() {
 
       <div id="landingBoutique_body">
         <aside id="landingsidebar">
-          <section className ="Blandingsidebar1">
+          <section className="Blandingsidebar1">
             <h2>Catégorie</h2> <br />
             <hr />
             <p>
-              Femme <br /> <br /> Homme <br /> <br /> Enfants <br /> <br />{" "}
-              Summer <br /> <br /> winter
+              {categoryValue.categories.map((cat, index) => (
+                <Button
+                  className="w-100 mt-2 py-1"
+                  variant={catIndex === index ? "primary" : "light"}
+                  key={index}
+                  onClick={ () => setCatIndex(index)}
+                >
+                  {cat.name}
+                </Button>
+              ))}
             </p>
           </section>
         </aside>
 
-        <section className ="Blandingsection_images">
-        <a href="#">
-          <img className="Bdisplay_img" src={img27} alt="" />
-          </a>
-          <a href="/boutiqueSubSection">
-          <img className="Bdisplay_img" src={img28} alt="" />
-          </a>
-          <a href="#">
-          <img className="Bdisplay_img" src={img26} alt="" />
-          </a>
-          {/* {
-              state.products.map((category, index)=> <img src={category.image} key={index} alt="" />)
-            } */}
-          {/* <img className="Bdisplay_img" src={state.categories[0] && state.categories[0].image} alt="" />
-          <img className="Bdisplay_img" src={state.categories[1] && state.categories[1].image} alt="" />
-          <img className="Bdisplay_img" src={state.categories[2] && state.categories[2].image} alt="" /> */}
+        <section className="Blandingsection_images">
+          {categoryValue.categories[catIndex] && categoryValue.categories[catIndex].products.map((prod, index) => (
+            <a key={index} href="#">
+              <img className="Bdisplay_img" src={`${IMAGE_URL}/${prod.image}`} alt="" />
+            </a>
+          ))}
         </section>
       </div>
     </div>

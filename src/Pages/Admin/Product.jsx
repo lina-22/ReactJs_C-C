@@ -7,7 +7,8 @@ import {
   LOAD_PRODUCTS,
   UPDATE_PRODUCTS,
 } from "../../actionTypes";
-// import AttatchCategoryModal from "../../Components/Product/AttatchCategoryModal";
+import AttatchCategoryModal from "../../Components/Product/AttachCategoryModal";
+
 import ProductModal from "../../Components/Product/ProductModal";
 import ProductTr from "../../Components/Product/ProductTr";
 import { ProductContext } from "../../contexts";
@@ -145,10 +146,10 @@ function Product() {
         saveProduct={saveProduct}
         updateProduct={updateProduct}
       />
-      {/* <AttatchCategoryModal 
+      <AttatchCategoryModal 
         show={showAttatch}
         handleClose={handleAttatchModal}
-      /> */}
+      />
     </Container>
   );
 }

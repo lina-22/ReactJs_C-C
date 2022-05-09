@@ -107,7 +107,7 @@ function App() {
                     path="boutiqueAjouterPanier"
                     element={<BoutiqueAjouterPanier />}
                   />
-               
+                
                   <Route path="panier" element={<Panier />} />
                   <Route path="propos" element={<Propos />} />
                 </Route>
