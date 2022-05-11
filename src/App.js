@@ -92,7 +92,7 @@ function App() {
                 <Route path="/" element={<UserLayout />}>
                   <Route index element={<Accueil />} />
                   <Route
-                    path="boutiqueSubSection"
+                    path="boutiqueSubSection/:productID"
                     element={<BoutiqueSubSection />}
                   />
                   <Route
