@@ -47,7 +47,7 @@ function AttatchCategoryModal({ show, handleClose }) {
 
       axios
         .post(
-          `${BACKEND_URL}/products/${productValue.selectedProduct.id}/attach_cateogry`,
+          `${BACKEND_URL}/products/${productValue.selectedProduct.id}/attach_category`,
           { categories }
         )
         .then((res) => {

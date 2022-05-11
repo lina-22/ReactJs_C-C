@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 import { SET_USER } from "../actionTypes";
 import { AuthContext } from "../contexts";
 import { BACKEND_URL } from "../utils";
-import MyNavbar from "./NavbarAdmin";
+// import MyNavbar from "./NavbarAdmin";
 // import Footer from "./Footer";
 function AdminLayout() {
   const { auth, authDispatch } = useContext(AuthContext);
@@ -41,7 +41,7 @@ function AdminLayout() {
 
   return (
     <div className="mainAdmin">
-      <MyNavbar />
+      {/* <MyNavbar /> */}
       <h1 id="admin">Admin Dashbord</h1>
       <Navbar bg="light" expand="lg">
 
