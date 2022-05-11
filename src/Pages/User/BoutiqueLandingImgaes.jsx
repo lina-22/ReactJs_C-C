@@ -9,10 +9,12 @@ import axios from "axios";
 import { BACKEND_URL, IMAGE_URL } from "../../utils";
 import { LOAD_CATEGORIES } from "../../actionTypes";
 import { toast } from "react-toastify";
+import { Link, useParams } from "react-router-dom";
 function BoutiqueLandingImgaes() {
   const { categoryValue, categoryDispatch } = useContext(CategoryContext);
-
   const [catIndex, setCatIndex] = useState(0);
+
+  
   useEffect(() => {
     if (!categoryValue.isLoaded) {
       axios
@@ -60,9 +62,9 @@ function BoutiqueLandingImgaes() {
 
         <section className="Blandingsection_images">
           {categoryValue.categories[catIndex] && categoryValue.categories[catIndex].products.map((prod, index) => (
-            <a key={index} href="#">
+            <Link to={`/boutiqueSubSection/${prod.id}`} key={index} href="#">
               <img className="Bdisplay_img" src={`${IMAGE_URL}/${prod.image}`} alt="" />
-            </a>
+            </Link>
           ))}
         </section>
       </div>

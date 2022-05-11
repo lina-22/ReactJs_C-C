@@ -62,7 +62,7 @@ function ProductAvailable() {
 
   const updateProductAvailable = (data, id) => {
     axios
-      .post(`${BACKEND_URL}/productsAvailable/${id}`, data)
+      .put(`${BACKEND_URL}/productsAvailable/${id}`, data)
       .then((res) => {
         const { status, data, message } = res.data;
         if (status) {
@@ -106,9 +106,9 @@ function ProductAvailable() {
             <tr>
               <th>Id</th>
               <th>Product_id</th>
-              <th>is_featured</th>
               <th>Colour</th>
               <th>Quantity</th>
+              <th>Size</th>
             </tr>
           </thead>
           <tbody>

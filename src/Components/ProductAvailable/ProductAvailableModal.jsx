@@ -1,52 +1,86 @@
+import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
-import { REMOVE_PRODUCTSAVAILABLE, } from "../../actionTypes";
-import { ProductAvailableContext } from "../../contexts";
+import Select from "react-select";
+import { toast } from "react-toastify";
+import { LOAD_PRODUCTS, REMOVE_PRODUCTSAVAILABLE } from "../../actionTypes";
+import { ProductAvailableContext, ProductContext } from "../../contexts";
+import { BACKEND_URL } from "../../utils";
 
-function ProductAvailableModal({ show, handleClose, saveCategory, updateCategory }) {
-  const { productAvailableValue, productAvailableDispatch } = useContext(ProductAvailableContext);
+function ProductAvailableModal({
+  show,
+  handleClose,
+  updateProductAvailable,
+  saveProductAvailable,
+}) {
+  const { productAvailableValue, productAvailableDispatch } = useContext(
+    ProductAvailableContext
+  );
+  const { productValue, productDispatch } = useContext(ProductContext);
   const [state, setState] = useState({
-    product_id: "",
+    product: {
+      value: null,
+      name: "",
+    },
     colour: "",
     quantity: 0,
-    size: false,
+    size: "",
   });
 
   const imgRef = useRef();
 
   useEffect(() => {
-    if (productAvailableValue.selectedproductAvailableValue) {
+    if (productAvailableValue.selectedProductAvailable) {
       setState((prvSt) => {
+
+        let product = productValue.products.find(prod => prod.id === productAvailableValue.selectedProductAvailable
+          .product_id)
+    
         return {
           ...prvSt,
-          product_id: productAvailableValue.selectedproductAvailable.product_id,
-          colour: productAvailableValue.selectedproductAvailable.colour,
-          quantity: productAvailableValue.selectedproductAvailable.quantity,
-          size: productAvailableValue.selectedproductAvailable.size,
+          product:{
+            value: product.id,
+            label: product.name
+          },
+          colour: productAvailableValue.selectedProductAvailable.colour,
+          quantity: productAvailableValue.selectedProductAvailable.quantity,
+          size: productAvailableValue.selectedProductAvailable.size,
         };
       });
+    }
+
+    if (!productValue.isLoaded) {
+      axios
+        .get(`${BACKEND_URL}/products`)
+        .then((res) => {
+          const { status, data, message } = res.data;
+          if (status) {
+            productDispatch({
+              type: LOAD_PRODUCTS,
+              payload: data,
+            });
+          } else {
+            toast.error(message);
+          }
+        })
+        .catch();
     }
   }, [show]);
 
   const onChangeHandler = (e) => {
     setState((prvSt) => {
-      if (e.target.type == "checkbox") {
-        return {
-          ...prvSt,
-          [e.target.product_id]: e.target.checked ? 1 : 0,
-        };
-      }
-
-      if (e.target.type == "file") {
-        return {
-          ...prvSt,
-          [e.target.product_id]: e.target.files[0],
-        };
-      }
-
       return {
         ...prvSt,
-        [e.target.product_id]: e.target.value,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+
+  const onSelectChangeHandler = (e) => {
+    setState((prvSt) => {
+      return {
+        ...prvSt,
+        product: e,
       };
     });
   };
@@ -55,27 +89,33 @@ function ProductAvailableModal({ show, handleClose, saveCategory, updateCategory
     e.preventDefault();
     setState((prevSt) => ({ ...prevSt, isLoading: true }));
 
-    const formData = new FormData();
+    const formData = {
+      product_id: state.product.value,
+      colour: state.colour,
+      size: state.size,
+      quantity: state.quantity,
+    };
 
-    formData.append("product_id", state.product_id);
-    formData.append("colour", state.colour);
-    formData.append("quantity", state.quantity);
-    formData.append("size", state.size);
-
-    // if (productAvailable.selectedproductAvailable) {
-    //   formData.append("_method", "PUT");
-    //   updateProductAvailable(formData, productAvailable.selectedProductAvailable.id);
-    // } else {
-    //   saveProductAvailable(formData);
-    // }
+    if (productAvailableValue.selectedProductAvailable) {
+      
+      updateProductAvailable(
+        formData,
+        productAvailableValue.selectedProductAvailable.id
+      );
+    } else {
+      saveProductAvailable(formData);
+    }
   };
 
   const resetState = () => {
-    productAvailableDispatch({ type: REMOVE_PRODUCTSAVAILABLE,});
+    productAvailableDispatch({ type: REMOVE_PRODUCTSAVAILABLE });
 
     setTimeout(() => {
       setState({
-        product_id: "",
+        product: {
+          value: null,
+          name: "",
+        },
         colour: "",
         quantity: 0,
         size: 0,
@@ -83,6 +123,24 @@ function ProductAvailableModal({ show, handleClose, saveCategory, updateCategory
       });
     }, 5);
   };
+
+  const getDefaultValue = () => {
+    if(productAvailableValue.selectedProductAvailable){
+      let product = productValue.products.find(prod => prod.id === productAvailableValue.selectedProductAvailable
+        .product_id)
+  
+        return {
+          value: product.id,
+          label: product.name
+        }
+    }
+
+    return {
+      value: "",
+      label: ""
+    }
+  
+  }
 
   return (
     <Modal show={show} onHide={handleClose} onExit={resetState}>
@@ -92,14 +150,16 @@ function ProductAvailableModal({ show, handleClose, saveCategory, updateCategory
       <Modal.Body>
         <Form onSubmit={onSubmitHandler}>
           <Form.Group className="mb-3" controlId="product_id">
-            <Form.Label>Product_id</Form.Label>
-            <Form.Control
-              onChange={onChangeHandler}
-              type="number"
-              name="product_id"
-              value={state.product_id}
-              placeholder="Product_id"
-              disabled={state.isLoading}
+            <Form.Label>Product</Form.Label>
+            <Select
+              onChange={onSelectChangeHandler}
+              options={productValue.products.map((prod) => {
+                return {
+                  value: prod.id,
+                  label: prod.name,
+                };
+              })}
+              defaultValue={getDefaultValue()}
             />
           </Form.Group>
 
@@ -131,14 +191,13 @@ function ProductAvailableModal({ show, handleClose, saveCategory, updateCategory
             <Form.Label>Size</Form.Label>
             <Form.Control
               onChange={onChangeHandler}
-              type="number"
+              type="text"
               name="size"
               value={state.size}
               placeholder="size"
               disabled={state.isLoading}
             />
           </Form.Group>
-  
 
           <Button variant="primary" type="submit" disabled={state.isLoading}>
             {state.isLoading ? "Loading..." : "Submit"}

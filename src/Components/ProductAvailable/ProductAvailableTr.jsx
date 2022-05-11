@@ -7,18 +7,18 @@ import { ProductAvailableContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
 
 function ProductAvailableTr({ productAvailable, handleShowModal }) {
-  const {ProductAvailableDispatch} = useContext(ProductAvailableContext);
+  const { productAvailableValue, productAvailableDispatch } = useContext(ProductAvailableContext);
 
   const deleteProductAvailable = (id) => {
     if(window.confirm('Are You Sure?')){
 
 
-      axios.delete(`${BACKEND_URL}/productsAvailable/{id}`).then(res => {
+      axios.delete(`${BACKEND_URL}/productsAvailable/${id}`).then(res => {
         const {status, message} = res.data;
 
         if(status){
 
-          ProductAvailableDispatch({
+          productAvailableDispatch({
             type: DELETE_PRODUCTSAVAILABLE,
             payload: id
           })
@@ -38,7 +38,7 @@ function ProductAvailableTr({ productAvailable, handleShowModal }) {
   }
 
   const editHandler = prodAvailable => {
-    ProductAvailableDispatch({
+    productAvailableDispatch({
       type: SELECT_PRODUCTSAVAILABLE,
       payload: prodAvailable
     })
