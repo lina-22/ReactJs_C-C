@@ -13,7 +13,7 @@ function BoutiqueSubSection() {
     <div id="boutiqe">
       <h1>Boutique</h1>
       <br /> <br />
-      <h4> Choisissez Votre produit </h4>
+      <h4> Idées susceptibles de vous plaire </h4>
     </div>
 
     <div id="Boutique_body">

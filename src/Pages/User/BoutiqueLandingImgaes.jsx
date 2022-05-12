@@ -59,14 +59,22 @@ function BoutiqueLandingImgaes() {
             </p>
           </section>
         </aside>
-
+        <div>
+        <p>Product name</p><br />
+        <p>price: 29€</p><br />
+        <p>discount</p><br />
+        <p>description:2.	Femme Chaussures Modernes Salon Chaussures de Salsa Danse en ligne Utilisation Talon Talon Cubain Bronze </p><br />
+        
         <section className="Blandingsection_images">
+    
           {categoryValue.categories[catIndex] && categoryValue.categories[catIndex].products.map((prod, index) => (
             <Link to={`/boutiqueSubSection/${prod.id}`} key={index} href="#">
+             
               <img className="Bdisplay_img" src={`${IMAGE_URL}/${prod.image}`} alt="" />
             </Link>
           ))}
         </section>
+        </div>
       </div>
     </div>
   );

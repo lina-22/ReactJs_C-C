@@ -1,13 +1,15 @@
 /* body start from boutique */
-#boutiqe{
+#boutiqeSubsection{
     text-align: center;
-    padding: 100px;
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
 }
 #Boutique_body{
     padding: 100px;
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 200px !important;
 
 
 }

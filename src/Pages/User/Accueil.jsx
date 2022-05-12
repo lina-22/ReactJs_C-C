@@ -8,9 +8,10 @@ import photoRight from '../../images/imgPage1/photo_right.png';
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BACKEND_URL } from '../../utils';
+import { BACKEND_URL, IMAGE_URL } from '../../utils';
 
-import '../../CSS_User/Accueil.css'
+import '../../CSS_User/Accueil.css';
+import { Link } from 'react-router-dom';
 
 function Accueil() {
 
@@ -52,9 +53,9 @@ function Accueil() {
         <article>
           {
             state.products.slice(0, 4).map((product, index)=>( 
-            <a href="">
-                <img src={product.image} key={index} alt="" /> 
-            </a> 
+              <Link to={`/boutiqueSubSection/${product.id}`} key={index}>
+                <img src={`${IMAGE_URL}/${product.image}`} key={index} alt="{product.name} " /> 
+                </Link> 
             ))
           }
         </article>

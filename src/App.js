@@ -83,10 +83,6 @@ function App() {
                     path="product_availables"
                     element={<ProductAvailable />}
                   />
-                  {/* <Route path="addProduct" element={<AddProduct />} />
-            <Route path="manageProduct" element={<ManageProduct />} />
-            <Route path="seeAllProduct" element={<SeeAllProduct />} />
-            <Route path="updateProduct" element={<UpdateProduct />} /> */}
                 </Route>
 
                 <Route path="/" element={<UserLayout />}>

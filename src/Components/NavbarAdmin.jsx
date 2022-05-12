@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import logoImg from '../images/imgPage1/logo.png';
 import panierImg from '../images/imgPage1/panier_img.png';
@@ -33,11 +32,6 @@ const logOutHandler = ()=>{
             
           </section>
         </section>
-        {/* <nav className="navbar">
-            <ul> 
-                <li><Link to = "/" >|| Accueil  || </Link> </li>
-            </ul>
-        </nav> */}
     </section>
     );
 }

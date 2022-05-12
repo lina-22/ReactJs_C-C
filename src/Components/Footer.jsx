@@ -23,22 +23,22 @@ function Footer() {
             <section>
               <h5>Corporate Information</h5>
               <span>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p> Sécurité</p>
+                <p>Career avec nous</p>
+                <p>Conditions générales de vente</p>
               </span>
             </section>
             <section>
               <h5>Trouver de L'aide</h5>
               <span>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p> FAQ </p>
+                <p>Mon compte</p>
+                <p>Guide des tailles</p>
               </span>
             </section>
           </section>
           <section className="bottom">
-            <p className='about_short'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, voluptate dolorem tenetur laborum rem voluptatibus aliquid labore magnam doloremque reiciendis nam ipsa facere delectus culpa sit odit aperiam, amet animi quo consectetur cum maiores. Officiis blanditiis, nemo vel officia delectus minima commodi reprehenderit repellendus perspiciatis voluptas rerum ipsam suscipit libero veniam aliquid omnis obcaecati, totam deleniti quia laborum ad ratione enim in? Quod delectus nisi consectetur obcaecati fugit deleniti excepturi impedit amet, quam quae itaque, laudantium quos, quibusdam accusamus? Expedita, rerum magnam sint aliquid esse atque minima necessitatibus cum, voluptatem animi dignissimos corrupti doloremque sed fugiat! Ipsam quam adipisci quidem!</p>
+            <p className='about_short'>Des images incroyables. Une tarification flexible.. Veniam, voluptate dolorem tenetur laborum rem voluptatibus aliquid labore magnam doloremque reiciendis nam ipsa facere delectus culpa sit odit aperiam, amet animi quo consectetur cum maiores. Officiis blanditiis, nemo vel officia delectus minima commodi reprehenderit repellendus perspiciatis voluptas rerum ipsam suscipit libero veniam aliquid omnis obcaecati, totam deleniti quia laborum ad ratione enim in? Quod delectus nisi consectetur obcaecati fugit deleniti excepturi impedit amet, quam quae itaque, laudantium quos, quibusdam accusamus? Expedita, rerum magnam sint aliquid esse atque minima necessitatibus cum, voluptatem animi dignissimos corrupti doloremque sed fugiat! Ipsam quam adipisci quidem!</p>
             <section className="contact_info">
               <address>22 rue de chaigneau, Lorient 2022 DressOnlineDoor. Tout droits résevés.</address>
               <section className="social">
