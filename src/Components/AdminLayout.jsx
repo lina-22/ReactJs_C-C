@@ -48,65 +48,62 @@ function AdminLayout() {
       {/* <MyNavbar /> */}
       <h1 id="admin">Admin Dashbord</h1>
       <section className="panier_logo">
-            {/* <img className="panier" src={panierImg} alt="" /> */}
-            
+
             {
               auth.user && <img style={{width: 25, cursor: "pointer", marginLeft: 10}} onClick={logOutHandler} title="Log Out" src={logout} alt="" />
             }
           
           </section> 
-      <div className="AdminLayoutNav">
-        <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" className="py-4 my-4">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Item>
-                <Link className="nav-link" to="/admin">
+                <Link className="nav-link mx-3" to="/admin">
                   {" "}
                   Dashboard{" "}
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link className="nav-link" to="/">
+                <Link className="nav-link mx-3" to="/">
                   {" "}
                   Accueil{" "}
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link className="nav-link" to="/admin/category">
+                <Link className="nav-link mx-3" to="/admin/category">
                   Category
                 </Link>
               </Nav.Item>
 
               <Nav.Item>
-                <Link className="nav-link" to="/admin/product">
+                <Link className="nav-link mx-3" to="/admin/product">
                   Product
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link className="nav-link" to="/admin/product_availables">
+                <Link className="nav-link mx-3" to="/admin/product_availables">
                   ProductAvailable
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link className="nav-link" to="">
+                <Link className="nav-link mx-3" to="">
                   ProductLine
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link className="nav-link" to="">
+                <Link className="nav-link mx-3" to="">
                   Reservation
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link className="nav-link" to="">
+                <Link className="nav-link mx-3" to="">
                   Users
                 </Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </div>
 
       {/* <MyNavbar /> */}
       <Outlet />

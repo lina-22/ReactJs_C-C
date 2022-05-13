@@ -1,4 +1,12 @@
 /* body start from boutique Landing images it is not working */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
 .Bboutique{
    margin-top: 200px !important;
    margin-bottom: 200px !important;
@@ -69,6 +77,12 @@
 .Blandingsection_images{
    display: flex;
    justify-content: space-between;
+
+    /* height: 200px;
+    width: 200px;
+    margin: 10px !important;
+    border: 6px solid #21130d; */
+
 }
 
 .Bdisplay_img{

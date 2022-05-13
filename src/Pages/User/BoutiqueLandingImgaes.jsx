@@ -2,7 +2,7 @@ import img26 from "../../images/imgPage3/image26.png";
 import img27 from "../../images/imgPage3/image27.png";
 import img28 from "../../images/imgPage3/image28.png";
 import "../../CSS_User/BoutiqueLandingImages.css";
-import { Button } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { useContext, useEffect, useState } from "react";
 import { CategoryContext } from "../../contexts";
 import axios from "axios";
@@ -14,7 +14,6 @@ function BoutiqueLandingImgaes() {
   const { categoryValue, categoryDispatch } = useContext(CategoryContext);
   const [catIndex, setCatIndex] = useState(0);
 
-  
   useEffect(() => {
     if (!categoryValue.isLoaded) {
       axios
@@ -40,42 +39,59 @@ function BoutiqueLandingImgaes() {
         <h1>Boutique</h1>
       </div>
 
-      <div id="landingBoutique_body">
-        <aside id="landingsidebar">
-          <section className="Blandingsidebar1">
-            <h2>Catégorie</h2> <br />
-            <hr />
-            <p>
-              {categoryValue.categories.map((cat, index) => (
-                <Button
-                  className="w-100 mt-2 py-1"
-                  variant={catIndex === index ? "primary" : "light"}
-                  key={index}
-                  onClick={ () => setCatIndex(index)}
-                >
-                  {cat.name}
-                </Button>
-              ))}
-            </p>
-          </section>
-        </aside>
-        <div>
-        <p>Product name</p><br />
-        <p>price: 29€</p><br />
-        <p>discount</p><br />
-        <p>description:2.	Femme Chaussures Modernes Salon Chaussures de Salsa Danse en ligne Utilisation Talon Talon Cubain Bronze </p><br />
-        
-        <section className="Blandingsection_images">
-    
-          {categoryValue.categories[catIndex] && categoryValue.categories[catIndex].products.map((prod, index) => (
-            <Link to={`/boutiqueSubSection/${prod.id}`} key={index} href="#">
-             
-              <img className="Bdisplay_img" src={`${IMAGE_URL}/${prod.image}`} alt="" />
-            </Link>
-          ))}
-        </section>
-        </div>
-      </div>
+      <Container className="mx-auto">
+        <Row>
+          <Col sm={3} lg={2}>
+            <div className="px-2">
+              <h2>Catégorie</h2> <br />
+              <hr />
+              <p>
+                {categoryValue.categories.map((cat, index) => (
+                  <Button
+                    className="w-100 mt-2 py-1"
+                    variant={catIndex === index ? "primary" : "light"}
+                    key={index}
+                    onClick={() => setCatIndex(index)}
+                  >
+                    {cat.name}
+                  </Button>
+                ))}
+              </p>
+            </div>
+          </Col>
+          <Col sm={9} lg={10}>
+            <div className="px-2">
+              <Row>
+                {categoryValue.categories[catIndex] &&
+                  categoryValue.categories[catIndex].products.map(
+                    (prod, index) => (
+                      <Col sm={6} md={4} lg={3} key={index} className ="mb-2">
+                        <div className="px-2">
+                        <div className="bg-light py-3 px-2">
+                          <h6>{prod.name}</h6>
+                        </div>
+                        <Link to={`/boutiqueSubSection/${prod.id}`} href="#">
+                          <img
+                            className="w-100"
+                            src={`${IMAGE_URL}/${prod.image}`}
+                            alt=""
+                          />
+                        </Link>
+                        <div className="bg-light py-3 px-2">
+                          <strong>&euro; {prod.price}</strong><br />
+                          <strong>&euro; {prod.discount}</strong><br />
+                          <h6>{prod.description}</h6>
+
+                        </div>
+                        </div>
+                      </Col>
+                    )
+                  )}
+              </Row>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import "../../CSS_User/BoutiqueSubSection.css";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { BACKEND_URL, IMAGE_URL } from "../../utils";
 import { toast } from "react-toastify";
@@ -65,9 +65,9 @@ export default BoutiqueSubSection;
 
 function AvailableBox({ avl }) {
   const [cartQuantity, setCartQuantity] = useState();
-  const {auth} = useContext(AuthContext);
-  const navigator = useNavigate();
-  const location = useLocation();
+  const {auth} = useContext(AuthContext); 
+  const navigator = useNavigate(); 
+  const location = useLocation();  
 
   const onChangeHandler = (e) => {
     if(e.target.value > avl.quantity){

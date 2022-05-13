@@ -1,14 +1,15 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { LOG_IN } from "../../actionTypes";
 import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
 import style from "./Login.css";
 
+
 function Login() {
-  const {auth,authDispatch} = useContext(AuthContext);
+  const { auth, authDispatch } = useContext(AuthContext);
   const navigate = useNavigate();
   const [state, setState] = useState({
     email: "",
@@ -16,14 +17,23 @@ function Login() {
     isLoading: false,
   });
 
-
-  useEffect(()=> {
-   
+  useEffect(() => {
     if(auth.user){
-      navigate('/')
+      navigate('/');
     }
+  });
+  
+  const location = useLocation();
 
-  }, [auth.user])
+  useEffect(() => {
+    if (auth.user) {
+      if (location.state) {
+        navigate(location.state.prevLocation);
+      } else {
+        navigate("/");
+      }
+    }
+  }, [auth.user]);
 
   const onChangeHandler = (e) => {
     setState({ ...state, [e.target.id]: e.target.value });
@@ -41,18 +51,16 @@ function Login() {
       .then((res) => {
         const { status, data, message } = res.data;
         if (status) {
-         
           authDispatch({
             type: LOG_IN,
-            payload: data
-          })
+            payload: data,
+          });
           toast.success(message);
           setState({ email: "", password: "", isLoading: false });
         } else {
           toast.error(message);
           setState({ ...state, isLoading: false });
         }
-       
       })
       .catch((err) => {
         console.log(err);
@@ -87,7 +95,9 @@ function Login() {
           />
         </div>
         <div>
-          <span>Not Yet Registered? Please <Link to='/registration'>Register</Link></span>
+          <span>
+            Not Yet Registered? Please <Link to="/registration">Register</Link>
+          </span>
         </div>
         <div className="Logininput-group">
           <input
