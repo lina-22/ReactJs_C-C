@@ -44,6 +44,7 @@ function AdminLayout() {
   }, [auth.user]);
 
   return (
+    <Container className="mx-auto">
     <div className="mainAdmin">
       {/* <MyNavbar /> */}
       <h1 id="admin">Admin Dashbord</h1>
@@ -109,6 +110,7 @@ function AdminLayout() {
       <Outlet />
       {/* <Footer /> */}
     </div>
+    </Container>
   );
 }
 

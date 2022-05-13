@@ -95,7 +95,7 @@ function Product() {
   };
 
   return (
-    <Container>
+    <Container className="mx-auto">
       <div className="clearfix my-2">
         <h1 className="float-start">Product</h1>
         <Button

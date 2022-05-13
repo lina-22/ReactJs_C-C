@@ -86,7 +86,7 @@ function ProductAvailable() {
   }
 
   return (
-    <Container>
+    <Container className="mx-auto">
       <div className="clearfix my-2">
         <h1 className="float-start">ProductAvailable</h1>
         <Button

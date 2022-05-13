@@ -49,7 +49,7 @@ function BoutiqueSubSection() {
         </div>
 
         <section id="sidebar2">
-          <h4 id="color">Choisissez Couleur</h4>
+          <h4 id="color">Ajouter Au Panier</h4>
           <section id="img_sidebar2">
             <aside id="sidebar_inf">
               {product.availables &&

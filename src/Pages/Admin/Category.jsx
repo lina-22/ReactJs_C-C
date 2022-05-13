@@ -88,7 +88,7 @@ function Category() {
   };
 
   return (
-    <Container>
+    <Container className="mx-auto">
       <div className="clearfix my-2">
         <h1 className="float-start">Category</h1>
         <Button

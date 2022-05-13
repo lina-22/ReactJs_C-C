@@ -65,24 +65,25 @@ function BoutiqueLandingImgaes() {
                 {categoryValue.categories[catIndex] &&
                   categoryValue.categories[catIndex].products.map(
                     (prod, index) => (
-                      <Col sm={6} md={4} lg={3} key={index} className ="mb-2">
+                      <Col sm={6} md={4} lg={3} key={index} className="mb-2">
                         <div className="px-2">
-                        <div className="bg-light py-3 px-2">
-                          <h6>{prod.name}</h6>
-                        </div>
-                        <Link to={`/boutiqueSubSection/${prod.id}`} href="#">
-                          <img
-                            className="w-100"
-                            src={`${IMAGE_URL}/${prod.image}`}
-                            alt=""
-                          />
-                        </Link>
-                        <div className="bg-light py-3 px-2">
-                          <strong>&euro; {prod.price}</strong><br />
-                          <strong>&euro; {prod.discount}</strong><br />
-                          <h6>{prod.description}</h6>
-
-                        </div>
+                          <div className="bg-light py-3 px-2">
+                            <h6>{prod.name}</h6>
+                          </div>
+                          <Link to={`/boutiqueSubSection/${prod.id}`} href="#">
+                            <img
+                              className="w-100"
+                              src={`${IMAGE_URL}/${prod.image}`}
+                              alt=""
+                            />
+                          </Link>
+                          <div className="bg-light py-3 px-2">
+                            <strong>&euro; {prod.price}</strong>
+                            <br />
+                            <strong>&euro; {prod.discount}</strong>
+                            <br />
+                            <h6>{prod.description}</h6>
+                          </div>
                         </div>
                       </Col>
                     )
