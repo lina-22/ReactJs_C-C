@@ -33,7 +33,7 @@ function BoutiqueSubSection() {
   return (
     <>
       <Container className="mx-auto">
-        <div id="boutiqe">
+        <div id="boutiqeSubsection">
           <h1>Boutique</h1>
           <br /> <br />
           <h4> Choisissez Votre produit </h4>
@@ -53,7 +53,9 @@ function BoutiqueSubSection() {
               </Col>
               <Col sm={6}>
                 <div className="px-2">
-                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">{product.name}</h4>
+                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
+                    {product.name}
+                  </h4>
                 </div>
               </Col>
             </Row>
@@ -73,7 +75,7 @@ export default BoutiqueSubSection;
 
 function AvailableBox({ avl, productID }) {
   const [cartQuantity, setCartQuantity] = useState();
-  const {reservationDispatch} =useContext(ReservationContext);
+  const { reservationDispatch } = useContext(ReservationContext);
   const { auth } = useContext(AuthContext);
   const navigator = useNavigate();
   const location = useLocation();
@@ -92,14 +94,14 @@ function AvailableBox({ avl, productID }) {
         .post(`${BACKEND_URL}/productsLine`, {
           product_available_id: avl.id,
           quantity: cartQuantity,
-          product_id: productID
+          product_id: productID,
         })
         .then((res) => {
           let { message, data, status } = res.data;
 
           if (status) {
             toast.success("Added To Cart!");
-            reservationDispatch({type: SET_RESERVATION, payload: data});
+            reservationDispatch({ type: SET_RESERVATION, payload: data });
           } else {
             toast.success(message);
           }
