@@ -71,6 +71,7 @@ function Login() {
 
   return (
     <div className="Loginmy-container">
+      <div className="mx-auto">
       <form onSubmit={onSubmitHandler}>
         <div className="Logininput-group">
           <label htmlFor="email">Email</label>
@@ -108,6 +109,7 @@ function Login() {
           />
         </div>
       </form>
+      </div>
     </div>
   );
 }
