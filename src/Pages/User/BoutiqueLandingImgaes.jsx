@@ -41,7 +41,7 @@ function BoutiqueLandingImgaes() {
 
       <Container className="mx-auto">
         <Row>
-          <Col sm={3} lg={2}>
+          <Col sm={3} lg={2} className="my-2">
             <div className="px-2">
               <h2>Catégorie</h2> <br />
               <hr />
@@ -59,7 +59,7 @@ function BoutiqueLandingImgaes() {
               </p>
             </div>
           </Col>
-          <Col sm={9} lg={10}>
+          <Col sm={9} lg={10} className="my-2">
             <div className="px-2">
               <Row>
                 {categoryValue.categories[catIndex] &&
@@ -78,11 +78,25 @@ function BoutiqueLandingImgaes() {
                             />
                           </Link>
                           <div className="bg-light py-3 px-2">
-                            <strong>&euro; {prod.price}</strong>
-                            <br />
-                            <strong>&euro; {prod.discount}</strong>
-                            <br />
-                            <h6>{prod.description}</h6>
+                            <table className="table text-center">
+                              <tbody>
+                                <tr>
+                                  <td>Price</td>
+                                  <td>:</td>
+                                  <td>&euro; {prod.price}</td>
+                                </tr>
+                                <tr>
+                                  <td>Discount</td>
+                                  <td>:</td>
+                                  <td>{prod.discount}%</td>
+                                </tr>
+                                <tr>
+                                  <td>Total Price</td>
+                                  <td>:</td>
+                                  <td>&euro; {prod.totalPrice}</td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
                         </div>
                       </Col>

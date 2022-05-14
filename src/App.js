@@ -24,6 +24,7 @@ import {
   CategoryContext,
   ProductContext,
   ProductAvailableContext,
+  ReservationContext,
 } from "./contexts";
 import { useReducer } from "react";
 import { authReducer } from "./reducers/authReducer";
@@ -39,6 +40,8 @@ import {
   productAvailableStore,
 } from "./reducers/productAvailableReducer";
 import Registration from "./Pages/Auth_Connexion/Registration";
+import { reservationReducer, reservationStore } from "./reducers/reservationReducer";
+import Carts from "./Pages/User/carts";
 
 const token = localStorage.getItem("AccessToken");
 // console.log(token);
@@ -64,6 +67,10 @@ function App() {
     productAvailableStore
   );
 
+  const [reservationValue, reservationDispatch] = useReducer(
+    reservationReducer,
+    reservationStore
+  );
   return (
     <>
       <AuthContext.Provider value={{ auth, authDispatch }}>
@@ -72,42 +79,47 @@ function App() {
             <ProductAvailableContext.Provider
               value={{ productAvailableValue, productAvailableDispatch }}
             >
-              <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/registration" element={<Registration />} />
-                <Route path="/admin" element={<AdminLayout />}>
-                  <Route index element={<AdminDashBord />} />
-                  <Route path="category" element={<Category />} />
-                  <Route path="product" element={<Product />} />
-                  <Route
-                    path="product_availables"
-                    element={<ProductAvailable />}
-                  />
-                </Route>
+              <ReservationContext.Provider
+                value={{ reservationValue, reservationDispatch }}
+              >
+                <Routes>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/registration" element={<Registration />} />
+                  <Route path="/admin" element={<AdminLayout />}>
+                    <Route index element={<AdminDashBord />} />
+                    <Route path="category" element={<Category />} />
+                    <Route path="product" element={<Product />} />
+                    <Route
+                      path="product_availables"
+                      element={<ProductAvailable />}
+                    />
+                  </Route>
 
-                <Route path="/" element={<UserLayout />}>
-                  <Route index element={<Accueil />} />
-                  <Route
-                    path="boutiqueSubSection/:productID"
-                    element={<BoutiqueSubSection />}
-                  />
-                  <Route
-                    path="boutiqueBlackdress"
-                    element={<BoutiqueBlackdress />}
-                  />
-                  <Route
-                    path="boutiqueLandingImgaes"
-                    element={<BoutiqueLandingImgaes />}
-                  />
-                  <Route
-                    path="boutiqueAjouterPanier"
-                    element={<BoutiqueAjouterPanier />}
-                  />
-                
-                  <Route path="panier" element={<Panier />} />
-                  <Route path="propos" element={<Propos />} />
-                </Route>
-              </Routes>
+                  <Route path="/" element={<UserLayout />}>
+                    <Route index element={<Accueil />} />
+                    <Route
+                      path="boutiqueSubSection/:productID"
+                      element={<BoutiqueSubSection />}
+                    />
+                    <Route
+                      path="boutiqueBlackdress"
+                      element={<BoutiqueBlackdress />}
+                    />
+                    <Route
+                      path="boutiqueLandingImgaes"
+                      element={<BoutiqueLandingImgaes />}
+                    />
+                    <Route
+                      path="boutiqueAjouterPanier"
+                      element={<BoutiqueAjouterPanier />}
+                    />
+
+                    <Route path="panier" element={<Panier />} />
+                    <Route path="propos" element={<Propos />} />
+                    <Route path="carts" element={<Carts />} />
+                  </Route>
+                </Routes>
+              </ReservationContext.Provider>
             </ProductAvailableContext.Provider>
           </ProductContext.Provider>
         </CategoryContext.Provider>
