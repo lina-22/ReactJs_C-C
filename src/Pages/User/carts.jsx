@@ -12,7 +12,7 @@ function Carts() {
   return (
     <>
       <Container className="mt-5 mx-auto pt-5">
-        <h1>Your Carts</h1>
+        <h1>Voir mon Panier</h1>
         <hr />
         <Row className="justify-content-center">
           <Col sm={12} lg={8} className="mt-5">
@@ -57,7 +57,22 @@ function SingleCart({ cart }) {
         toast.error("Something Went Wrong!");
       });
   };
+  const deleteCart = (id) => {
+    axios.delete(`${BACKEND_URL}/productsLine/${id}`).then(res => {
+      let {status, data, message} = res.data;
 
+      if(status){
+        toast.success("Cart Delete Success!");
+        reservationDispatch({type: SET_RESERVATION, payload: data});
+      }else{
+        toast.success(message);
+      }
+
+    }).catch(err => {
+      console.log(err);
+      toast.error("Something Went Wrong!!");
+    });
+  }
   return (
     <div className="mb-2">
       <div className="border border-warning rounded">
@@ -112,9 +127,10 @@ function SingleCart({ cart }) {
           </Col>
         </Row>
       </div>
-      <Button variant="danger" className="py-2 w-100 mt-1">
+      <Button variant="danger" onClick={() => deleteCart(cart.id)} className="py-2 w-100 mt-1">
         Delete
       </Button>
+
     </div>
   );
 }

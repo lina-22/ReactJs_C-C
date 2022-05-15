@@ -57,7 +57,28 @@ function BoutiqueSubSection() {
                     {product.name}
                   </h4>
                 </div>
+                <div className="px-2">
+                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
+                  &euro;{product.price}
+                  </h4>
+                </div>
+                <div className="px-2">
+                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
+                  {product.discount}%
+                  </h4>
+                </div>
+                <div className="px-2">
+                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
+                  &euro;{product.totalPrice}
+                  </h4>
+                </div>
+                <div className="px-2">
+                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
+                    {product.description}
+                  </h4>
+                </div>
               </Col>
+
             </Row>
           </Col>
           <Col md={4} lg={3}>
@@ -102,6 +123,7 @@ function AvailableBox({ avl, productID }) {
           if (status) {
             toast.success("Added To Cart!");
             reservationDispatch({ type: SET_RESERVATION, payload: data });
+            setCartQuantity("");
           } else {
             toast.success(message);
           }
@@ -113,8 +135,10 @@ function AvailableBox({ avl, productID }) {
     }
   };
 
+
   return (
     <div className="mt-3 p-2 border">
+      <h4> Produit Availables </h4>
       <ListGroup>
         <ListGroup.Item>Colour: {avl.colour}</ListGroup.Item>
         <ListGroup.Item>Size: {avl.size}</ListGroup.Item>

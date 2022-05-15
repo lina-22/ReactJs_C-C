@@ -40,6 +40,7 @@ function BoutiqueLandingImgaes() {
       </div>
 
       <Container className="mx-auto">
+        <h4> Idées susceptibles de vous plaire </h4><br />
         <Row>
           <Col sm={3} lg={2} className="my-2">
             <div className="px-2">
