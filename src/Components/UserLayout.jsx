@@ -6,25 +6,40 @@ import { useContext, useEffect } from "react";
 import { AuthContext, ReservationContext } from "../contexts";
 import axios from "axios";
 import { BACKEND_URL } from "../utils";
-import { SET_RESERVATION } from "../actionTypes";
+import { SET_RESERVATION, SET_USER } from "../actionTypes";
 
 function UserLayout() {
-  const { auth } = useContext(AuthContext);
+  const { auth, authDispatch } = useContext(AuthContext);
   const { reservationValue, reservationDispatch } =
     useContext(ReservationContext);
 
-  useEffect(() => {
-    if (auth.user) {
-      if (!reservationValue.isLoaded) {
-        axios.get(`${BACKEND_URL}/productsLine`).then((res) => {
-          let { status, message, data } = res.data;
-          if (status) {
-            reservationDispatch({ type: SET_RESERVATION, payload: data });
+    useEffect(() => {
+      if (auth.user) {
+        if (!reservationValue.isLoaded) {
+          axios.get(`${BACKEND_URL}/productsLine`).then((res) => {
+            let { status, message, data } = res.data;
+            if (status) {
+              reservationDispatch({ type: SET_RESERVATION, payload: data });
+            }
+          });
+        }
+      }else{
+          if (!auth.user) {
+            axios
+              .get(`${BACKEND_URL}/profile`)
+              .then((res) => {
+                const { status, data, message } = res.data;
+                if (status) {
+                  authDispatch({
+                    type: SET_USER,
+                    payload: data,
+                  });
+                }
+              })
           }
-        });
       }
-    }
-  });
+    }, [auth.user]);
+  
 
   return (
     <div className="main">
