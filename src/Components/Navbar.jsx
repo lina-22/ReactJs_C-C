@@ -130,10 +130,10 @@ function Navbar() {
               <Link to="/login"> Connexion </Link>
             </li>
             <li>
-              <Link to="/panier"> Panier </Link>
+              <Link to="/panier"> équipe ? </Link>
             </li>
             <li>
-              <Link to="/propos"> Propos </Link>
+              <Link to="/propos"> A Propos </Link>
             </li>
           </ul>
         </nav>

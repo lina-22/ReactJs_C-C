@@ -9,7 +9,7 @@ import BoutiqueSubSection from "./Pages/User/BoutiqueSubSection";
 import BoutiqueBlackdress from "./Pages/User/BoutiqueBlackdress";
 import BoutiqueAjouterPanier from "./Pages/User/BoutiqueAjouterPanier";
 
-import Panier from "./Pages/User/Panier";
+import Panier from "./Pages/User/Group";
 import Propos from "./Pages/User/Propos";
 
 import AdminDashBord from "./Pages/Admin/AdminDashBord";
