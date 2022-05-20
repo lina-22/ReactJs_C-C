@@ -32,7 +32,7 @@ function Group() {
                   <h2>Need Help?</h2>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Error, ea aliquid?
-                </p>
+                </p><br /><hr />
                 <p>
                   <h2>Customer Service</h2>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -57,7 +57,7 @@ function Group() {
               <br />
               <input type="text" name="" id="" placeholder="Your full name" />
             </section>
-
+            
             <section className="hotlinkright">
               <input type="text" placeholder="Enter your email" />
               <input type="text" placeholder="Order Number (If Applicable)" />

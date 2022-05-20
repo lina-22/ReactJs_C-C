@@ -40,7 +40,7 @@ function BoutiqueLandingImgaes() {
       </div>
 
       <Container className="mx-auto">
-        <h4> Idées susceptibles de vous plaire </h4><br />
+        <h2> Idées susceptibles de vous plaire </h2><br />
         <Row>
           <Col sm={3} lg={2} className="my-2">
             <div className="px-2">
@@ -82,17 +82,17 @@ function BoutiqueLandingImgaes() {
                             <table className="table text-center">
                               <tbody>
                                 <tr>
-                                  <td>Price</td>
+                                  <td>Prix</td>
                                   <td>:</td>
                                   <td>&euro; {prod.price}</td>
                                 </tr>
                                 <tr>
-                                  <td>Discount</td>
+                                  <td>La réduction</td>
                                   <td>:</td>
                                   <td>{prod.discount}%</td>
                                 </tr>
                                 <tr>
-                                  <td>Total Price</td>
+                                  <td>Prix ​​Total</td>
                                   <td>:</td>
                                   <td>&euro; {prod.totalPrice}</td>
                                 </tr>

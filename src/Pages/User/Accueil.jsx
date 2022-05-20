@@ -39,10 +39,10 @@ function Accueil() {
     <div className="hero">
         <img className="main_image" src={mainImg} alt="" />  
         <h2 className='info_pub'>
-             économisez votre temps <br/> et vivez facilement      
+        Économisez votre temps <br/> et vivez facilement      
         </h2>
         <h3>
-        Offre toujous disponible!!
+        Offre toujours disponible!
         </h3>
     </div>
     <div className="promo_trending">

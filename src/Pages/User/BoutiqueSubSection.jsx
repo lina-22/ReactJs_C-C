@@ -138,14 +138,14 @@ function AvailableBox({ avl, productID }) {
 
   return (
     <div className="mt-3 p-2 border">
-      <h4> Produit Availables </h4>
+      <h4> Produits Disponibles </h4>
       <ListGroup>
         <ListGroup.Item>Colour: {avl.colour}</ListGroup.Item>
-        <ListGroup.Item>Size: {avl.size}</ListGroup.Item>
-        <ListGroup.Item>Quantity: {avl.quantity}</ListGroup.Item>
+        <ListGroup.Item>Taille: {avl.size}</ListGroup.Item>
+        <ListGroup.Item>Quantité: {avl.quantity}</ListGroup.Item>
       </ListGroup>
       <div className="row">
-        <div className="col-6 p-2">
+        <div className="col-4 p-2">
           <input
             type="number"
             onChange={onChangeHandler}
@@ -154,9 +154,9 @@ function AvailableBox({ avl, productID }) {
             min={0}
           />
         </div>
-        <div className="col-6 p-2">
+        <div className="col-8 p-2">
           <Button variant="primary" onClick={addToCart} className="w-100">
-            Add To Cart
+          Ajouter au panier
           </Button>
         </div>
       </div>

@@ -20,12 +20,12 @@
       /* background-image: url("img/legal.jpg"), url("paper.gif"); */
   }
   
-  .submit_button{
+  .Propossubmit_button{
      text-align: center;
      width: 100px;
      height: 50px;
      border-radius: 30px;
-     border-color: turquoise;   
+     border-color: turquoise !important;   
   }
    
   /* body end from Propos */

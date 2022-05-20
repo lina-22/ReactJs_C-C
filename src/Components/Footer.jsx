@@ -43,14 +43,12 @@ function Footer() {
         <section className="bottom">
           <br />
           <p className="about_short">
-           Click&Collect
-            la plateforme marketplace de vente en gros. Des ventes en gros,
-            réservées aux professionnels de la mode, de vêtements pour femmes,
-            hommes Click&Collect : la solution simple, rapide et juste pour vos
-            approvisionnements.Venez rejoindre la
-            communauté de ceux qui décident et participent à la mode
-            d’aujourd’hui et de demain.Des images incroyables. Une tarification
-            flexible.... !
+            Click&Collect est un site e-commerce réservé aux passionnés de la mode.
+            Click & Collect est la solution simple et rapide pour trouver des
+            vêtements de femmes et hommes. Choisissez, achetez et venez
+            récupérer votre commande à notre dépôt ! Des images attractives et
+            des tarifs tout en douceur....Idées susceptibles de vous plaire
+            
           </p>
           <section className="contact_info">
             <address>

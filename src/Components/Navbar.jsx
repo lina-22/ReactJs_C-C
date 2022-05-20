@@ -133,7 +133,7 @@ function Navbar() {
               <Link to="/panier"> équipe ? </Link>
             </li>
             <li>
-              <Link to="/propos"> A Propos </Link>
+              <Link to="/propos"> À Propos </Link>
             </li>
           </ul>
         </nav>
