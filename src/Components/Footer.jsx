@@ -43,7 +43,7 @@ function Footer() {
         <section className="bottom">
           <br />
           <p className="about_short">
-            Des images incroyables. Une tarification flexible.... Click&Collect
+           Click&Collect
             la plateforme marketplace de vente en gros. Des ventes en gros,
             réservées aux professionnels de la mode, de vêtements pour femmes,
             hommes Click&Collect : la solution simple, rapide et juste pour vos
