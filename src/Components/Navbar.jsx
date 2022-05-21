@@ -65,12 +65,13 @@ import logout from "../images/logout.png";
 import "../CSS_Components/Navbar.css";
 import { useContext } from "react";
 import { AuthContext, ReservationContext } from "../contexts";
-import { LOG_OUT } from "../actionTypes";
+import { CLEAR_RESERVATION, LOG_OUT } from "../actionTypes";
 function Navbar() {
   const { auth, authDispatch } = useContext(AuthContext);
-  const { reservationValue } = useContext(ReservationContext);
+  const { reservationValue, reservationDispatch } = useContext(ReservationContext);
   const logOutHandler = () => {
-    authDispatch({ type: LOG_OUT });
+    authDispatch({type: LOG_OUT});
+    reservationDispatch({ type: CLEAR_RESERVATION });
   };
 
   return (
@@ -130,10 +131,10 @@ function Navbar() {
               <Link to="/login"> Connexion </Link>
             </li>
             <li>
-              <Link to="/panier"> équipe ? </Link>
+              <Link to="/panier"> Panier </Link>
             </li>
             <li>
-              <Link to="/propos"> À Propos </Link>
+              <Link to="/propos"> Propos </Link>
             </li>
           </ul>
         </nav>

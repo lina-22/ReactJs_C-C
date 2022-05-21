@@ -14,26 +14,31 @@ function BoutiqueSubSection() {
 
   useEffect(() => {
     if (productID) {
-      axios
-        .get(`${BACKEND_URL}/products/${productID}`)
-        .then((res) => {
-          let { status, message, data } = res.data;
-          if (status) {
-            setProduct(data);
-          } else {
-            toast.error(message);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          toast.error("Something Went Wrong!");
-        });
+      getProduct();
     }
   }, [productID]);
+
+  const getProduct = () => {
+    axios
+      .get(`${BACKEND_URL}/products/${productID}`)
+      .then((res) => {
+        let { status, message, data } = res.data;
+        if (status) {
+          setProduct(data);
+        } else {
+          toast.error(message);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Something Went Wrong!");
+      });
+  };
+
   return (
     <>
       <Container className="mx-auto">
-        <div id="boutiqeSubsection">
+        <div id="boutiqe">
           <h1>Boutique</h1>
           <br /> <br />
           <h4> Choisissez Votre produit </h4>
@@ -57,34 +62,13 @@ function BoutiqueSubSection() {
                     {product.name}
                   </h4>
                 </div>
-                <div className="px-2">
-                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
-                  &euro;{product.price}
-                  </h4>
-                </div>
-                <div className="px-2">
-                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
-                  {product.discount}%
-                  </h4>
-                </div>
-                <div className="px-2">
-                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
-                  &euro;{product.totalPrice}
-                  </h4>
-                </div>
-                <div className="px-2">
-                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
-                    {product.description}
-                  </h4>
-                </div>
               </Col>
-
             </Row>
           </Col>
           <Col md={4} lg={3}>
             {product.availables &&
               product.availables.map((avail, index) => (
-                <AvailableBox avl={avail} key={index} productID={productID} />
+                <AvailableBox avl={avail} key={index} productID={productID} getProduct={getProduct} />
               ))}
           </Col>
         </Row>
@@ -94,7 +78,7 @@ function BoutiqueSubSection() {
 }
 export default BoutiqueSubSection;
 
-function AvailableBox({ avl, productID }) {
+function AvailableBox({ avl, productID, getProduct }) {
   const [cartQuantity, setCartQuantity] = useState();
   const { reservationDispatch } = useContext(ReservationContext);
   const { auth } = useContext(AuthContext);
@@ -122,8 +106,9 @@ function AvailableBox({ avl, productID }) {
 
           if (status) {
             toast.success("Added To Cart!");
-            reservationDispatch({ type: SET_RESERVATION, payload: data });
             setCartQuantity("");
+              getProduct();
+            reservationDispatch({ type: SET_RESERVATION, payload: data });
           } else {
             toast.success(message);
           }
@@ -135,17 +120,15 @@ function AvailableBox({ avl, productID }) {
     }
   };
 
-
   return (
     <div className="mt-3 p-2 border">
-      <h4> Produits Disponibles </h4>
       <ListGroup>
         <ListGroup.Item>Colour: {avl.colour}</ListGroup.Item>
-        <ListGroup.Item>Taille: {avl.size}</ListGroup.Item>
-        <ListGroup.Item>Quantité: {avl.quantity}</ListGroup.Item>
+        <ListGroup.Item>Size: {avl.size}</ListGroup.Item>
+        <ListGroup.Item>Quantity: {avl.quantity}</ListGroup.Item>
       </ListGroup>
       <div className="row">
-        <div className="col-4 p-2">
+        <div className="col-6 p-2">
           <input
             type="number"
             onChange={onChangeHandler}
@@ -154,9 +137,9 @@ function AvailableBox({ avl, productID }) {
             min={0}
           />
         </div>
-        <div className="col-8 p-2">
+        <div className="col-6 p-2">
           <Button variant="primary" onClick={addToCart} className="w-100">
-          Ajouter au panier
+            Add To Cart
           </Button>
         </div>
       </div>
