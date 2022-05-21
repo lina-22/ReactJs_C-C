@@ -77,7 +77,7 @@ function Registration() {
   };
 
   return (
-    <Container className="registerCustomer">
+    <Container className="mx-auto">
       <div className="register">
       <div className="créerCompte">
       <h5>Créer Un Compte</h5>

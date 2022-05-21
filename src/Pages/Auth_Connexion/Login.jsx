@@ -7,7 +7,6 @@ import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
 import style from "./Login.css";
 
-
 function Login() {
   const { auth, authDispatch } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -18,11 +17,11 @@ function Login() {
   });
 
   useEffect(() => {
-    if(auth.user){
-      navigate('/');
+    if (auth.user) {
+      navigate("/");
     }
   });
-  
+
   const location = useLocation();
 
   useEffect(() => {
@@ -71,7 +70,11 @@ function Login() {
 
   return (
     <div className="Loginmy-container">
-      <div className="mx-auto">
+       <div className="créerCompte">
+      <h5>Veuillez vous connecter</h5>
+      <hr />
+      </div>
+    <div className="mx-auto">
       <form onSubmit={onSubmitHandler}>
         <div className="Logininput-group">
           <label htmlFor="email">Email</label>
@@ -109,8 +112,8 @@ function Login() {
           />
         </div>
       </form>
-      </div>
     </div>
+     </div>
   );
 }
 

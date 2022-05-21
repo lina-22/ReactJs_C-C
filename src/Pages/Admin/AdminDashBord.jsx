@@ -8,7 +8,7 @@ function AdminDashBord() {
     <Container className="mx-auto">
     <div>
       <section className="AdminDashBoardImg">
-        <img src={AdminDashBoardImg} alt="" />
+        {/* <img src={AdminDashBoardImg} alt="" /> */}
       </section>
     </div>
     </Container>
