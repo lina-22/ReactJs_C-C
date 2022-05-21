@@ -25,6 +25,7 @@ import {
   ProductContext,
   ProductAvailableContext,
   ReservationContext,
+  AdminReservationContext,
 } from "./contexts";
 import { useReducer } from "react";
 import { authReducer } from "./reducers/authReducer";
@@ -42,6 +43,8 @@ import {
 import Registration from "./Pages/Auth_Connexion/Registration";
 import { reservationReducer, reservationStore } from "./reducers/reservationReducer";
 import Carts from "./Pages/User/carts";
+import { adminReservationReducer, adminReservationStore } from "./reducers/adminReservationReducer";
+import Reservations from "./Pages/Admin/Reservations";
 
 const token = localStorage.getItem("AccessToken");
 // console.log(token);
@@ -70,18 +73,23 @@ function App() {
   const [reservationValue, reservationDispatch] = useReducer(
     reservationReducer,
     reservationStore
+  ); 
+  const [adminReservationValue, adminReservationDispatch] = useReducer(
+    adminReservationReducer,
+    adminReservationStore
   );
   return (
     <>
-      <AuthContext.Provider value={{ auth, authDispatch }}>
-        <CategoryContext.Provider value={{ categoryValue, categoryDispatch }}>
-          <ProductContext.Provider value={{ productValue, productDispatch }}>
-            <ProductAvailableContext.Provider
-              value={{ productAvailableValue, productAvailableDispatch }}
+    <AuthContext.Provider value={{ auth, authDispatch }}>
+      <CategoryContext.Provider value={{ categoryValue, categoryDispatch }}>
+        <ProductContext.Provider value={{ productValue, productDispatch }}>
+          <ProductAvailableContext.Provider
+            value={{ productAvailableValue, productAvailableDispatch }}
+          >
+            <ReservationContext.Provider
+              value={{ reservationValue, reservationDispatch }}
             >
-              <ReservationContext.Provider
-                value={{ reservationValue, reservationDispatch }}
-              >
+              <AdminReservationContext.Provider value={{ adminReservationValue, adminReservationDispatch }}>
                 <Routes>
                   <Route path="/login" element={<Login />} />
                   <Route path="/registration" element={<Registration />} />
@@ -93,6 +101,8 @@ function App() {
                       path="product_availables"
                       element={<ProductAvailable />}
                     />
+
+                    <Route path="reservations" element={<Reservations />} />
                   </Route>
 
                   <Route path="/" element={<UserLayout />}>
@@ -119,14 +129,16 @@ function App() {
                     <Route path="carts" element={<Carts />} />
                   </Route>
                 </Routes>
-              </ReservationContext.Provider>
-            </ProductAvailableContext.Provider>
-          </ProductContext.Provider>
-        </CategoryContext.Provider>
-      </AuthContext.Provider>
-      <ToastContainer />
-    </>
-  );
+              </AdminReservationContext.Provider>
+            </ReservationContext.Provider>
+          </ProductAvailableContext.Provider>
+        </ProductContext.Provider>
+      </CategoryContext.Provider>
+    </AuthContext.Provider>
+    <ToastContainer />
+  </>
+);
 }
+
 
 export default App;

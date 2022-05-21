@@ -93,7 +93,7 @@ function AdminLayout() {
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link className="nav-link mx-3" to="">
+                <Link className="nav-link mx-3" to="/admin/reservations">
                   Reservation
                 </Link>
               </Nav.Item>

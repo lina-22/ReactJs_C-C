@@ -131,7 +131,7 @@ function Navbar() {
               <Link to="/login"> Connexion </Link>
             </li>
             <li>
-              <Link to="/panier"> Panier </Link>
+              <Link to="/panier"> Équipe </Link>
             </li>
             <li>
               <Link to="/propos"> Propos </Link>

@@ -47,7 +47,6 @@
 .hotlinkcontact {
   background-color: rgb(36, 126, 126);
   padding: 100px !important;
-  /* width: 1000px; */
   margin: 100px !important;
   position: relative;
 }
@@ -104,7 +103,7 @@ button {
 /************* responsive ****************/
 /*********************************************/
 
-@media screen and (min-width: 960px) and (max-width: 1200px) {
+/* @media screen and (min-width: 960px) and (max-width: 1200px) {
   .groupImage img {
     object-fit: cover;
     max-height: 100%;
@@ -146,4 +145,4 @@ button {
     height: 190px;
     width: 190px;
   }
-}
+} */
