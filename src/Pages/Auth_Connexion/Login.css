@@ -4,6 +4,14 @@
   box-sizing: border-box !important;
 }
 
+/* 21/05/22 */
+.Loginmy-container{
+  text-align: center;
+  margin: 100px !important;
+  margin: 100px !important;
+  background-color: rgb(111, 228, 189);
+}
+/* 21/05/22 */
 .Loginmy-container{
   width: 300px;
   max-height: 80vh;

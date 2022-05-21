@@ -1,5 +1,5 @@
 import "../../CSS_User/BoutiqueSubSection.css";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { BACKEND_URL, IMAGE_URL } from "../../utils";
@@ -38,7 +38,7 @@ function BoutiqueSubSection() {
   return (
     <>
       <Container className="mx-auto">
-        <div id="boutiqe">
+        <div id="boutiqeSubsection">
           <h1>Boutique</h1>
           <br /> <br />
           <h4> Choisissez Votre produit </h4>
@@ -60,6 +60,21 @@ function BoutiqueSubSection() {
                 <div className="px-2">
                   <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
                     {product.name}
+                  </h4>
+                </div>
+                <div className="px-2">
+                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
+                   Le Prix : {product.price}
+                  </h4>
+                </div>
+                <div className="px-2">
+                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
+                  La réduction: {product.discount}
+                  </h4>
+                </div>
+                <div className="px-2">
+                  <h4 className="bg-light border-start border-warning border-5 py-3 px-2">
+                  La description {product.description}
                   </h4>
                 </div>
               </Col>
@@ -105,7 +120,7 @@ function AvailableBox({ avl, productID, getProduct }) {
           let { message, data, status } = res.data;
 
           if (status) {
-            toast.success("Added To Cart!");
+            toast.success("Ajouter au panier!");
             setCartQuantity("");
               getProduct();
             reservationDispatch({ type: SET_RESERVATION, payload: data });
@@ -128,7 +143,7 @@ function AvailableBox({ avl, productID, getProduct }) {
         <ListGroup.Item>Quantity: {avl.quantity}</ListGroup.Item>
       </ListGroup>
       <div className="row">
-        <div className="col-6 p-2">
+        <div className="col-4 p-2">
           <input
             type="number"
             onChange={onChangeHandler}
@@ -137,12 +152,23 @@ function AvailableBox({ avl, productID, getProduct }) {
             min={0}
           />
         </div>
-        <div className="col-6 p-2">
+        <div className="col-8 p-2">
           <Button variant="primary" onClick={addToCart} className="w-100">
-            Add To Cart
+            Ajouter au panier
           </Button>
         </div>
       </div>
+
+      <div className="row">
+        <div className="col-12 p-2">
+          <Button variant="secondary"className="w-100">
+            {/* <Link to={`/boutiqueSubSection`} ></Link> */}
+            Payer Maintenant
+            {/* <a href="/payment"></a> */}
+          </Button>
+        </div>
+      </div>
+
     </div>
   );
 }

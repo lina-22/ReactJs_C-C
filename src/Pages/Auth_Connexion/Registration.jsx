@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { LOG_IN } from "../../actionTypes";
 import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
+import style from "./Registration.css";
 
 function Registration() {
   const { auth ,authDispatch } = useContext(AuthContext);
@@ -76,7 +77,12 @@ function Registration() {
   };
 
   return (
-    <Container>
+    <Container className="registerCustomer">
+      <div className="register">
+      <div className="créerCompte">
+      <h5>Créer Un Compte</h5>
+      </div>
+      
       <Form onSubmit={onSubmitHandler}>
         <Form.Group className="mb-3" controlId="first_name">
           <Form.Label>First Name</Form.Label>
@@ -142,6 +148,7 @@ function Registration() {
           {state.isLoading ? "Loading..." : "Register"}
         </Button>
       </Form>
+      </div>
     </Container>
   );
 }

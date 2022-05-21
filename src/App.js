@@ -6,11 +6,11 @@ import UserLayout from "./Components/UserLayout";
 import Accueil from "./Pages/User/Accueil";
 import BoutiqueLandingImgaes from "./Pages/User/BoutiqueLandingImgaes";
 import BoutiqueSubSection from "./Pages/User/BoutiqueSubSection";
-import BoutiqueBlackdress from "./Pages/User/BoutiqueBlackdress";
-import BoutiqueAjouterPanier from "./Pages/User/BoutiqueAjouterPanier";
+
 
 import Panier from "./Pages/User/Group";
 import Propos from "./Pages/User/Propos";
+import Payment from "./Pages/User/payment";
 
 import AdminDashBord from "./Pages/Admin/AdminDashBord";
 import Category from "./Pages/Admin/Category";
@@ -111,22 +111,16 @@ function App() {
                       path="boutiqueSubSection/:productID"
                       element={<BoutiqueSubSection />}
                     />
-                    <Route
-                      path="boutiqueBlackdress"
-                      element={<BoutiqueBlackdress />}
-                    />
+                  
                     <Route
                       path="boutiqueLandingImgaes"
                       element={<BoutiqueLandingImgaes />}
                     />
-                    <Route
-                      path="boutiqueAjouterPanier"
-                      element={<BoutiqueAjouterPanier />}
-                    />
-
+                
                     <Route path="panier" element={<Panier />} />
                     <Route path="propos" element={<Propos />} />
                     <Route path="carts" element={<Carts />} />
+                    <Route path="payment" element={<Payment />} />
                   </Route>
                 </Routes>
               </AdminReservationContext.Provider>
