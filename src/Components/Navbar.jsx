@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logoImg from "../images/imgPage1/Logo2.png";
 import panierImg from "../images/imgPage1/panier_img.png";
 import shoppingCartIcon from "../images/imgPage1/shopping_cart.svg";
+import menuIcon from "../images/menu.png";
 import logout from "../images/logout.png";
 import "../CSS_Components/Navbar.css";
 import { useContext } from "react";
@@ -58,8 +59,12 @@ function Navbar() {
       </section>
       <section className="mainNav">
         <input type="checkbox" id="nav-toggler" className="nav-toggler" />
-        <label htmlFor="nav-toggler">
-          <span></span>
+        <label htmlFor="nav-toggler" id="nav-lbl">
+          <img
+              style={{ width: 25, cursor: "pointer", marginLeft: 10 }}
+              src={menuIcon}
+              alt="menu"
+            />
         </label>
         <nav>
           <ul>
