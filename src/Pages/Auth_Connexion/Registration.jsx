@@ -1,15 +1,21 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Form,
+  FormControl,
+  FormLabel,
+} from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { LOG_IN } from "../../actionTypes";
 import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
-import style from "./Registration.css";
+
 
 function Registration() {
-  const { auth ,authDispatch } = useContext(AuthContext);
+  const { auth, authDispatch } = useContext(AuthContext);
   const [state, setState] = useState({
     isLoading: false,
     first_name: "",
@@ -22,8 +28,8 @@ function Registration() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(auth.user){
-      navigate('/');
+    if (auth.user) {
+      navigate("/");
     }
   });
 
@@ -51,7 +57,6 @@ function Registration() {
           });
 
           toast.success(message);
-          
 
           setState({
             isLoading: false,
@@ -62,12 +67,11 @@ function Registration() {
             password_confirmation: "",
           });
 
-          navigate('/')
+          navigate("/");
         } else {
           toast.error(message);
           setState({ ...state, isLoading: false });
         }
-    
       })
       .catch((err) => {
         console.log(err);
@@ -77,77 +81,98 @@ function Registration() {
   };
 
   return (
-    <Container className="mx-auto">
-      <div className="register">
-      <div className="créerCompte">
-      <h5>Créer Un Compte</h5>
-      </div>
-      
-      <Form onSubmit={onSubmitHandler}>
-        <Form.Group className="mb-3" controlId="first_name">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="First Name"
-            value={state.first_name}
-            onChange={onChangeHandler}
-            disabled={state.isLoading}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="last_name">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Last Name"
-            value={state.last_name}
-            onChange={onChangeHandler}
-            disabled={state.isLoading}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="email">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="name@example.com"
-            value={state.email}
-            onChange={onChangeHandler}
-            disabled={state.isLoading}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Your Password"
-            value={state.password}
-            onChange={onChangeHandler}
-            disabled={state.isLoading}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="password_confirmation">
-          <Form.Label>Password Confirmation</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Repeat Password"
-            value={state.password_confirmation}
-            onChange={onChangeHandler}
-            disabled={state.isLoading}
-          />
-        </Form.Group>
-        <div>
-          <span>
-            Already Registered? Please <Link to="/login">Login</Link>
-          </span>
-        </div>
-        <Button
-          variant="primary"
-          type="submit"
-          className="w-100"
-          disabled={state.isLoading}
-        >
-          {state.isLoading ? "Loading..." : "Register"}
-        </Button>
-      </Form>
+    <Container
+      style={{ height: "100vh" }}
+      className="mx-auto d-flex justify-content-center align-items-center btn-dark"
+    >
+      <div className="p-4 border shadow rounded w-50">
+        <Form onSubmit={onSubmitHandler}>
+          <h2 className="text-center mb-3">Créer Un Compte</h2>
+          <hr />
+
+          {/* ***************First Name************* */}
+          <Form.Group className="my-3">
+            <FormLabel>First Name</FormLabel>
+            <FormControl
+              type="text"
+              className="mt-2 py-2 px-3"
+              id="first_name"
+              onChange={onChangeHandler}
+              placeholder="First Name"
+              value={state.first_name}
+              disabled={state.isLoading}
+            />
+          </Form.Group>
+          {/* ***************Last Name*************** */}
+          <Form.Group className="my-3">
+            <FormLabel>Last Name</FormLabel>
+            <FormControl
+              type="text"
+              className="mt-2 py-2 px-3"
+              id="last_name"
+              onChange={onChangeHandler}
+              placeholder="Last Name"
+              value={state.last_name}
+              disabled={state.isLoading}
+            />
+          </Form.Group>
+          {/* ***************Email*************** */}
+          <Form.Group className="my-3">
+            <FormLabel>Email address</FormLabel>
+            <FormControl
+              type="email"
+              className="mt-2 py-2 px-3"
+              id="email"
+              onChange={onChangeHandler}
+              placeholder="name@example.com"
+              value={state.email}
+              disabled={state.isLoading}
+            />
+          </Form.Group>
+          {/* ***************Password*************** */}
+          <Form.Group className="my-3">
+            <FormLabel>Password</FormLabel>
+            <FormControl
+              type="password"
+              className="mt-2 py-2 px-3"
+              id="password"
+              onChange={onChangeHandler}
+              placeholder="Enter Your Password"
+              value={state.password}
+              disabled={state.isLoading}
+            />
+          </Form.Group>
+
+          {/* ***************confirm_Password*************** */}
+          <Form.Group className="my-3">
+            <FormLabel>Password Confirmation</FormLabel>
+            <FormControl
+              type="password"
+              className="mt-2 py-2 px-3"
+              id="password_confirmation"
+              onChange={onChangeHandler}
+              placeholder="Enter Your Password"
+              value={state.password_confirmation}
+              disabled={state.isLoading}
+            />
+          </Form.Group>
+
+          {/* **********Button********** */}
+          <div className="my-3">
+            <span>
+              Already Registered? Please <Link to="/login">Login</Link>
+            </span>
+          </div>
+
+          <div className="Registration-group">
+            <input
+              type="submit"
+              className="btn w-100 btn-info py-2"
+              value={state.isLoading ? "Loading..." : "REGISTRATION"}
+              disabled={state.isLoading}
+            />
+          </div>
+        </Form>
       </div>
     </Container>
   );

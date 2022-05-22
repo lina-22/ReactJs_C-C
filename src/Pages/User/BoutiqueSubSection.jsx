@@ -134,7 +134,7 @@ function AvailableBox({ avl, productID, getProduct }) {
       navigator("/login", { state: { prevLocation: location.pathname } });
     }
   };
-
+// console.log(productID,cartQuantity,avl.id);
   return (
     <div className="mt-3 p-2 border">
       <ListGroup>

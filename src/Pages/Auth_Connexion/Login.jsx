@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
+import { Container, Form, FormControl, FormLabel } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { LOG_IN } from "../../actionTypes";
 import { AuthContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
-import style from "./Login.css";
+// import style from "./Login.css";
 
 function Login() {
   const { auth, authDispatch } = useContext(AuthContext);
@@ -69,51 +70,57 @@ function Login() {
   };
 
   return (
-    <div className="Loginmy-container">
-       <div className="créerCompte">
-      <h5>Veuillez vous connecter</h5>
-      <hr />
+    <Container
+      style={{ height: "100vh"}}
+      className="mx-auto d-flex justify-content-center align-items-center btn-light"
+    >
+      <div className="p-4 border shadow rounded w-50">
+        <Form onSubmit={onSubmitHandler}>
+          <h2 className="text-center mb-3">Log In</h2>
+          <hr />
+          <Form.Group className="my-3">
+            <FormLabel>Email</FormLabel>
+            <FormControl
+              type="email"
+              className="mt-2 py-2 px-3"
+              id="email"
+              onChange={onChangeHandler}
+              placeholder="Enter Your Email"
+              value={state.email}
+              disabled={state.isLoading}
+            />
+          </Form.Group>
+
+          <Form.Group className="my-3">
+            <FormLabel>Password</FormLabel>
+            <FormControl
+              type="password"
+              className="mt-2 py-2 px-3"
+              id="password"
+              onChange={onChangeHandler}
+              placeholder="Enter Your Password"
+              value={state.password}
+              disabled={state.isLoading}
+            />
+          </Form.Group>
+          <div className="my-3">
+            <span>
+              Not Yet Registered? Please{" "}
+              <Link to="/registration">Register</Link>
+            </span>
+          </div>
+
+          <div className="Logininput-group">
+            <input
+              type="submit"
+              className="btn w-100 btn-secondary py-2"
+              value={state.isLoading ? "Loading..." : "LOGIN"}
+              disabled={state.isLoading}
+            />
+          </div>
+        </Form>
       </div>
-    <div className="mx-auto">
-      <form onSubmit={onSubmitHandler}>
-        <div className="Logininput-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            onChange={onChangeHandler}
-            placeholder="Enter Your Email"
-            value={state.email}
-            disabled={state.isLoading}
-          />
-        </div>
-        <div className="Logininput-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            onChange={onChangeHandler}
-            placeholder="Enter Your Password"
-            value={state.password}
-            disabled={state.isLoading}
-          />
-        </div>
-        <div>
-          <span>
-            Not Yet Registered? Please <Link to="/registration">Register</Link>
-          </span>
-        </div>
-        <div className="Logininput-group">
-          <input
-            type="submit"
-            className="Loginbtn"
-            value={state.isLoading ? "Loading..." : "LOGIN"}
-            disabled={state.isLoading}
-          />
-        </div>
-      </form>
-    </div>
-     </div>
+    </Container>
   );
 }
 
