@@ -43,21 +43,20 @@ function CategoryTr({ category, handleShowModal }) {
       payload: cat
     })
     handleShowModal();
-
   }
 
   return (
     <tr>
       <td>{category.id}</td>
       <td>{category.name}</td>
-      {/* this line should delete as we will cut cat images  */}
+      {/* this line should delete as i cut cat images  */}
       <td>{category.is_featured}</td> 
       <td>
         {category.image && (
           <img width={70} src={`${IMAGE_URL}/${category.image}`} />
         )}
       </td>
-      {/* until this line should delete as we will cut cat images  */}
+      {/* until this line should delete as i cut cat images  */}
       <td>
         <Button variant="warning" size="sm" className="mx-1" onClick={() => editHandler(category)}>Edit</Button>
         <Button variant="danger" size="sm" className="mx-1" onClick={() => deleteCategory(category.id)}>Delete</Button>

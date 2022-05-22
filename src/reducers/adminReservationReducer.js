@@ -6,7 +6,6 @@ export const adminReservationStore = {
   reservations: null,
 };
 
-
 export const adminReservationReducer = (state, action) => {
   switch (action.type) {
     case LOAD_ADMIN_RESERVATIONS:

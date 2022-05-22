@@ -40,7 +40,6 @@ function UserLayout() {
       }
     }, [auth.user]);
   
-
   return (
     <div className="main">
       <div id="landing">

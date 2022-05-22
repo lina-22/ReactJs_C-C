@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useContext } from "react";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { SET_RESERVATION } from "../../actionTypes";
 import { ReservationContext } from "../../contexts";
@@ -130,7 +131,15 @@ function SingleCart({ cart }) {
       <Button variant="danger" onClick={() => deleteCart(cart.id)} className="py-2 w-100 mt-1">
         Delete
       </Button>
-
+      <div className="row">
+        <div className="col-12 p-2">
+          <Button variant="secondary"className="w-100">
+            {/* <Link to="/payment" ></Link> */}
+            Payer Maintenant
+            {/* <a href="/payment"></a> */}
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

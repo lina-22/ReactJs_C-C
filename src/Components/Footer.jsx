@@ -47,7 +47,7 @@ function Footer() {
             Click & Collect est la solution simple et rapide pour trouver des
             vêtements de femmes et hommes. Choisissez, achetez et venez
             récupérer votre commande à notre dépôt ! Des images attractives et
-            des tarifs tout en douceur....Idées susceptibles de vous plaire
+            des tarifs tout en douceur....Idées susceptibles de vous plaire.
             
           </p>
           <section className="contact_info">

@@ -158,17 +158,6 @@ function AvailableBox({ avl, productID, getProduct }) {
           </Button>
         </div>
       </div>
-
-      <div className="row">
-        <div className="col-12 p-2">
-          <Button variant="secondary"className="w-100">
-            {/* <Link to={`/boutiqueSubSection`} ></Link> */}
-            Payer Maintenant
-            {/* <a href="/payment"></a> */}
-          </Button>
-        </div>
-      </div>
-
     </div>
   );
 }
