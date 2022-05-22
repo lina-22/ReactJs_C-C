@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import logoImg from "../images/imgPage1/Logo2.png";
+import logoImg from "../images/imgPage1/Logo.jpeg";
 import panierImg from "../images/imgPage1/panier_img.png";
 import shoppingCartIcon from "../images/imgPage1/shopping_cart.svg";
 import menuIcon from "../images/menu.png";

@@ -48,7 +48,7 @@ function Accueil() {
     <div className="promo_trending">
       <section className="promotoion">
         <h4>
-          Feel the <br/><span>fashion of modern world</span>
+        Toutes les tendances <br/><span>A UN SEUL ENDROIT</span>
         </h4>
         <article>
           {
