@@ -30,14 +30,11 @@ function Group() {
               <section className="helpline">
                 <p>
                   <h2>Need Help?</h2>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Error, ea aliquid?
+                  Découvrez les bénéfices de notre solution d'assistance. Demandez votre démo personnalisée. Customer support Les meilleures expériences client sont supportées par Click and Collect.
                 </p><br /><hr />
                 <p>
                   <h2>Customer Service</h2>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Error, ea aliquid? Ea, repudiandae Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Error,
+                  Citizens Advice consumer helpline: 0808 223 1133. Relay Paris, France - if you can't hear or speak on the phone, you can type what you want to say: 18001 then 0808 223 ...
                 </p>
               </section>
             </section>
