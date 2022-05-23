@@ -9,7 +9,6 @@ import { BACKEND_URL, IMAGE_URL } from "../../utils";
 function ProductTr({product, handleShowModal, handleAttatchModal}) {
   const {productDispatch} = useContext(ProductContext)
 
-
   const deleteProduct = (id) => {
     if(window.confirm('Are You Sure?')){
 
@@ -45,7 +44,6 @@ function ProductTr({product, handleShowModal, handleAttatchModal}) {
 
   }
 
-
   const attactchCategoryHandler = prod => {
     productDispatch({
       type: SELECT_PRODUCTS,
@@ -55,17 +53,16 @@ function ProductTr({product, handleShowModal, handleAttatchModal}) {
     handleAttatchModal();
   }
 
-  
   return (
     <tr>
       <td>{product.id}</td>
       <td>{product.name}</td>
       <td>{product.is_featured}</td>
-      <td>{product.price}</td>
-      <td>{product.discount}</td>
+      <td>&euro;{product.price}</td>
+      <td>{product.discount}%</td>
       <td>
         {product.image && (
-          <img width={70} src={`${IMAGE_URL}/${product.image}`} />
+          <img width={100} src={`${IMAGE_URL}/${product.image}`} />
         )}
       </td>
       <td>{product.description}</td>

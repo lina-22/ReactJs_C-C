@@ -24,7 +24,6 @@
 .AdminDroits p{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     height: 400px;
-    justify-content: center;
 }
 .AdminLayoutNav{
     display: flex;

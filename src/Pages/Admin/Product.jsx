@@ -8,7 +8,6 @@ import {
   UPDATE_PRODUCTS,
 } from "../../actionTypes";
 import AttatchCategoryModal from "../../Components/Product/AttachCategoryModal";
-
 import ProductModal from "../../Components/Product/ProductModal";
 import ProductTr from "../../Components/Product/ProductTr";
 import { ProductContext } from "../../contexts";

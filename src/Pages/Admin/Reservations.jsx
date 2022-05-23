@@ -105,12 +105,6 @@ function Reservations() {
             </thead>
             <tbody>
               {adminReservationValue.reservations.map((resv, index) => (
-                // <ProductTr
-                //   handleShowModal={handleShowModal}
-                //   handleAttatchModal={handleAttatchModal}
-                //   product={prod}
-                //   key={index}
-                // />
                 <tr key={index}>
                   <td>{resv.id}</td>
                   <td>{resv.reference}</td>

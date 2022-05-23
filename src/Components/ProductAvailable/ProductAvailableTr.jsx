@@ -52,7 +52,7 @@ function ProductAvailableTr({ productAvailable, handleShowModal }) {
       <td>{productAvailable.id}</td>
       <td>{productAvailable.product_id}</td>
       <td>{productAvailable.colour}</td> 
-      <td>{productAvailable.quantity}</td> 
+      <td>{productAvailable.quantity}pcs</td> 
       <td>{productAvailable.size}</td> 
 
       <td>

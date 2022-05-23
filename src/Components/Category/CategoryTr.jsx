@@ -53,7 +53,7 @@ function CategoryTr({ category, handleShowModal }) {
       <td>{category.is_featured}</td> 
       <td>
         {category.image && (
-          <img width={70} src={`${IMAGE_URL}/${category.image}`} />
+          <img width={100} src={`${IMAGE_URL}/${category.image}`} />
         )}
       </td>
       {/* until this line should delete as i cut cat images  */}
