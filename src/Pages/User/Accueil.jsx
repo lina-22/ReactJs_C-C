@@ -1,8 +1,8 @@
+// import tshirt1 from '../../images/imgPage1/T-shirt1.png';
+// import formal1 from '../../images/imgPage1/Formal1.png';
+// import formal2 from '../../images/imgPage1/Formal2.png';
+// import tshirt2 from '../../images/imgPage1/T-shirt2.png';
 import mainImg from '../../images/imgPage1/main_img.jpg';
-import tshirt1 from '../../images/imgPage1/T-shirt1.png';
-import formal1 from '../../images/imgPage1/Formal1.png';
-import formal2 from '../../images/imgPage1/Formal2.png';
-import tshirt2 from '../../images/imgPage1/T-shirt2.png';
 import photoLeft from '../../images/imgPage1/photo_left.png';
 import photoRight from '../../images/imgPage1/photo_right.png';
 

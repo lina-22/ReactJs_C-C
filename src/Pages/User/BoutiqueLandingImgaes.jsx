@@ -1,6 +1,6 @@
-import img26 from "../../images/imgPage3/image26.png";
-import img27 from "../../images/imgPage3/image27.png";
-import img28 from "../../images/imgPage3/image28.png";
+// import img26 from "../../images/imgPage3/image26.png";
+// import img27 from "../../images/imgPage3/image27.png";
+// import img28 from "../../images/imgPage3/image28.png";
 import "../../CSS_User/BoutiqueLandingImages.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useContext, useEffect, useState } from "react";

@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import logoImg from "../images/imgPage1/Logo.jpeg";
 import panierImg from "../images/imgPage1/panier_img.png";
@@ -11,9 +10,10 @@ import { AuthContext, ReservationContext } from "../contexts";
 import { CLEAR_RESERVATION, LOG_OUT } from "../actionTypes";
 function Navbar() {
   const { auth, authDispatch } = useContext(AuthContext);
-  const { reservationValue, reservationDispatch } = useContext(ReservationContext);
+  const { reservationValue, reservationDispatch } =
+    useContext(ReservationContext);
   const logOutHandler = () => {
-    authDispatch({type: LOG_OUT});
+    authDispatch({ type: LOG_OUT });
     reservationDispatch({ type: CLEAR_RESERVATION });
   };
 
@@ -30,7 +30,7 @@ function Navbar() {
           </h1>
         </header>
         <section className="panier_logo">
-          <Link to={'/carts'}>
+          <Link to={"/carts"}>
             <span className="position-relative mx-4">
               <img className="panier" src={shoppingCartIcon} alt="panier" />
               <span
@@ -47,13 +47,16 @@ function Navbar() {
           </Link>
 
           {auth.user && (
-            <img
-              style={{ width: 25, cursor: "pointer", marginLeft: 10 }}
-              onClick={logOutHandler}
-              title="Log Out"
-              src={logout}
-              alt=""
-            />
+            <>
+              <img
+                style={{ width: 25, cursor: "pointer", marginLeft: 10 }}
+                onClick={logOutHandler}
+                title="Log Out"
+                src={logout}
+                alt=""
+              />
+              <span>{auth.user.first_name}</span>
+            </>
           )}
         </section>
       </section>
@@ -61,10 +64,10 @@ function Navbar() {
         <input type="checkbox" id="nav-toggler" className="nav-toggler" />
         <label htmlFor="nav-toggler" id="nav-lbl">
           <img
-              style={{ width: 25, cursor: "pointer", marginLeft: 10 }}
-              src={menuIcon}
-              alt="menu"
-            />
+            style={{ width: 25, cursor: "pointer", marginLeft: 10 }}
+            src={menuIcon}
+            alt="menu"
+          />
         </label>
         <nav>
           <ul>
