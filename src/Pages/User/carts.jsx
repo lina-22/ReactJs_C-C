@@ -85,62 +85,62 @@ function SingleCart({ cart }) {
   }
   return (
     <div className="mb-2">
-      <div className="border border-warning rounded">
-        <Row>
-          <Col sm={3}>
-            <img
-              width="100%"
-              src={`${IMAGE_URL}/${cart.product.image}`}
-              alt=""
-            />
-          </Col>
-          <Col sm={5}>
-            <h4>{cart.product.name}</h4>
-          </Col>
-          <Col sm={3}>
-            <div className="p-2">
-              <table className="table text-center">
-                <tbody>
-                  <tr>
-                    <td>Colour</td>
-                    <td>:</td>
-                    <td>{cart.colour}</td>
-                  </tr>
-                  <tr>
-                    <td>Size</td>
-                    <td>:</td>
-                    <td>{cart.size}</td>
-                  </tr>
-                  <tr>
-                    <td>Quantity</td>
-                    <td>:</td>
-                    <td>{cart.quantity}</td>
-                  </tr>
-                  <tr>
-                    <td>Totol Price</td>
-                    <td>:</td>
-                    <td>{cart.totalPrice}</td>
-                  </tr>
-                </tbody>
-              </table>
-              <ButtonGroup className="w-100 mt-4">
-                <Button onClick={() => changeCartQuantity('decrement')} variant="info" className="w-50">
-                  {" "}
-                  -{" "}
-                </Button>
-                <Button onClick={() => changeCartQuantity('increment')} variant="primary" className="w-50">
-                  {" "}
-                  +{" "}
-                </Button>
-              </ButtonGroup>
-            </div>
-          </Col>
-        </Row>
-      </div>
-      <Button variant="danger" onClick={() => deleteCart(cart.id)} className="py-2 w-100 mt-1">
-        Delete
-      </Button>
-
+    <div className="border border-warning rounded">
+      <Row>
+        <Col sm={3}>
+          <img
+            width="100%"
+            src={`${IMAGE_URL}/${cart.product.image}`}
+            alt=""
+          />
+        </Col>
+        <Col sm={5}>
+          <h4>{cart.product.name}</h4>
+        </Col>
+        <Col sm={3}>
+          <div className="p-2">
+            <table className="table text-center">
+              <tbody>
+                <tr>
+                  <td>Colour</td>
+                  <td>:</td>
+                  <td>{cart.colour}</td>
+                </tr>
+                <tr>
+                  <td>Size</td>
+                  <td>:</td>
+                  <td>{cart.size}</td>
+                </tr>
+                <tr>
+                  <td>Quantity</td>
+                  <td>:</td>
+                  <td>{cart.quantity}</td>
+                </tr>
+                <tr>
+                  <td>Totol Price</td>
+                  <td>:</td>
+                  <td>{cart.totalPrice}</td>
+                </tr>
+              </tbody>
+            </table>
+            <ButtonGroup className="w-100 mt-4">
+              <Button onClick={() => changeCartQuantity('decrement')} variant="info" className="w-50">
+                {" "}
+                -{" "}
+              </Button>
+              <Button onClick={() => changeCartQuantity('increment')} variant="primary" className="w-50">
+                {" "}
+                +{" "}
+              </Button>
+            </ButtonGroup>
+          </div>
+        </Col>
+      </Row>
     </div>
+    <Button variant="danger" onClick={() => deleteCart(cart.id)} className="py-2 w-100 mt-1">
+      Delete
+    </Button>
+
+  </div>
   );
 }
