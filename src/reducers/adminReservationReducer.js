@@ -1,4 +1,4 @@
-import { LOAD_ADMIN_RESERVATIONS , ADMIN_RESERVATION_STATUS_CHANGE, ADMIN_RESERVATIONS_STATUS_CHANGE} from "../actionTypes";
+import { LOAD_ADMIN_RESERVATIONS , ADMIN_RESERVATION_STATUS_CHANGE, ADMIN_RESERVATION_DELETE} from "../actionTypes";
 
 
 export const adminReservationStore = {
@@ -17,10 +17,12 @@ export const adminReservationReducer = (state, action) => {
       const oldReservations = state.reservations;
       const index =  oldReservations.findIndex(prod => prod.id === action.payload.id);
       oldReservations[index] = action.payload;
-
-      return{
-        ...state, reservations: oldReservations
-      }
+      case ADMIN_RESERVATION_DELETE:
+        let reservations = state.reservations.filter((e) => e.id !== action.payload);
+      return {
+        ...state,
+        reservations,
+      };
 
     default:
       return state;

@@ -37,7 +37,7 @@ function AdminLayout() {
           navigate("/login");
         });
     } else {
-      if (![1, 2].includes(auth.user.role_id)) {
+      if (![1, 2].includes(parseInt(auth.user.role_id))) {
         navigate("/");
       }
     }

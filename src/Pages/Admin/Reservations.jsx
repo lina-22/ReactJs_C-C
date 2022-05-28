@@ -5,7 +5,7 @@ import { Container, Form, Modal, Table } from "react-bootstrap";
 import { toast } from "react-toastify";
 import {
   ADMIN_RESERVATION_STATUS_CHANGE,
-  LOAD_ADMIN_RESERVATIONS,
+  LOAD_ADMIN_RESERVATIONS,ADMIN_RESERVATION_DELETE
 } from "../../actionTypes";
 import { AdminReservationContext } from "../../contexts";
 import { BACKEND_URL } from "../../utils";
@@ -83,7 +83,29 @@ function Reservations() {
         toast.error("Something Went Wrong!");
       });
   };
+  const onDeleteHandler = (id) => {
+    if (window.confirm("Are You Sure??")) {
+      axios
+        .delete(`${BACKEND_URL}/reservations/${id}`)
+        .then((res) => {
+          const { status, data, message } = res.data;
+          if (status) {
+            adminReservationDispatch({
+              type: ADMIN_RESERVATION_DELETE,
+              payload: id,
+            });
 
+            toast.success(message);
+          } else {
+            toast.error(message);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error("Something Went Wrong!");
+        });
+    }
+  };
   return (
     <>
       <Container className="mx-auto">
@@ -118,7 +140,7 @@ function Reservations() {
                     >
                       Change Status
                     </button>
-                    <button className="btn btn-sm px-4 py-2 btn-danger my-2 mx-2">
+                    <button onClick={() => onDeleteHandler(resv.id)} className="btn btn-sm px-4 py-2 btn-danger my-2 mx-2">
                       Delete
                     </button>
                   </td>

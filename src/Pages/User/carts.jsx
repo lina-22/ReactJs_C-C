@@ -48,7 +48,7 @@ function SingleCart({ cart }) {
   const { reservationDispatch } = useContext(ReservationContext);
 
   const changeCartQuantity = (action) => {
-    console.log(cart);
+    // console.log(cart);
     axios
       .post(`${BACKEND_URL}/productsLine/${action}`, {
         product_available_id: cart.product_available_id,
@@ -69,7 +69,7 @@ function SingleCart({ cart }) {
         toast.error("Something Went Wrong!");
       });
   };
-  const deleteCart = (id) => {
+  const deleteCart = () => {
     axios.delete(`${BACKEND_URL}/productsLine?reservation_id=${cart.reservation_id}&product_available_id=${cart.product_available_id}`
      ).then(res => {
       let {status, data, message} = res.data;
@@ -140,7 +140,7 @@ function SingleCart({ cart }) {
           </Col>
         </Row>
       </div>
-      <Button variant="danger" onClick={() => deleteCart(cart.id)} className="py-2 w-100 mt-1">
+      <Button variant="danger" onClick={() => deleteCart()} className="py-2 w-100 mt-1">
         Delete
       </Button>
 

@@ -78,10 +78,11 @@ function Navbar() {
               <Link to="/boutiqueLandingImgaes"> Boutique </Link>
             </li>
             <li>
-              <Link to="/login"> Connexion </Link>
+              {auth.user?<Link to="#" onClick={logOutHandler}>Disconnexion </Link>:<Link to="/login"> Connexion </Link>}
+              
             </li>
             <li>
-              <Link to="/panier"> Équipe </Link>
+              <Link to="/panier"> Contact </Link>
             </li>
             <li>
               <Link to="/propos"> Propos </Link>

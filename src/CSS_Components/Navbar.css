@@ -61,7 +61,8 @@ nav ul {
 }
 nav ul li {
     transform: scale(1, 0);
-    padding: 4px;
+    padding: 10px;
+    margin: 0 10px !important;
     
 }
 nav ul li:hover {
