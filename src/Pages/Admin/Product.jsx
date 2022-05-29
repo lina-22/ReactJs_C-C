@@ -22,7 +22,7 @@ function Product() {
     if (!productValue.isLoaded) {
       axios
         .get(`${BACKEND_URL}/products`)
-        .then((res) => {console.log(res)
+        .then((res) => {/*console.log(res)*/
           const { status, data, message } = res.data;
           if (status) {
             productDispatch({
